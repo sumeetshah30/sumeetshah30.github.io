@@ -310,6 +310,38 @@ footer a:hover{color:var(--gold)}
   .nr{gap:.5rem}
   .nb{padding:.35rem .7rem;font-size:.62rem}
 }
+
+/* ═══════════════════════════════════════════════
+   CONTACT FORM
+═══════════════════════════════════════════════ */
+.contact-form{display:flex;flex-direction:column;gap:1.1rem;padding:2rem;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);margin-top:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.45rem}
+.form-group label{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.form-group input,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:var(--r);padding:.75rem 1rem;font-family:var(--font-sans);font-size:.88rem;color:var(--text);outline:none;transition:border-color .2s,background .2s;resize:none}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.04)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted2)}
+.form-submit{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--gold);color:#05060a;border:none;border-radius:2rem;padding:.85rem 2rem;font-family:var(--font-sans);font-size:.82rem;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:all .25s;margin-top:.5rem}
+.form-submit:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,76,.3)}
+.form-submit svg{flex-shrink:0}
+
+/* ═══════════════════════════════════════════════
+   ADDITIONAL PROJECT CARDS
+═══════════════════════════════════════════════ */
+.proj-cards{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border);gap:0}
+.proj-card{padding:2.5rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;transition:background .3s;cursor:default}
+.proj-card:nth-child(2n){border-right:none}
+.proj-card:hover{background:var(--surface)}
+.pc-num{font-family:var(--font-mono);font-size:.58rem;color:var(--gold);letter-spacing:.16em;margin-bottom:.85rem}
+.pc-title{font-family:var(--font-serif);font-size:1.4rem;font-weight:300;color:var(--text);margin-bottom:.9rem;line-height:1.2}
+.pc-title em{font-style:italic;color:var(--gold)}
+.pc-desc{font-size:.85rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:1.5rem}
+.pc-tag{font-size:.68rem;padding:.22rem .65rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:2rem;color:var(--muted)}
+.proj-card:hover .pc-tag{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.2);color:var(--text)}
+.pc-bg{position:absolute;top:1rem;right:1.5rem;font-family:var(--font-serif);font-size:7rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.018);line-height:1;user-select:none;pointer-events:none}
+.proj-card:hover .pc-bg{color:rgba(201,168,76,.07)}
+@media(max-width:960px){.proj-cards{grid-template-columns:1fr}.proj-card{border-right:none}}
 </style>
 </head>
 <body>
@@ -420,7 +452,7 @@ footer a:hover{color:var(--gold)}
   </div>
   <div class="about-wrap">
     <div class="about-main rv">
-      <p>I'm a <strong>Software Engineer</strong> based in Bengaluru, India, specialising in enterprise backend development. I've worked on insurance policy management platforms serving international markets — designing APIs, implementing authentication systems, and optimising database performance under production load.</p>
+      <p>I'm <strong>Sumeet <span style="color:var(--gold)">Shah</span></strong> — a <strong>Software Engineer</strong> based in India, specialising in enterprise backend development. I've worked on insurance policy management platforms serving international markets — designing APIs, implementing authentication systems, and optimising database performance under production load.</p>
       <p>My philosophy is simple: <strong>clean architecture produces maintainable systems</strong>. I apply SOLID principles and repository patterns not as abstract ideals but as practical tools for writing code that future developers — including myself — can actually work with confidently.</p>
       <p>I hold a <strong>B.E. in Computer Engineering</strong> (CGPA 8.65) from MET's Institute of Engineering, Nashik. Outside of code, I'm driven by emerging technology, problem-solving, travel, and music.</p>
       <p>Currently <strong>open to freelance projects and full-time roles</strong> — particularly backend-heavy work, API development, and Angular full-stack builds for startups and product teams globally.</p>
@@ -428,7 +460,7 @@ footer a:hover{color:var(--gold)}
       <div class="about-pill-row">
         <span class="ap gold">Clean Architecture</span>
         <span class="ap gold">SOLID Principles</span>
-        <span class="ap">Bengaluru, India</span>
+        <span class="ap">India</span>
         <span class="ap">Remote — Global</span>
         <span class="ap">English · Hindi · Marathi</span>
         <span class="ap">Full-time Available</span>
@@ -459,7 +491,7 @@ footer a:hover{color:var(--gold)}
       </div>
       <div class="aside-block">
         <div class="aside-ttl">Quick Info</div>
-        <div class="aside-row"><span>Location</span><span>Bengaluru, India</span></div>
+        <div class="aside-row"><span>Location</span><span>India</span></div>
         <div class="aside-row"><span>Remote</span><span>Yes, global</span></div>
         <div class="aside-row"><span>Phone</span><span>+91 98816 86450</span></div>
         <div class="aside-row"><span>Response</span><span>Within 24 hrs</span></div>
@@ -484,7 +516,7 @@ footer a:hover{color:var(--gold)}
         <div style="height:.75rem"></div>
         <div class="exp-period">Apr 2024 – Mar 2026</div>
         <div style="height:.35rem"></div>
-        <div class="exp-type">Full-time · Bengaluru, India</div>
+        <div class="exp-type">Full-time · India</div>
       </div>
       <div class="exp-right">
         <div class="exp-role">Packaged App Development Associate</div>
@@ -532,7 +564,7 @@ footer a:hover{color:var(--gold)}
     <div class="sk rv d1"><div class="sk-bg">02</div><div class="sk-ic">🖥️</div><div class="sk-t">Frontend</div><div class="sk-tags"><span class="sk-tag">Angular</span><span class="sk-tag">TypeScript</span><span class="sk-tag">JavaScript</span><span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span></div></div>
     <div class="sk rv d2"><div class="sk-bg">03</div><div class="sk-ic">🗄️</div><div class="sk-t">Databases &amp; ORM</div><div class="sk-tags"><span class="sk-tag">SQL Server</span><span class="sk-tag">PostgreSQL</span><span class="sk-tag">EF Core</span><span class="sk-tag">LINQ</span></div></div>
     <div class="sk rv"><div class="sk-bg">04</div><div class="sk-ic">🏗️</div><div class="sk-t">Architecture</div><div class="sk-tags"><span class="sk-tag">Clean Architecture</span><span class="sk-tag">SOLID</span><span class="sk-tag">Repository Pattern</span><span class="sk-tag">MVC</span><span class="sk-tag">Microservices</span><span class="sk-tag">REST Design</span></div></div>
-    <div class="sk rv d1"><div class="sk-bg">05</div><div class="sk-ic">☁️</div><div class="sk-t">DevOps &amp; Cloud</div><div class="sk-tags"><span class="sk-tag">Azure</span><span class="sk-tag">AWS</span><span class="sk-tag">Docker</span><span class="sk-tag">Kubernetes EKS</span><span class="sk-tag">Jenkins</span><span class="sk-tag">CI/CD</span></div></div>
+    <div class="sk rv d1"><div class="sk-bg">05</div><div class="sk-ic">☁️</div><div class="sk-t">DevOps &amp; Cloud</div><div class="sk-tags"><span class="sk-tag">Azure</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">Azure App Service</span><span class="sk-tag">Docker</span><span class="sk-tag">Jenkins</span><span class="sk-tag">CI/CD</span></div></div>
     <div class="sk rv d2"><div class="sk-bg">06</div><div class="sk-ic">🔒</div><div class="sk-t">Security &amp; Tooling</div><div class="sk-tags"><span class="sk-tag">Okta OIDC</span><span class="sk-tag">RBAC</span><span class="sk-tag">JWT</span><span class="sk-tag">Splunk</span><span class="sk-tag">Postman</span><span class="sk-tag">GitHub Copilot</span><span class="sk-tag">Jira</span></div></div>
   </div>
 </section>
@@ -540,7 +572,7 @@ footer a:hover{color:var(--gold)}
 <!-- ════════ PROJECTS ════════ -->
 <section id="projects">
   <div class="sec-head rv">
-    <div class="sec-lbl">Featured Project</div>
+    <div class="sec-lbl">Featured Projects</div>
     <div>
       <h2 class="sec-h">What I've <em>shipped.</em></h2>
       <p class="sec-sub">Production-quality work built to enterprise standards — clean architecture, secure APIs, and real-world scalability.</p>
@@ -560,7 +592,7 @@ footer a:hover{color:var(--gold)}
       </div>
     </div>
     <div class="proj-info rv d1">
-      <div class="proj-idx">Project 01 / 01</div>
+      <div class="proj-idx">Project 01 / 03</div>
       <h3 class="proj-t">Smart Task &amp;<br/><em>Workflow</em> System</h3>
       <p class="proj-d">A full-stack task management platform for teams — create, assign, track, and manage tasks with role-based access, configurable workflow states, and complete audit logging. Built with clean architecture for real-world scalability.</p>
       <div class="proj-feats">
@@ -568,6 +600,45 @@ footer a:hover{color:var(--gold)}
         <div class="pf"><span class="pf-n">02</span><div><strong>Clean Architecture</strong> — Strict Domain / Application / Infrastructure / API separation.</div></div>
         <div class="pf"><span class="pf-n">03</span><div><strong>Workflow States</strong> — Configurable task lifecycle with full audit logging.</div></div>
         <div class="pf"><span class="pf-n">04</span><div><strong>EF Core + LINQ</strong> — Optimised ORM queries for high-performance data retrieval.</div></div>
+      </div>
+      <a class="proj-link" href="https://github.com/sumeetshah30" target="_blank" rel="noopener">
+        View on GitHub
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+  </div>
+  <!-- Additional Projects -->
+  <div class="proj-cards">
+    <div class="proj-card rv">
+      <div class="pc-bg">02</div>
+      <div class="pc-num">Project 02 / 03</div>
+      <h3 class="pc-title">Employee <em>Leave</em> Management System</h3>
+      <p class="pc-desc">A comprehensive leave management platform for organisations — employees can apply, track, and manage leaves with multi-tier approval workflows, real-time notifications, and HR reporting dashboards built on clean .NET architecture.</p>
+      <div class="pc-tags">
+        <span class="pc-tag">ASP.NET Core</span>
+        <span class="pc-tag">C#</span>
+        <span class="pc-tag">Entity Framework</span>
+        <span class="pc-tag">SQL Server</span>
+        <span class="pc-tag">Angular</span>
+        <span class="pc-tag">REST API</span>
+      </div>
+      <a class="proj-link" href="https://github.com/sumeetshah30" target="_blank" rel="noopener">
+        View on GitHub
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+    <div class="proj-card rv d1">
+      <div class="pc-bg">03</div>
+      <div class="pc-num">Project 03 / 03</div>
+      <h3 class="pc-title">Inventory &amp; <em>Order</em> Tracking API</h3>
+      <p class="pc-desc">A scalable inventory management and order tracking backend — real-time stock updates, supplier management, order lifecycle tracking, and automated reorder alerts. Designed with microservices principles for enterprise-grade reliability.</p>
+      <div class="pc-tags">
+        <span class="pc-tag">ASP.NET Core Web API</span>
+        <span class="pc-tag">LINQ</span>
+        <span class="pc-tag">PostgreSQL</span>
+        <span class="pc-tag">JWT Auth</span>
+        <span class="pc-tag">Docker</span>
+        <span class="pc-tag">Clean Architecture</span>
       </div>
       <a class="proj-link" href="https://github.com/sumeetshah30" target="_blank" rel="noopener">
         View on GitHub
@@ -594,16 +665,49 @@ footer a:hover{color:var(--gold)}
         sumeetshah7007@gmail.com
       </a>
       <div>
-        <a class="s-row" href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener"><span class="s-row-n">LinkedIn — /in/sumeet-shah30</span><span class="s-row-a">↗</span></a>
         <a class="s-row" href="https://github.com/sumeetshah30" target="_blank" rel="noopener"><span class="s-row-n">GitHub — sumeetshah30</span><span class="s-row-a">↗</span></a>
-        <a class="s-row" href="tel:+919881686450"><span class="s-row-n">Phone — +91 98816 86450</span><span class="s-row-a">↗</span></a>
+        <a class="s-row" href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener"><span class="s-row-n">LinkedIn — /in/sumeet-shah30</span><span class="s-row-a">↗</span></a>
       </div>
+      <!-- Contact Form -->
+      <form class="contact-form" action="https://formsubmit.co/sumeetshah7007@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+        <input type="hidden" name="_subject" value="New message from Portfolio"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_next" value=""/>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="first_name" placeholder="John" required/>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="last_name" placeholder="Doe" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="+91 98765 43210"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          Send Message
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        </button>
+      </form>
     </div>
     <div class="ct-r rv d1">
       <div class="ct-r-h">Quick Info</div>
       <div class="info-rows">
         <div class="ir"><span class="ir-l">Status</span><div class="avpill"><i></i>Available for work</div></div>
-        <div class="ir"><span class="ir-l">Location</span><span class="ir-v">Bengaluru, India</span></div>
+        <div class="ir"><span class="ir-l">Location</span><span class="ir-v">India</span></div>
         <div class="ir"><span class="ir-l">Remote</span><span class="ir-v">Yes — global clients welcome</span></div>
         <div class="ir"><span class="ir-l">Specialisation</span><span class="ir-v">ASP.NET Core, Angular</span></div>
         <div class="ir"><span class="ir-l">Open to</span><span class="ir-v">Freelance &amp; Full-time</span></div>
@@ -636,6 +740,15 @@ window.addEventListener('scroll',()=>document.getElementById('nb').classList.tog
 /* reveal */
 const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.07,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+</script>
+
+<script>
+/* contact form */
+function handleFormSubmit(e) {
+  const btn = e.target.querySelector('.form-submit');
+  btn.innerHTML = 'Sending… <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>';
+  btn.disabled = true;
+}
 </script>
 </body>
 </html>
