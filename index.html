@@ -37,13 +37,9 @@ html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
   --font-mono:'JetBrains Mono',monospace;
 }
 
-body{background:var(--bg);color:var(--text);font-family:var(--font-sans);overflow-x:hidden;line-height:1.6;cursor:none}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);overflow-x:hidden;line-height:1.6}
 
-/* ── CURSOR ── */
-#cur{position:fixed;width:8px;height:8px;background:var(--p1);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;box-shadow:0 0 10px var(--p1)}
-#cur2{position:fixed;width:30px;height:30px;border:1px solid rgba(167,139,250,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s,transform .1s ease}
-.hov #cur{width:42px;height:42px;background:rgba(167,139,250,.12);box-shadow:none}
-.hov #cur2{opacity:0}
+
 
 /* ── NOISE GRAIN ── */
 #grain{position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -277,39 +273,150 @@ footer a:hover{color:var(--p1)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  nav{padding:.9rem 1.4rem}
+  nav{padding:.85rem 1.2rem}
   .nm{display:none}
-  #hero{grid-template-columns:1fr}
+  .nr{display:none}
+  .hamburger{display:flex}
+  #hero{grid-template-columns:1fr;min-height:auto;padding-top:70px}
   .hero-r{display:none}
-  .hero-l{padding:6rem 1.6rem 3.5rem}
-  .sec-head{grid-template-columns:1fr;padding:3.5rem 1.6rem 2rem;gap:1rem}
+  .hero-l{padding:4rem 1.4rem 3rem}
+  h1.h-name{font-size:clamp(3rem,12vw,5rem);line-height:.92;letter-spacing:-.03em}
+  .h-eyebrow{font-size:.55rem;letter-spacing:.15em}
+  .h-sub p{font-size:.88rem;line-height:1.85}
+  .h-cta{flex-wrap:wrap;gap:.6rem}
+  .btn-p{font-size:.76rem;padding:.7rem 1.25rem}
+  .sec-head{grid-template-columns:1fr;padding:3rem 1.4rem 2rem;gap:.8rem}
+  .sec-h{font-size:clamp(2rem,7.5vw,3.2rem)}
+  .sec-sub{font-size:.85rem}
   .about-wrap{grid-template-columns:1fr}
-  .about-main{border-right:none;padding:2rem 1.6rem}
-  .about-side{padding:1.8rem 1.6rem;border-top:1px solid var(--border)}
+  .about-main{border-right:none;padding:1.8rem 1.4rem}
+  .about-main p{font-size:.87rem;line-height:1.95}
+  .about-hl{font-size:.92rem;padding:1.2rem 1.4rem}
+  .about-side{padding:1.6rem 1.4rem;border-top:1px solid var(--border)}
+  .about-pills{gap:.35rem}
   .exp-card{grid-template-columns:1fr}
-  .exp-left{border-right:none;border-bottom:1px solid var(--border);padding:1.8rem 1.6rem 1.2rem}
-  .exp-right{padding:1.8rem 1.6rem}
-  .skills-grid{grid-template-columns:1fr 1fr}
-  .sk:nth-child(2n){border-right:none}
-  .sk:nth-child(3n){border-right:1px solid var(--border)}
-  .sk:nth-child(5){border-bottom:1px solid var(--border)}
-  .sk:nth-child(6){border-bottom:none}
+  .exp-left{border-right:none;border-bottom:1px solid var(--border);padding:1.6rem 1.4rem 1rem}
+  .exp-right{padding:1.6rem 1.4rem}
+  .exp-pts li{font-size:.82rem;line-height:1.8}
+  .exp-role{font-size:.58rem;letter-spacing:.13em}
+  .skills-grid{grid-template-columns:1fr}
+  .sk{padding:1.8rem 1.4rem;border-right:none}
+  .sk:nth-child(n){border-bottom:1px solid var(--border)}
+  .sk:last-child{border-bottom:none}
   .proj-wrap{grid-template-columns:1fr}
-  .proj-vis{min-height:240px}
-  .proj-info{border-left:none;border-top:1px solid var(--border);padding:2.2rem 1.6rem}
+  .proj-vis{min-height:200px;padding:2rem 1.4rem}
+  .stack-vis{max-width:100%}
+  .proj-info{border-left:none;border-top:1px solid var(--border);padding:1.8rem 1.4rem}
+  .proj-t{font-size:clamp(1.5rem,6vw,2rem)}
+  .proj-d{font-size:.83rem}
+  .pf{font-size:.78rem}
   .proj-cards{grid-template-columns:1fr}
-  .proj-card{border-right:none}
+  .proj-card{border-right:none;padding:1.8rem 1.4rem}
+  .pc-title{font-size:1.15rem}
+  .pc-desc{font-size:.8rem}
   .contact-grid{grid-template-columns:1fr}
-  .ct-l{border-right:none;border-bottom:1px solid var(--border);padding:2.2rem 1.6rem}
-  .ct-r{padding:2.2rem 1.6rem}
+  .ct-l{border-right:none;border-bottom:1px solid var(--border);padding:2rem 1.4rem}
+  .ct-r{padding:2rem 1.4rem}
+  .ct-cta{font-size:clamp(1.4rem,6vw,2rem)}
   .form-row{grid-template-columns:1fr}
-  .nr{gap:.4rem}
-  .nbtn{padding:.32rem .7rem;font-size:.6rem}
+  .contact-form{padding:1.4rem}
+  .ct-email{font-size:.7rem;gap:.5rem}
+  .s-row-n{font-size:.74rem}
+  footer{padding:1.2rem 1.4rem;flex-direction:column;gap:.4rem;text-align:center}
+  .ticker{display:none}
+  .blog-grid{grid-template-columns:1fr}
+  .blog-card-img{height:180px}
 }
+@media(max-width:480px){
+  h1.h-name{font-size:clamp(2.5rem,14vw,3.8rem)}
+  .hero-l{padding:3.5rem 1.1rem 2.5rem}
+  .sec-head{padding:2.4rem 1.1rem 1.6rem}
+  .sec-h{font-size:clamp(1.8rem,9vw,2.6rem)}
+  .about-main{padding:1.5rem 1.1rem}
+  .about-side{padding:1.4rem 1.1rem}
+  .exp-left{padding:1.4rem 1.1rem .9rem}
+  .exp-right{padding:1.4rem 1.1rem}
+  .proj-info{padding:1.5rem 1.1rem}
+  .proj-card{padding:1.5rem 1.1rem}
+  .ct-l,.ct-r{padding:1.6rem 1.1rem}
+  .contact-form{padding:1rem}
+  .sk{padding:1.5rem 1.1rem}
+  .exp-badge{display:none}
+  footer{padding:1rem 1.1rem}
+  .blog-card{padding:1.4rem 1.1rem}
+}
+
+/* ── SKILL TAG LOGOS ── */
+.sk-tag{display:inline-flex;align-items:center;gap:5px}
+.sk-logo{display:inline-flex;align-items:center;flex-shrink:0;width:20px;height:20px}
+.sk-logo svg{width:20px;height:20px;flex-shrink:0}
+.sk-ic{display:none}
+
+
+/* ── HAMBURGER MOBILE NAV ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:1001;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(4,4,10,.97);backdrop-filter:blur(24px);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
+.mobile-nav.open{display:flex}
+.mobile-nav a.mnl{font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.03em;transition:color .2s}
+.mobile-nav a.mnl:hover{color:var(--p1)}
+.mobile-nav-btns{display:flex;flex-direction:column;gap:.7rem;align-items:center;margin-top:.8rem;padding-top:1.5rem;border-top:1px solid var(--border);width:200px}
+.mobile-nav-btns .nbtn{font-size:.75rem;padding:.55rem 1.6rem;justify-content:center;width:100%}
+
+
+/* ── BLOG SECTION ── */
+#blog{background:var(--bg2)}
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);gap:0}
+.blog-card{border-right:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background .3s;text-decoration:none;display:block;color:inherit}
+.blog-card:nth-child(2n){border-right:none}
+.blog-card:hover{background:rgba(139,92,246,.04)}
+.blog-card-img{height:220px;overflow:hidden;position:relative;background:var(--bg3);border-bottom:1px solid var(--border)}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.blog-card:hover .blog-card-img img{transform:scale(1.04)}
+.blog-card-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(56,189,248,.08));position:relative;overflow:hidden}
+.blog-card-img-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(45deg,rgba(139,92,246,.15) 25%,transparent 25%,transparent 75%,rgba(139,92,246,.08) 75%),linear-gradient(45deg,rgba(56,189,248,.08) 25%,transparent 25%,transparent 75%,rgba(56,189,248,.05) 75%);background-size:40px 40px}
+.blog-tag{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--p1);background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);padding:.22rem .65rem;border-radius:999px;display:inline-flex;align-items:center}
+.blog-body{padding:2rem 2.2rem 2.2rem}
+.blog-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
+.blog-date{font-family:var(--font-mono);font-size:.58rem;color:var(--muted2);letter-spacing:.08em}
+.blog-title{font-family:var(--font-display);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.25;margin-bottom:.9rem}
+.blog-title em{font-style:normal;background:linear-gradient(135deg,var(--p1),var(--p3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.blog-excerpt{font-size:.85rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1.4rem}
+.blog-read{font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--p1);display:flex;align-items:center;gap:.4rem;transition:gap .2s}
+.blog-card:hover .blog-read{gap:.7rem}
+.blog-read-min{font-family:var(--font-mono);font-size:.58rem;color:var(--muted2);margin-left:auto}
+.blog-full{display:none;position:fixed;inset:0;z-index:990;background:var(--bg);overflow-y:auto}
+.blog-full.open{display:block}
+.blog-full-inner{max-width:740px;margin:0 auto;padding:6rem 2.5rem 5rem}
+.blog-full-close{position:fixed;top:1.5rem;right:2rem;background:var(--glass2);border:1px solid var(--border2);color:var(--text);font-size:.7rem;letter-spacing:.1em;padding:.5rem 1rem;border-radius:999px;cursor:pointer;font-family:var(--font-sans);z-index:991;transition:all .2s}
+.blog-full-close:hover{background:rgba(139,92,246,.15);border-color:rgba(139,92,246,.3);color:var(--p1)}
+.bf-tag{display:inline-flex;margin-bottom:1.5rem}
+.bf-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--text);margin-bottom:1.2rem}
+.bf-title em{font-style:normal;background:linear-gradient(135deg,var(--p1),var(--p3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.bf-meta{display:flex;align-items:center;gap:1.5rem;padding:1.2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:2.5rem;font-size:.72rem;color:var(--muted2);flex-wrap:wrap;font-family:var(--font-mono)}
+.bf-img{width:100%;height:300px;object-fit:cover;border-radius:12px;margin-bottom:2.5rem;border:1px solid var(--border)}
+.bf-img-placeholder{width:100%;height:300px;border-radius:12px;margin-bottom:2.5rem;border:1px solid var(--border);background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(56,189,248,.08));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:3rem;font-weight:800;color:rgba(139,92,246,.25);letter-spacing:-.03em;overflow:hidden;position:relative}
+.bf-img-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(139,92,246,.06) 39px,rgba(139,92,246,.06) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(56,189,248,.04) 39px,rgba(56,189,248,.04) 40px)}
+.bf-body h2{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--text);margin:2.5rem 0 1rem;letter-spacing:-.02em}
+.bf-body h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--text);margin:2rem 0 .8rem;letter-spacing:-.01em}
+.bf-body p{font-size:.93rem;color:var(--muted);line-height:2;font-weight:300;margin-bottom:1.3rem}
+.bf-body strong{color:var(--text);font-weight:500}
+.bf-body code{font-family:var(--font-mono);font-size:.82rem;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.18);color:var(--p1);padding:.15rem .45rem;border-radius:4px}
+.bf-body pre{background:rgba(4,4,10,.8);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto}
+.bf-body pre code{background:none;border:none;padding:0;font-size:.8rem;color:rgba(200,192,176,.8)}
+.bf-body ul,.bf-body ol{padding-left:1.5rem;margin-bottom:1.3rem}
+.bf-body li{font-size:.93rem;color:var(--muted);line-height:1.95;font-weight:300;margin-bottom:.4rem}
+.bf-body blockquote{border-left:2px solid var(--p1);padding-left:1.4rem;margin:1.8rem 0;font-style:italic;color:rgba(240,236,228,.65);font-size:1rem;line-height:1.8}
+.bf-divider{width:40px;height:2px;background:linear-gradient(90deg,var(--p1),var(--p3));margin:2.5rem 0;border-radius:2px}
+@media(max-width:480px){.blog-full-inner{padding:5rem 1.2rem 3rem}.bf-title{font-size:clamp(1.7rem,8vw,2.4rem)}.bf-img-placeholder{height:200px}}
+
 </style>
 </head>
 <body>
-<div id="cur"></div><div id="cur2"></div><div id="grain"></div>
+<div id="grain"></div>
 <div class="blob blob1"></div>
 <div class="blob blob2"></div>
 <div class="blob blob3"></div>
@@ -322,6 +429,7 @@ footer a:hover{color:var(--p1)}
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nr">
@@ -332,7 +440,24 @@ footer a:hover{color:var(--p1)}
       Résumé
     </a>
   </div>
+  <button class="hamburger" id="hbg" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mnav">
+  <a class="mnl" href="#about" onclick="closeMnav()">About</a>
+  <a class="mnl" href="#experience" onclick="closeMnav()">Experience</a>
+  <a class="mnl" href="#skills" onclick="closeMnav()">Skills</a>
+  <a class="mnl" href="#projects" onclick="closeMnav()">Projects</a>
+  <a class="mnl" href="#blog" onclick="closeMnav()">Blog</a>
+  <a class="mnl" href="#contact" onclick="closeMnav()">Contact</a>
+  <div class="mobile-nav-btns">
+    <a class="nbtn nbtn-ghost" href="mailto:sumeetshah7007@gmail.com">Freelance</a>
+    <a class="nbtn nbtn-dl" href="SumeetShResumeLat.pdf" download>Download Résumé</a>
+  </div>
+</div>
 
 <!-- ════ HERO ════ -->
 <section id="hero">
@@ -524,12 +649,48 @@ footer a:hover{color:var(--p1)}
     </div>
   </div>
   <div class="skills-grid">
-    <div class="sk rv"><div class="sk-bg">01</div><div class="sk-ic">⚙️</div><div class="sk-t">Backend &amp; Frameworks</div><div class="sk-tags"><span class="sk-tag">C#</span><span class="sk-tag">ASP.NET Core</span><span class="sk-tag">ASP.NET MVC</span><span class="sk-tag">Web API</span><span class="sk-tag">Node.js</span><span class="sk-tag">Java</span><span class="sk-tag">C++</span></div></div>
-    <div class="sk rv d1"><div class="sk-bg">02</div><div class="sk-ic">🖥️</div><div class="sk-t">Frontend</div><div class="sk-tags"><span class="sk-tag">Angular</span><span class="sk-tag">TypeScript</span><span class="sk-tag">JavaScript</span><span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span></div></div>
-    <div class="sk rv d2"><div class="sk-bg">03</div><div class="sk-ic">🗄️</div><div class="sk-t">Databases &amp; ORM</div><div class="sk-tags"><span class="sk-tag">SQL Server</span><span class="sk-tag">PostgreSQL</span><span class="sk-tag">EF Core</span><span class="sk-tag">LINQ</span></div></div>
-    <div class="sk rv"><div class="sk-bg">04</div><div class="sk-ic">🏗️</div><div class="sk-t">Architecture</div><div class="sk-tags"><span class="sk-tag">Clean Architecture</span><span class="sk-tag">SOLID</span><span class="sk-tag">Repository Pattern</span><span class="sk-tag">MVC</span><span class="sk-tag">Microservices</span><span class="sk-tag">REST Design</span></div></div>
-    <div class="sk rv d1"><div class="sk-bg">05</div><div class="sk-ic">☁️</div><div class="sk-t">DevOps &amp; Cloud</div><div class="sk-tags"><span class="sk-tag">Azure</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">Azure App Service</span><span class="sk-tag">Docker</span><span class="sk-tag">Jenkins</span><span class="sk-tag">CI/CD</span></div></div>
-    <div class="sk rv d2"><div class="sk-bg">06</div><div class="sk-ic">🔒</div><div class="sk-t">Security &amp; Tooling</div><div class="sk-tags"><span class="sk-tag">Okta OIDC</span><span class="sk-tag">RBAC</span><span class="sk-tag">JWT</span><span class="sk-tag">Splunk</span><span class="sk-tag">Postman</span><span class="sk-tag">GitHub Copilot</span><span class="sk-tag">Jira</span></div></div>
+    <div class="sk rv">
+      <div class="sk-bg">01</div>
+      <div class="sk-t">Backend &amp; Frameworks</div>
+      <div class="sk-tags">
+        <span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="#512BD4"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="9" font-weight="bold" font-family="sans-serif">C#</text></svg></span>C#</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M11.998 1C5.924 1 1 5.924 1 12s4.924 11 10.998 11C18.072 23 23 18.076 23 12S18.072 1 11.998 1zM6.916 15.222a.875.875 0 01-.875-.875V9.653a.875.875 0 011.75 0v4.694a.875.875 0 01-.875.875zm4.584 0H9.75a.875.875 0 01-.875-.875V9.653a.875.875 0 01.875-.875H11.5a2.789 2.789 0 012.786 2.786 2.789 2.789 0 01-2.786 2.786v.872zm5.5-1.75h-.875v.875a.875.875 0 01-1.75 0v-.875h-.875a.875.875 0 010-1.75h.875v-.875a.875.875 0 011.75 0v.875h.875a.875.875 0 010 1.75z"/></svg></span>ASP.NET Core</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M11.998 1C5.924 1 1 5.924 1 12s4.924 11 10.998 11C18.072 23 23 18.076 23 12S18.072 1 11.998 1zM6.916 15.222a.875.875 0 01-.875-.875V9.653a.875.875 0 011.75 0v4.694a.875.875 0 01-.875.875zm4.584 0H9.75a.875.875 0 01-.875-.875V9.653a.875.875 0 01.875-.875H11.5a2.789 2.789 0 012.786 2.786 2.789 2.789 0 01-2.786 2.786v.872zm5.5-1.75h-.875v.875a.875.875 0 01-1.75 0v-.875h-.875a.875.875 0 010-1.75h.875v-.875a.875.875 0 011.75 0v.875h.875a.875.875 0 010 1.75z"/></svg></span>ASP.NET MVC</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M11.998 1C5.924 1 1 5.924 1 12s4.924 11 10.998 11C18.072 23 23 18.076 23 12S18.072 1 11.998 1zM6.916 15.222a.875.875 0 01-.875-.875V9.653a.875.875 0 011.75 0v4.694a.875.875 0 01-.875.875zm4.584 0H9.75a.875.875 0 01-.875-.875V9.653a.875.875 0 01.875-.875H11.5a2.789 2.789 0 012.786 2.786 2.789 2.789 0 01-2.786 2.786v.872zm5.5-1.75h-.875v.875a.875.875 0 01-1.75 0v-.875h-.875a.875.875 0 010-1.75h.875v-.875a.875.875 0 011.75 0v.875h.875a.875.875 0 010 1.75z"/></svg></span>Web API</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#339933" d="M12 1.85L3 7.05v9.9l9 5.2 9-5.2V7.05l-9-5.2zm0 2.31l6.5 3.75v7.52L12 19.18l-6.5-3.75V7.91L12 4.16z"/></svg></span>Node.js</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#00599C"/><text x="12" y="17" text-anchor="middle" fill="white" font-size="9" font-weight="bold" font-family="sans-serif">C++</text></svg></span>C++</span>
+      </div>
+    </div>
+    <div class="sk rv d1">
+      <div class="sk-bg">02</div>
+      <div class="sk-t">Frontend</div>
+      <div class="sk-tags">
+        <span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#DD0031" d="M12 2.5L3 5.8l1.4 12L12 21.5l7.6-3.7 1.4-12z"/><path fill="#C3002F" d="M12 2.5v19l7.6-3.7 1.4-12z"/><path fill="white" d="M12 6.3L7.6 17h1.7l.9-2.2h3.6l.9 2.2h1.7L12 6.3zm1.2 7H10.8L12 9.9l1.2 3.4z"/></svg></span>Angular</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#3178C6"/><text x="12" y="17" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="sans-serif">TS</text></svg></span>TypeScript</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#F7DF1E"/><text x="12" y="17" text-anchor="middle" fill="#222" font-size="10" font-weight="bold" font-family="sans-serif">JS</text></svg></span>JavaScript</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#E34F26" d="M3 2l1.7 19.3L12 23l7.3-1.7L21 2H3z"/><path fill="#EF652A" d="M12 21.4V4.3H19l-1.4 16-5.6 1.1z"/><path fill="white" d="M12 11h3.8l.3-3H8.6l.3 3H12zm0 6l-3.1-.8-.2-2.2H6.5l.4 4.5L12 20.5v-3.5zm0 0v-3.5l3.1-.8.2-2.5h2l-.4 5.5L12 17z"/></svg></span>HTML5</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#1572B6" d="M3 2l1.7 19.3L12 23l7.3-1.7L21 2H3z"/><path fill="#33A9DC" d="M12 21.4V4.3H19l-1.4 16-5.6 1.1z"/><path fill="white" d="M12 11H7.5l.3 2.5H12v2.5l-3.2-.9-.2-2.1H6.4l.4 4.3L12 18.7v-2.5zm0 0V8.5H17l-.2 2.5H12z"/></svg></span>CSS3</span>
+      </div>
+    </div>
+    <div class="sk rv d2">
+      <div class="sk-bg">03</div>
+      <div class="sk-t">Databases &amp; ORM</div>
+      <div class="sk-tags">
+        <span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="9" ry="3" fill="#CC2927"/><path fill="#CC2927" d="M3 6v4c0 1.657 4.03 3 9 3s9-1.343 9-3V6"/><path fill="#CC2927" d="M3 10v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/><path fill="#CC2927" d="M3 14v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/><ellipse cx="12" cy="6" rx="9" ry="3" fill="#CC2927" opacity=".5"/></svg></span>SQL Server</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#336791"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="sans-serif">PgSQL</text></svg></span>PostgreSQL</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M11.998 1C5.924 1 1 5.924 1 12s4.924 11 10.998 11C18.072 23 23 18.076 23 12S18.072 1 11.998 1zM6.916 15.222a.875.875 0 01-.875-.875V9.653a.875.875 0 011.75 0v4.694a.875.875 0 01-.875.875zm4.584 0H9.75a.875.875 0 01-.875-.875V9.653a.875.875 0 01.875-.875H11.5a2.789 2.789 0 012.786 2.786 2.789 2.789 0 01-2.786 2.786v.872zm5.5-1.75h-.875v.875a.875.875 0 01-1.75 0v-.875h-.875a.875.875 0 010-1.75h.875v-.875a.875.875 0 011.75 0v.875h.875a.875.875 0 010 1.75z"/></svg></span>EF Core</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M11.998 1C5.924 1 1 5.924 1 12s4.924 11 10.998 11C18.072 23 23 18.076 23 12S18.072 1 11.998 1zM6.916 15.222a.875.875 0 01-.875-.875V9.653a.875.875 0 011.75 0v4.694a.875.875 0 01-.875.875zm4.584 0H9.75a.875.875 0 01-.875-.875V9.653a.875.875 0 01.875-.875H11.5a2.789 2.789 0 012.786 2.786 2.789 2.789 0 01-2.786 2.786v.872zm5.5-1.75h-.875v.875a.875.875 0 01-1.75 0v-.875h-.875a.875.875 0 010-1.75h.875v-.875a.875.875 0 011.75 0v.875h.875a.875.875 0 010 1.75z"/></svg></span>LINQ</span>
+      </div>
+    </div>
+    <div class="sk rv">
+      <div class="sk-bg">04</div>
+      <div class="sk-t">Architecture</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Clean Architecture</span><span class="sk-tag">SOLID</span><span class="sk-tag">Repository Pattern</span><span class="sk-tag">MVC</span><span class="sk-tag">Microservices</span><span class="sk-tag">REST Design</span>
+      </div>
+    </div>
+    <div class="sk rv d1">
+      <div class="sk-bg">05</div>
+      <div class="sk-t">DevOps &amp; Cloud</div>
+      <div class="sk-tags">
+        <span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#0089D6" d="M5.33 21h13.34L13.25 3H10.7L5.33 21zm4.22-5.64l3.2-8.22 4.25 9.86H9.55z"/></svg></span>Azure</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#0089D6" d="M5.33 21h13.34L13.25 3H10.7L5.33 21zm4.22-5.64l3.2-8.22 4.25 9.86H9.55z"/></svg></span>Azure DevOps</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#0089D6" d="M5.33 21h13.34L13.25 3H10.7L5.33 21zm4.22-5.64l3.2-8.22 4.25 9.86H9.55z"/></svg></span>Azure App Service</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#2496ED" d="M13.98 11.08h2.12v-1.9h-2.12zm-2.95 0h2.12v-1.9h-2.12zm-2.95 0h2.12v-1.9h-2.12zm-2.95 0H7.25v-1.9H5.13zm5.9-2.93h2.12V6.25h-2.12zm-2.95 0h2.12V6.25H8.08zM21 11.52c-.19-1.37-1.1-2.54-2.12-3.34l-.43-.34-.38.4c-.47.51-.67 1.36-.6 2.03.06.54.24 1.08.6 1.5-.28.15-.56.37-.82.49a5.5 5.5 0 01-2.12.38H1.17l-.05.52c-.16 1.56.16 3.26 1.01 4.6L2.6 18c1.27 1.61 3.19 2.42 5.52 2.42 5.25 0 9.14-2.37 11-6.68 1.28.02 2.54-.32 3.14-1.52l.15-.3-.41-.4z"/></svg></span>Docker</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#D33833"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="sans-serif">Jenkins</text></svg></span>Jenkins</span><span class="sk-tag">CI/CD</span>
+      </div>
+    </div>
+    <div class="sk rv d2">
+      <div class="sk-bg">06</div>
+      <div class="sk-t">Security &amp; Tooling</div>
+      <div class="sk-tags">
+        <span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#007DC1"/><circle cx="12" cy="12" r="4" fill="white"/></svg></span>Okta OIDC</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#007DC1"/><circle cx="12" cy="12" r="4" fill="white"/></svg></span>RBAC</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M11.998 1C5.924 1 1 5.924 1 12s4.924 11 10.998 11C18.072 23 23 18.076 23 12S18.072 1 11.998 1zM6.916 15.222a.875.875 0 01-.875-.875V9.653a.875.875 0 011.75 0v4.694a.875.875 0 01-.875.875zm4.584 0H9.75a.875.875 0 01-.875-.875V9.653a.875.875 0 01.875-.875H11.5a2.789 2.789 0 012.786 2.786 2.789 2.789 0 01-2.786 2.786v.872zm5.5-1.75h-.875v.875a.875.875 0 01-1.75 0v-.875h-.875a.875.875 0 010-1.75h.875v-.875a.875.875 0 011.75 0v.875h.875a.875.875 0 010 1.75z"/></svg></span>JWT</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#65A637"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="sans-serif">SPLNK</text></svg></span>Splunk</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#FF6C37"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="8" font-weight="bold" font-family="sans-serif">PM</text></svg></span>Postman</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#E8E4DC" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></span>GitHub Copilot</span><span class="sk-tag"><span class="sk-logo"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#2684FF" d="M11.571 11.513H0a5.218 5.218 0 005.232 5.215l2.13.001v2.057A5.215 5.215 0 0012.575 24V12.518a1.005 1.005 0 00-1.004-1.005zM6.016 6.008H17.58A5.218 5.218 0 0012.35.793L10.22.792V-1.265A5.215 5.215 0 005.012-6.48v11.483a1.005 1.005 0 001.004 1.005z"/><path fill="#2684FF" d="M11.793 8.76H23.36a5.218 5.218 0 00-5.232-5.215l-2.13-.001V1.487A5.215 5.215 0 0010.79-3.728V7.755a1.005 1.005 0 001.003 1.005z" transform="translate(0 7.753)"/></svg></span>Jira</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -665,35 +826,274 @@ footer a:hover{color:var(--p1)}
   </div>
 </section>
 
+<!-- ════ BLOG ════ -->
+<section id="blog">
+  <div class="sec-head rv">
+    <div class="sec-lbl">Insights</div>
+    <div>
+      <h2 class="sec-h">Thoughts on <em>tech.</em></h2>
+      <p class="sec-sub">Deep dives into the technologies shaping how we build and deploy intelligent software systems.</p>
+    </div>
+  </div>
+  <div class="blog-grid">
+    <a class="blog-card rv" href="#" onclick="openBlog('b1');return false;" aria-label="Read blog post">
+      <div class="blog-card-img">
+        <div class="blog-card-img-placeholder" style="font-size:5rem;color:rgba(139,92,246,.18)">AI</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-tag">Generative AI</span>
+          <span class="blog-date">June 2026 · by Sumeet Shah</span>
+        </div>
+        <h3 class="blog-title">From GPT to <em>Production</em> — Building Real Apps with Generative AI</h3>
+        <p class="blog-excerpt">Everyone's experimenting with ChatGPT. But how do you actually ship a production-grade feature powered by a large language model? Here's what two years of .NET development taught me about integrating GenAI into real enterprise systems.</p>
+        <div class="blog-meta" style="margin-bottom:0">
+          <span class="blog-read">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="blog-read-min">8 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="blog-card rv d1" href="#" onclick="openBlog('b2');return false;" aria-label="Read blog post">
+      <div class="blog-card-img">
+        <div class="blog-card-img-placeholder" style="font-size:5rem;color:rgba(56,189,248,.18)">🤖</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-tag" style="color:var(--p3);background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.2)">Agentic AI</span>
+          <span class="blog-date">May 2026 · by Sumeet Shah</span>
+        </div>
+        <h3 class="blog-title">Agentic AI &amp; <em>.NET</em> — Building Autonomous Backend Workflows</h3>
+        <p class="blog-excerpt">Agentic AI systems don't just respond — they plan, act, and course-correct autonomously. I explore how ASP.NET Core developers can architect agent-driven pipelines that interact with real APIs, databases, and business logic.</p>
+        <div class="blog-meta" style="margin-bottom:0">
+          <span class="blog-read" style="color:var(--p3)">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="blog-read-min">10 min read</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ════ BLOG ARTICLE 1 — Full Page ════ -->
+<div class="blog-full" id="b1">
+  <button class="blog-full-close" onclick="closeBlog('b1')">← Back to portfolio</button>
+  <div class="blog-full-inner">
+    <span class="blog-tag bf-tag">Generative AI</span>
+    <h1 class="bf-title">From GPT to <em>Production</em> — Building Real Apps with Generative AI</h1>
+    <div class="bf-meta">
+      <span>Sumeet Shah</span>
+      <span>June 2026</span>
+      <span>8 min read</span>
+      <span>ASP.NET Core · C# · OpenAI API</span>
+    </div>
+    <div class="bf-img-placeholder">GenAI × .NET</div>
+    <div class="bf-body">
+      <p>Everyone's played with ChatGPT. Everyone's seen the demos. But there's a significant gap between <em>prompting a chatbot</em> and <em>shipping a production feature powered by a large language model</em>. I've been on both sides of that gap — and this article is about what I learned crossing it.</p>
+
+      <p>Over the past year, working at the intersection of enterprise .NET development and emerging AI capabilities, I've integrated LLM-powered features into backend systems that serve real users. Here's what actually matters.</p>
+
+      <div class="bf-divider"></div>
+      <h2>Why most GenAI demos fail in production</h2>
+      <p>Demo code is optimistic. It assumes the model always returns well-formed JSON, that latency is acceptable, that the same prompt works every time. Production systems are none of those things.</p>
+      <p>The three failure modes I encountered most often:</p>
+      <ul>
+        <li><strong>Non-determinism at scale</strong> — the same prompt can return structurally different responses. Your parser breaks on Tuesday.</li>
+        <li><strong>Latency spikes</strong> — a 2-second average with 15-second tail latency is a UX nightmare when it's blocking a user action.</li>
+        <li><strong>Cost surprises</strong> — token usage at demo scale (10 requests/day) doesn't predict production scale (50,000 requests/day).</li>
+      </ul>
+
+      <h2>The architecture that actually works</h2>
+      <p>After several iterations, I settled on a pattern I call <strong>Guard-Generate-Validate</strong> for LLM integration in .NET backends.</p>
+
+      <h3>1. Guard — protect your system from the model</h3>
+      <p>Treat the LLM like an untrusted external API. Every response should go through a validation layer before touching your database or business logic.</p>
+      <pre><code>public async Task&lt;PolicySummary?&gt; GenerateSummaryAsync(string policyText)
+{{
+    var raw = await _llmClient.CompleteAsync(BuildPrompt(policyText));
+    
+    if (!TryParseSummary(raw, out var summary))
+    {{
+        _logger.LogWarning("LLM returned unparseable response, falling back");
+        return await _fallbackService.GetSummaryAsync(policyText);
+    }}
+    
+    return summary;
+}}</code></pre>
+
+      <h3>2. Generate — engineer your prompt like code</h3>
+      <p>Prompt engineering is real engineering. I treat prompts as versioned, tested artifacts — not strings concatenated at runtime. A few principles that made a measurable difference:</p>
+      <ul>
+        <li>Specify the <strong>output format explicitly</strong> in the system prompt. Ask for JSON with a defined schema.</li>
+        <li>Include <strong>negative examples</strong> — "do not include preamble text before the JSON".</li>
+        <li>Use <strong>temperature=0</strong> for structured output tasks. Save creativity for summarisation and generation tasks where variation is acceptable.</li>
+      </ul>
+
+      <h3>3. Validate — never trust the model's output directly</h3>
+      <p>JSON schema validation, semantic checks, and range guards before any LLM output reaches your data layer. I use <code>FluentValidation</code> for this — the same library I use everywhere else in the stack.</p>
+
+      <blockquote>"The model doesn't know what your application needs. Only your code does."</blockquote>
+
+      <div class="bf-divider"></div>
+      <h2>Practical patterns for ASP.NET Core</h2>
+
+      <h3>Async streaming for better UX</h3>
+      <p>If your LLM call takes 4 seconds, don't make the user wait for the whole response. Stream it. ASP.NET Core supports server-sent events natively — combine it with OpenAI's streaming API and you get a chat-like experience in your own UI without WebSockets complexity.</p>
+
+      <h3>Caching semantically similar requests</h3>
+      <p>Exact-match caching barely works for LLM inputs — users rephrase the same question. Semantic caching (embedding the input, finding vector-similar cached results) can reduce LLM API calls by 30–60% for common question patterns. I used Azure AI Search for this.</p>
+
+      <h3>Observability is non-negotiable</h3>
+      <p>Log the full prompt, the full response, latency, token count, and model version for every production call. When something breaks — and it will — you need the complete picture. I pipe this to Splunk with a custom LLM telemetry middleware.</p>
+
+      <div class="bf-divider"></div>
+      <h2>What I'd tell myself 12 months ago</h2>
+      <p>GenAI in production is a software engineering problem first, and an AI problem second. The models are impressive. The hard part is wrapping them in the reliability, observability, and testability that enterprise systems demand. If you can build resilient APIs, you can build resilient AI features — the discipline is the same.</p>
+
+      <p>The engineers who will build the most valuable AI-powered systems aren't the ones who know the most about transformer architecture. They're the ones who know how to <strong>ship production software</strong> — and who learn to work with LLMs the same way they work with any powerful, imperfect dependency.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ BLOG ARTICLE 2 — Full Page ════ -->
+<div class="blog-full" id="b2">
+  <button class="blog-full-close" onclick="closeBlog('b2')">← Back to portfolio</button>
+  <div class="blog-full-inner">
+    <span class="blog-tag bf-tag" style="color:var(--p3);background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.2)">Agentic AI</span>
+    <h1 class="bf-title">Agentic AI &amp; <em>.NET</em> — Building Autonomous Backend Workflows</h1>
+    <div class="bf-meta">
+      <span>Sumeet Shah</span>
+      <span>May 2026</span>
+      <span>10 min read</span>
+      <span>ASP.NET Core · C# · Semantic Kernel</span>
+    </div>
+    <div class="bf-img-placeholder" style="color:rgba(56,189,248,.18)">Agentic × .NET</div>
+    <div class="bf-body">
+      <p>Generative AI responds to prompts. <strong>Agentic AI acts on goals.</strong> That distinction sounds subtle, but it fundamentally changes how you architect the systems around it — and what becomes possible.</p>
+
+      <p>A GenAI feature says: "Here's a summary of this document." An agentic system says: "I need to process this claim — let me check the policy database, calculate the payout, flag anomalies, draft the notification, and submit it for approval." It plans, executes, and adapts.</p>
+
+      <p>I've been working with agentic patterns in .NET backends since early 2025. Here's what the architecture actually looks like.</p>
+
+      <div class="bf-divider"></div>
+      <h2>What makes a system "agentic"?</h2>
+      <p>Three properties distinguish an agentic system from a simple LLM integration:</p>
+      <ul>
+        <li><strong>Tool use</strong> — the agent can call functions, APIs, and services autonomously to gather information or take action.</li>
+        <li><strong>Multi-step reasoning</strong> — it breaks down complex goals into subtasks and executes them in sequence, with each step informing the next.</li>
+        <li><strong>Feedback loops</strong> — it can observe the results of its actions and adjust its plan accordingly.</li>
+      </ul>
+
+      <h2>Microsoft Semantic Kernel — the .NET-native choice</h2>
+      <p>For .NET developers, <strong>Semantic Kernel</strong> is the most mature framework for building agentic systems. It gives you plugins (tools the agent can call), planners (the reasoning layer), and memory (context persistence) — all wired into familiar .NET patterns.</p>
+
+      <pre><code>var kernel = Kernel.CreateBuilder()
+    .AddAzureOpenAIChatCompletion(deploymentName, endpoint, apiKey)
+    .Build();
+
+kernel.Plugins.AddFromType&lt;PolicyPlugin&gt;();
+kernel.Plugins.AddFromType&lt;NotificationPlugin&gt;();
+
+var result = await kernel.InvokePromptAsync(
+    "Process claim {{$claimId}} end-to-end and notify the claimant.",
+    new KernelArguments {{ ["claimId"] = claimId }}
+);</code></pre>
+
+      <h3>Designing agent plugins for enterprise systems</h3>
+      <p>Each plugin is a C# class with methods decorated with <code>[KernelFunction]</code>. The agent decides when and how to call them based on the goal. The key design principle: <strong>make plugins idempotent and auditable</strong>.</p>
+      <p>In enterprise systems, an agent might call the same function twice if it re-plans. Your plugin must handle that gracefully — database operations should be idempotent, and every action should be logged with enough context to reconstruct what happened and why.</p>
+
+      <div class="bf-divider"></div>
+      <h2>The hardest problem: trust boundaries</h2>
+      <p>When a human submits a form, they're responsible for what they submit. When an agent calls your API, <em>the system is responsible</em>. This creates a new class of security and governance challenges.</p>
+
+      <h3>Scope constraints</h3>
+      <p>Agents should operate within explicitly defined scopes. Don't give your claims-processing agent access to HR data just because it technically could need it. Apply the principle of least privilege just as you would to a service account.</p>
+
+      <h3>Human-in-the-loop checkpoints</h3>
+      <p>For high-stakes actions — sending a large payment, modifying a live policy, triggering an external API — require explicit human approval before the agent proceeds. I implement this as an async approval workflow: the agent pauses, creates an approval request, and resumes when a human confirms.</p>
+
+      <blockquote>"Autonomous doesn't mean unsupervised. The best agentic systems know when to ask."</blockquote>
+
+      <h3>Full audit trails</h3>
+      <p>Every decision the agent makes — which tool it chose to call, what reasoning it used, what the tool returned — should be logged. When something goes wrong, and eventually it will, you need to understand the agent's decision chain completely.</p>
+
+      <div class="bf-divider"></div>
+      <h2>A real pattern: the claim processing agent</h2>
+      <p>At Accenture, I worked on insurance policy workflows. An agentic system for claim processing looks like this:</p>
+      <ol>
+        <li><strong>Intake</strong> — agent receives a claim submission, calls <code>GetPolicyDetails(policyId)</code> to fetch coverage.</li>
+        <li><strong>Validation</strong> — calls <code>ValidateClaim(claimData, policy)</code> to check eligibility and flag anomalies.</li>
+        <li><strong>Decision</strong> — for straightforward claims, calls <code>ApproveClaim()</code> or <code>FlagForReview()</code> based on rules.</li>
+        <li><strong>Notification</strong> — calls <code>SendClaimantNotification()</code> with a generated, personalised message.</li>
+        <li><strong>Audit</strong> — logs the full decision chain to the audit system.</li>
+      </ol>
+      <p>What previously required 3 microservices and a message queue can be expressed as a goal for an agent — with the agent handling orchestration, error recovery, and retry logic autonomously.</p>
+
+      <div class="bf-divider"></div>
+      <h2>Where agentic AI actually delivers value</h2>
+      <p>Not every process benefits from an agent. The sweet spot is workflows that are <strong>complex enough that hardcoded orchestration is brittle</strong>, but <strong>structured enough that the agent can be given clear success criteria</strong>.</p>
+      <p>Document processing, multi-step data enrichment, cross-system reconciliation, intelligent notification routing — these are the use cases where agentic systems consistently outperform both rigid automation and purely human processes.</p>
+      <p>The backend engineers who understand both the distributed systems fundamentals <em>and</em> the new agentic patterns will build the most impactful systems in the next five years. The foundation is the same — clean architecture, reliable APIs, thoughtful data models. What changes is the orchestration layer above it.</p>
+    </div>
+  </div>
+</div>
+
 <footer>
   <span>© 2026 Sumeet Shah. All rights reserved.</span>
   <span style="font-family:var(--font-mono);font-size:.6rem">Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></span>
 </footer>
 
 <script>
-const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button,.hstat,.sk,.sl,.cert-item,.s-row,.pf,.exp-card,.proj-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
-});
+/* ── nav scroll + active ── */
 const nb=document.getElementById('nb');
-const secs=['hero','about','experience','skills','projects','contact'];
+const secs=['hero','about','experience','skills','projects','blog','contact'];
 function updateNav(){
   nb.classList.toggle('s',scrollY>50);
-  let cur2='hero';
-  secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=130)cur2=id;});
-  document.querySelectorAll('.nm a').forEach(a=>a.classList.toggle('nav-active',a.getAttribute('href')==='#'+cur2));
+  let cur='hero';
+  secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=130)cur=id;});
+  document.querySelectorAll('.nm a').forEach(a=>a.classList.toggle('nav-active',a.getAttribute('href')==='#'+cur));
 }
 window.addEventListener('scroll',updateNav,{passive:true});
 updateNav();
+
+/* ── reveal on scroll ── */
 const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.07,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+/* ── hamburger ── */
+const hbg=document.getElementById('hbg');
+const mnav=document.getElementById('mnav');
+hbg.addEventListener('click',()=>{
+  hbg.classList.toggle('open');
+  mnav.classList.toggle('open');
+  document.body.style.overflow=mnav.classList.contains('open')?'hidden':'';
+});
+function closeMnav(){
+  hbg.classList.remove('open');
+  mnav.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── blog open/close ── */
+function openBlog(id){
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow='hidden';
+  window.scrollTo(0,0);
+}
+function closeBlog(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.blog-full.open').forEach(el=>el.classList.remove('open'));
+    document.body.style.overflow='';
+  }
+});
+
+/* ── contact form ── */
 const cfBtn=document.getElementById('cf-btn');
 document.querySelector('.contact-form')?.addEventListener('submit',()=>{
-  cfBtn.textContent='Sending…';cfBtn.disabled=true;
+  if(cfBtn){cfBtn.textContent='Sending…';cfBtn.disabled=true;}
 });
 </script>
 </body>
