@@ -1,31 +1,551 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080b09"><meta name="description" content="Sumeet Shah — Software Engineer focused on C#, .NET, Angular, APIs, and practical AI tooling.">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Sumeet Shah — Software Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Software Engineer specialising in ASP.NET Core, C# and Angular. Available for freelance and full-time work."/>
+<meta name="theme-color" content="#E9EDF0"/>
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('js');try{var th=localStorage.getItem('th');if(th)document.documentElement.dataset.theme=th}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
 <style>
-:root{color-scheme:dark;--bg:#080b09;--panel:#0d120f;--panel2:#111913;--line:#26342a;--text:#edf5ed;--muted:#9aab9d;--green:#b7ff5a;--green2:#75d934;--mono:'DM Mono',monospace;--sans:'Manrope',system-ui,sans-serif;--max:1240px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(rgba(183,255,90,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(183,255,90,.035) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 88%)}body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 70% 0%,rgba(117,217,52,.11),transparent 38%),radial-gradient(ellipse at 0% 55%,rgba(117,217,52,.04),transparent 35%)}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:4px}.skip{position:absolute;left:1rem;top:-5rem;background:var(--green);color:#071006;padding:.7rem 1rem;z-index:999}.skip:focus{top:1rem}.mono,.eyebrow,.nav-links,.pill,.micro,.terminal,.section-index,.project-meta,.footer-note{font-family:var(--mono)}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}.topbar{position:fixed;z-index:100;top:0;left:0;right:0;background:rgba(8,11,9,.82);border-bottom:1px solid rgba(183,255,90,.12);backdrop-filter:blur(18px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}.brand{font-weight:800;letter-spacing:-.06em;text-decoration:none;font-size:1.05rem}.brand b{color:var(--green)}.nav-links{display:flex;align-items:center;gap:1.5rem;font-size:.72rem;color:var(--muted)}.nav-links a{text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--green)}.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;text-decoration:none;border:1px solid var(--green);color:var(--green);padding:.72rem 1rem;font:500 .75rem var(--mono);transition:transform .25s,background .25s,color .25s}.nav-cta:hover,.button.primary{background:var(--green);color:#071006}.button:hover{transform:translateY(-3px)}.button.secondary{border-color:var(--line);color:var(--text)}.button.secondary:hover{border-color:var(--green);color:var(--green)}.menu-btn{display:none;background:none;color:var(--green);border:1px solid var(--line);padding:.5rem .7rem;font: .75rem var(--mono)}main{padding-top:72px}.hero{min-height:calc(100svh - 72px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:4vw;align-items:center;padding-top:70px;padding-bottom:70px}.eyebrow{font-size:.72rem;letter-spacing:.08em;color:var(--green);text-transform:uppercase;display:flex;gap:.65rem;align-items:center}.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 16px var(--green);animation:blink 1.8s infinite}@keyframes blink{50%{opacity:.3}}h1{font-size:clamp(3.4rem,8.5vw,8.1rem);line-height:.91;letter-spacing:-.09em;margin:1.5rem 0 1.6rem;font-weight:800}h1 .outline{color:transparent;-webkit-text-stroke:1px #839184}h1 .acid{color:var(--green)}.hero-copy{max-width:610px;color:var(--muted);font-size:clamp(1rem,1.4vw,1.12rem)}.hero-copy strong{color:var(--text);font-weight:600}.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}.hero-meta{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:2.3rem;color:var(--muted);font: .68rem var(--mono)}.hero-meta span:before{content:'↳ ';color:var(--green)}.terminal{border:1px solid #344637;background:rgba(10,15,11,.93);box-shadow:0 0 0 1px rgba(183,255,90,.035),0 25px 90px rgba(0,0,0,.3);transform:rotate(1deg);position:relative}.terminal:before{content:"";position:absolute;inset:-9px 9px 9px -9px;border:1px solid rgba(183,255,90,.16);z-index:-1}.term-head{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1rem;border-bottom:1px solid var(--line);font-size:.67rem;color:var(--muted)}.lights{display:flex;gap:5px}.lights i{display:block;width:7px;height:7px;border-radius:50%;background:#3c5140}.lights i:first-child{background:var(--green)}.term-body{padding:1.5rem;min-height:315px;font-size:.77rem;line-height:2}.prompt{color:var(--green)}.term-dim{color:#718274}.term-val{color:#e9f6e9}.term-bar{height:5px;background:#202b22;margin:.25rem 0 .7rem}.term-bar span{display:block;height:100%;background:var(--green);transform-origin:left;animation:grow 1.5s cubic-bezier(.2,.8,.2,1) both}@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}.term-footer{display:flex;justify-content:space-between;padding:.7rem 1rem;border-top:1px solid var(--line);font-size:.65rem;color:var(--muted)}.acid{color:var(--green)}.ticker{border-block:1px solid var(--line);overflow:hidden;background:#0b100c}.ticker-track{display:flex;width:max-content;animation:ticker 28s linear infinite}.ticker-track span{padding:1rem 1.5rem;font: .7rem var(--mono);color:#91a193;white-space:nowrap}.ticker-track b{color:var(--green);padding-right:1.5rem}@keyframes ticker{to{transform:translateX(-50%)}}section.content{padding:clamp(5rem,10vw,9rem) 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:3.5rem}.section-index{color:var(--green);font-size:.72rem;padding-top:.6rem}.section-title{font-size:clamp(2.4rem,5vw,5.1rem);letter-spacing:-.075em;line-height:.98;margin:0;font-weight:800}.section-title em{font-style:normal;color:var(--green)}.section-desc{max-width:620px;color:var(--muted);margin:1.2rem 0 0}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem}.about-text p{color:#b4c0b5;max-width:730px}.about-text strong{color:var(--text)}.quote{border-left:2px solid var(--green);padding:1rem 1.3rem;color:#d6e2d5;margin:2rem 0;background:linear-gradient(90deg,rgba(183,255,90,.07),transparent);font-size:1.02rem}.fact-panel{border:1px solid var(--line);background:var(--panel);padding:1.5rem}.panel-label{font: .68rem var(--mono);color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}.fact-row{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid #202a22;font-size:.82rem}.fact-row:last-child{border:0}.fact-row span:first-child{color:var(--muted)}.fact-row span:last-child{text-align:right}.architecture{border:1px solid var(--line);padding:clamp(1rem,3vw,2rem);background:rgba(13,18,15,.75)}.arch-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;align-items:stretch}.arch-node{min-height:132px;padding:1rem;border:1px solid #344637;background:#0b100c;position:relative;transition:transform .35s,border-color .35s,background .35s}.arch-node:hover{transform:translateY(-6px);border-color:var(--green);background:#101a11}.arch-node .n{font: .68rem var(--mono);color:var(--green)}.arch-node h3{font-size:1rem;line-height:1.2;margin:1rem 0 .5rem}.arch-node p{font-size:.74rem;color:var(--muted);margin:0}.arch-arrow{display:none}.arch-note{font: .7rem var(--mono);color:var(--muted);margin:1.3rem 0 0}.timeline{border-top:1px solid var(--line)}.job{display:grid;grid-template-columns:220px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--line)}.job-date{font: .72rem var(--mono);color:var(--green)}.job-date small{display:block;color:var(--muted);margin-top:.55rem}.job h3{margin:0;font-size:1.25rem;letter-spacing:-.03em}.job h4{margin:.3rem 0 1rem;color:var(--muted);font-weight:500;font-size:.9rem}.job ul{padding-left:1.1rem;color:#b4c0b5}.job li{padding:.28rem 0}.job li::marker{color:var(--green)}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.skill{padding:1.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:190px;transition:background .3s}.skill:hover{background:rgba(183,255,90,.035)}.skill-num{font: .7rem var(--mono);color:var(--green)}.skill h3{font-size:1rem;margin:1.1rem 0 .8rem}.tags{display:flex;gap:.45rem;flex-wrap:wrap}.tag{font: .66rem var(--mono);border:1px solid #2b382e;padding:.3rem .5rem;color:#b9c8ba}.project-feature{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line);margin-bottom:1rem;background:var(--panel)}.project-visual{min-height:300px;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 70% 35%,rgba(183,255,90,.12),transparent 40%),linear-gradient(135deg,#111a12,#0a0e0b);border-right:1px solid var(--line);position:relative;overflow:hidden}.project-visual:after{content:"FINORA / 01";font:clamp(2rem,5vw,4.5rem) var(--mono);color:rgba(183,255,90,.13);letter-spacing:-.09em;position:absolute;right:-1rem;bottom:2.2rem;transform:rotate(-90deg) translateX(100%);transform-origin:right bottom}.visual-top,.project-meta{font-size:.68rem;color:var(--green)}.mini-dashboard{position:relative;z-index:1;border:1px solid #3b4b3b;background:rgba(8,11,9,.88);padding:1rem;width:min(100%,340px);margin:auto}.dash-head{display:flex;justify-content:space-between;color:var(--muted);font: .63rem var(--mono);padding-bottom:.8rem;border-bottom:1px solid var(--line)}.dash-total{font-size:1.8rem;font-weight:800;letter-spacing:-.06em;margin:.8rem 0}.dash-total small{font: .65rem var(--mono);color:var(--green)}.bars{display:flex;align-items:end;gap:6px;height:55px}.bars i{flex:1;background:var(--green);opacity:.75;animation:barpulse 2.4s ease-in-out infinite alternate;transform-origin:bottom}.bars i:nth-child(2n){opacity:.35;animation-delay:-1s}@keyframes barpulse{to{transform:scaleY(.55)}}.project-info{padding:clamp(1.5rem,4vw,3rem)}.project-info h3{font-size:clamp(1.8rem,3.5vw,3.2rem);letter-spacing:-.07em;line-height:1;margin:.8rem 0 1rem}.project-info p,.project-card p{color:var(--muted);font-size:.9rem}.project-info ul{padding-left:1.1rem;color:#c0cbbf;font-size:.85rem}.project-info li{padding:.25rem 0}.project-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.project-card{border:1px solid var(--line);padding:1.5rem;background:var(--panel);display:flex;flex-direction:column;min-height:300px;transition:transform .35s,border-color .35s}.project-card:hover{transform:translateY(-7px);border-color:var(--green)}.project-card .project-meta{color:var(--green)}.project-card h3{font-size:1.45rem;line-height:1.15;letter-spacing:-.05em;margin:1rem 0 .3rem}.project-card .tags{margin:1rem 0 1.4rem}.project-card .button{margin-top:auto;align-self:flex-start}.terminal-section{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}.terminal-live{border:1px solid var(--line);background:#070a08}.terminal-live .term-body{min-height:210px}.command-row{display:flex;gap:.5rem;padding:.7rem;border-top:1px solid var(--line)}.command-row label{color:var(--green);font: .8rem var(--mono);padding:.5rem 0}.command-row input{min-width:0;flex:1;background:transparent;border:0;color:var(--text);font: .8rem var(--mono)}.command-row button{background:var(--green);border:0;color:#071006;font: .7rem var(--mono);padding:.5rem .8rem;cursor:pointer}.command-hint{font:.68rem var(--mono);color:var(--muted);margin-top:.8rem}.contact-box{display:grid;grid-template-columns:1fr .7fr;gap:2rem;padding:clamp(1.5rem,5vw,4rem);border:1px solid var(--green);background:linear-gradient(120deg,rgba(183,255,90,.07),transparent 60%)}.contact-box h3{font-size:clamp(2.5rem,6vw,6rem);line-height:.93;letter-spacing:-.09em;margin:1rem 0}.contact-box h3 span{color:var(--green)}.contact-box p{color:var(--muted);max-width:500px}.contact-links{display:flex;flex-direction:column;justify-content:center}.contact-links a{padding:1rem 0;border-bottom:1px solid var(--line);text-decoration:none;font: .78rem var(--mono);display:flex;justify-content:space-between;gap:1rem}.contact-links a:hover{color:var(--green)}footer{padding:1.5rem 0;display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font:.67rem var(--mono)}.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}.delay1{transition-delay:.12s}.delay2{transition-delay:.22s}.delay3{transition-delay:.32s}.cursor{display:inline-block;width:9px;height:1em;background:var(--green);vertical-align:-.1em;animation:blink 1s steps(2) infinite}.noscript{color:var(--green);font: .7rem var(--mono)}
-@media(max-width:900px){.wrap{width:min(100% - 40px,var(--max))}.hero{grid-template-columns:1fr;gap:3rem;padding-top:70px}.hero-right{max-width:600px;width:100%;margin:auto}.section-head{grid-template-columns:120px 1fr}.about-grid,.terminal-section{grid-template-columns:1fr}.arch-flow{grid-template-columns:repeat(2,1fr)}.project-feature{grid-template-columns:1fr}.project-visual{border-right:0;border-bottom:1px solid var(--line);min-height:270px}.project-grid{grid-template-columns:repeat(2,1fr)}.contact-box{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.wrap{width:calc(100% - 32px)}.nav{height:64px}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;padding:1.2rem 1rem 1.5rem;background:#080b09;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:1rem}.nav-links.open{display:flex}.nav-cta{display:none}.menu-btn{display:block}.hero{min-height:auto;padding-top:70px;padding-bottom:60px}.hero h1{font-size:clamp(3.25rem,17vw,5.5rem)}.hero-meta{gap:.7rem 1rem}.term-body{padding:1rem;font-size:.69rem;min-height:280px}.section-head{grid-template-columns:1fr;gap:.8rem;margin-bottom:2.3rem}.section-title{font-size:clamp(2.5rem,12vw,4rem)}section.content{padding:5rem 0}.arch-flow,.skills-grid,.project-grid{grid-template-columns:1fr}.arch-node{min-height:auto}.job{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0}.project-visual{min-height:250px;padding:1rem}.project-info{padding:1.3rem}.contact-box{padding:1.3rem}.contact-box h3{font-size:clamp(2.8rem,14vw,4.5rem)}footer{flex-direction:column}.ticker-track span{padding:.8rem 1rem}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}.ticker-track{animation:none}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#E9EDF0;--ink:#0E1A2B;--cobalt:#2740FF;--amber:#FF9F1C;--rule:#C3CCD5;--mut:#52607A;--card:#fff;--grid:rgba(14,26,43,.055);--px:clamp(1.25rem,7vw,6rem);--disp:'Bricolage Grotesque',sans-serif;--mono:'JetBrains Mono',monospace}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--paper) linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/88px 100%;color:var(--ink);font:400 1.02rem/1.65 'Hanken Grotesk',sans-serif;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+section{position:relative;padding:8rem var(--px)}
+h2{font:700 clamp(2.6rem,6.5vw,6rem)/.95 var(--disp);font-variation-settings:"wdth" 80;letter-spacing:-.025em;max-width:16ch}
+.dark{background:#0E1A2B;color:#E9EDF0}
+.btn{display:inline-block;font:600 .95rem var(--disp);padding:.85rem 1.5rem;border-radius:99px;background:var(--cobalt);color:#fff;text-decoration:none;border:2px solid var(--cobalt);transition:background .2s,color .2s;cursor:pointer}
+.btn:hover{background:transparent;color:var(--cobalt)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.dark .btn.ghost:hover{background:#E9EDF0;color:#0E1A2B}
+
+/* loader, cursor, spine, hud */
+#curtain,#spine,#hud,#cur{display:none}
+.js #curtain{display:grid;place-items:center;position:fixed;inset:0;z-index:9000;background:#0E1A2B;color:#E9EDF0;font:400 .95rem var(--mono)}
+.js #spine{display:block;position:fixed;left:20px;top:18vh;bottom:18vh;width:2px;background:var(--rule);z-index:50}
+#fill{position:absolute;inset:0;background:var(--cobalt);transform-origin:top;transform:scaleY(0)}
+#spine a{position:absolute;left:-4px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);transform:translateY(-50%)}
+#pkt{position:absolute;left:-6px;top:0;width:14px;height:14px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px rgba(255,159,28,.28);transform:translateY(-50%)}
+.js #hud{display:block;position:fixed;left:48px;bottom:18px;z-index:50;font:400 .72rem var(--mono);background:var(--ink);color:var(--paper);padding:.35rem .7rem;border-radius:6px;max-width:calc(100vw - 70px)}
+@media(pointer:fine){.js #cur{display:block;position:fixed;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:9999;transition:scale .25s}#cur.big{scale:3}}
+@media(max-width:899px){.js #spine{left:0;right:0;top:0;bottom:auto;width:auto;height:3px}#fill{transform-origin:left}#spine a,#pkt{display:none}.js #hud{left:12px}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--px);mix-blend-mode:difference;color:#fff}
+nav a{text-decoration:none;font:500 .9rem var(--disp)}nav div{display:flex;gap:1.6rem}
+nav .lg{font-weight:700;font-size:1.05rem}
+@media(max-width:700px){nav div a:not(:last-child){display:none}}
+
+/* hero */
+#hero{min-height:100vh;padding-top:7rem;display:flex;flex-direction:column;justify-content:flex-end;gap:2.5rem}
+#name{font:800 clamp(3.6rem,15vw,15rem)/.82 var(--disp);font-variation-settings:"wdth" 75;letter-spacing:-.035em;color:var(--ink)}
+#name .w{display:block}
+.hero-in{max-width:34rem;font-size:1.15rem}
+.js .hero-in{opacity:0}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+.live{display:inline-flex;gap:.5rem;align-items:center;font:500 .85rem var(--disp);margin-bottom:1rem}.live::before{content:'';width:9px;height:9px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 4px rgba(22,163,74,.2)}
+.photo{position:absolute;right:var(--px);top:7rem;width:clamp(110px,15vw,210px);aspect-ratio:4/5}
+.photo::before{content:'';position:absolute;inset:0;transform:translate(12px,12px);background:var(--cobalt)}
+.photo img{position:relative;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+
+/* system */
+#system{border-top:1px solid var(--rule)}
+#system p.sub{max-width:36rem;color:var(--mut);margin:1.4rem 0 4rem}
+.sys{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem}
+.sys-line{position:absolute;left:0;right:0;top:50%;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 14px)}
+.pk{position:absolute;top:-5px;width:12px;height:12px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(255,159,28,.3)}
+.node{position:relative;font:600 1rem/1.2 var(--disp);padding:1.6rem .8rem;background:var(--paper);border:2px solid var(--ink);cursor:pointer;color:var(--ink);transition:background .2s,color .2s,transform .2s}
+.node:hover{transform:translateY(-4px)}.node[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+#sys-info{margin-top:2.5rem;max-width:40rem;border-left:4px solid var(--cobalt);padding-left:1.4rem;min-height:9rem}
+#sys-info h3{font:700 1.7rem var(--disp);margin-bottom:.4rem}
+@media(max-width:899px){.sys{grid-template-columns:1fr 1fr}.sys-line{display:none}}
+
+/* about */
+#about{display:grid;gap:4rem}
+#pull{font:600 clamp(1.8rem,4.2vw,3.8rem)/1.12 var(--disp);font-variation-settings:"wdth" 85;letter-spacing:-.02em;max-width:24ch}
+.about-cols{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem}
+.about-cols p{max-width:38rem;margin-bottom:1.2rem;color:var(--ink);opacity:.85}
+dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.4rem;font-size:.95rem}dt{color:var(--mut)}dd{font-weight:500}
+.certs{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--rule);display:grid;gap:.6rem;font-size:.95rem}.certs span{color:var(--mut)}
+@media(max-width:899px){.about-cols{grid-template-columns:1fr;gap:2rem}}
+
+/* experience */
+#experience{padding:0}
+.xwrap{height:100vh;overflow:hidden;display:flex;align-items:center}
+.xtrack{display:flex;gap:2rem;align-items:stretch;padding:0 var(--px);width:max-content}
+.xp{width:min(540px,82vw);padding:2.2rem;border:2px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;gap:1rem;justify-content:center}
+.xp.intro{border:0;background:none;padding-left:0;width:min(520px,82vw)}
+.xp h3{font:700 1.8rem/1.05 var(--disp);font-variation-settings:"wdth" 85}
+.xp .when{font:400 .8rem var(--mono);color:var(--mut)}
+.xp ul{list-style:none;display:grid;gap:.9rem}.xp li{padding-left:1.1rem;position:relative;font-size:.98rem}.xp li::before{content:'';position:absolute;left:0;top:.7em;width:6px;height:6px;background:var(--cobalt)}
+.xp.hot{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}.xp.hot li::before{background:var(--amber)}
+.big30{font:800 clamp(5rem,12vw,9rem)/.8 var(--disp);font-variation-settings:"wdth" 75}
+@media(max-width:899px){#experience{padding:5rem var(--px)}.xwrap{height:auto;overflow:visible}.xtrack{flex-direction:column;width:auto;padding:0}.xp{width:100%}}
+
+/* stack */
+#stack{overflow:hidden}
+.row{display:grid;grid-template-columns:minmax(0,11rem) 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(233,237,240,.2);padding:1.3rem 0}
+.row>span{font:500 .95rem var(--disp);color:rgba(233,237,240,.65)}
+.mq{overflow:hidden;white-space:nowrap;mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mqt{display:inline-flex;gap:2.2rem;font:700 clamp(2rem,5vw,4.2rem)/1.1 var(--disp);font-variation-settings:"wdth" 80;letter-spacing:-.02em;padding-right:2.2rem}
+.mqt i{font-style:normal;-webkit-text-stroke:1.5px var(--paper);color:transparent}
+@media(max-width:899px){.row{grid-template-columns:1fr;gap:.2rem}}
+
+/* projects */
+#projects h2{margin-bottom:4rem}
+.pcard{position:sticky;top:calc(5.5rem + var(--i)*22px);background:var(--card);border:2px solid var(--ink);padding:2.2rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;transform-origin:top center}
+.pcard h3{font:800 clamp(2rem,4vw,3.4rem)/.95 var(--disp);font-variation-settings:"wdth" 78;letter-spacing:-.02em}
+.pcard p{color:var(--ink);opacity:.85;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.2rem 0}.tags span{font-size:.8rem;font-weight:500;padding:.2rem .7rem;border:1px solid var(--ink);border-radius:99px}
+.pcard ul{list-style:none;display:grid;gap:.5rem;font-size:.95rem;margin-bottom:1rem}
+.lnk{font:700 1rem var(--disp);color:var(--cobalt)}
+@media(max-width:899px){.pcard{grid-template-columns:1fr;gap:1rem;top:5rem}}
+
+/* writing */
+.post{display:grid;grid-template-columns:8rem 1fr auto;gap:2rem;align-items:baseline;padding:2rem 0;border-top:2px solid var(--ink);text-decoration:none;cursor:pointer;transition:padding .25s,background .25s}
+.post:last-child{border-bottom:2px solid var(--ink)}
+.post:hover{background:var(--card);padding-left:1.2rem;padding-right:1.2rem}
+.post time{font:400 .8rem var(--mono);color:var(--mut)}
+.post h3{font:700 clamp(1.4rem,2.6vw,2.2rem)/1.08 var(--disp);font-variation-settings:"wdth" 85}.post p{color:var(--mut);margin-top:.5rem;max-width:44rem;font-size:.95rem}
+#writing .list{margin-top:3.5rem}
+@media(max-width:899px){.post{grid-template-columns:1fr;gap:.4rem}}
+
+/* contact */
+#contact h2{max-width:12ch;font-size:clamp(3rem,10vw,9rem)}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem}
+.ct a.mail{font:700 clamp(1.2rem,2.4vw,1.9rem) var(--disp);word-break:break-all}
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;margin:1.4rem 0 2rem}
+form{display:grid;gap:1.1rem}.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:grid;gap:.3rem;font:500 .85rem var(--disp)}
+input,textarea{background:transparent;border:0;border-bottom:2px solid rgba(233,237,240,.5);color:inherit;font:inherit;padding:.5rem 0;outline:none;resize:none;border-radius:0}
+input:focus,textarea:focus{border-color:var(--amber)}
+.dark .btn{border-color:var(--amber);background:var(--amber);color:var(--ink)}.dark .btn:hover{background:transparent;color:var(--amber)}
+@media(max-width:899px){.ct,.two{grid-template-columns:1fr}}
+footer{background:var(--ink);color:rgba(233,237,240,.6);padding:2rem var(--px) 4.5rem;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(233,237,240,.15)}
+
+/* blog overlay */
+.blog-full{display:none;position:fixed;inset:0;z-index:1000;background:var(--paper);overflow-y:auto}.blog-full.open{display:block}
+.blog-full-inner{max-width:720px;margin:0 auto;padding:7rem 1.4rem 5rem}
+.blog-full-close{position:fixed;top:1rem;right:1.2rem;z-index:2;font:600 .85rem var(--disp);background:var(--ink);color:var(--paper);border:0;border-radius:99px;padding:.6rem 1.1rem;cursor:pointer}
+.bf-tag{font:600 .8rem var(--disp);color:var(--cobalt)}
+.bf-title{font:800 clamp(2.2rem,6vw,3.8rem)/1 var(--disp);font-variation-settings:"wdth" 82;letter-spacing:-.025em;margin:.6rem 0 1rem}
+.bf-meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font:400 .78rem var(--mono);color:var(--mut)}
+.bf-img-placeholder{margin:2rem 0;padding:3rem 1rem;background:#0E1A2B;color:var(--amber);font:800 2.4rem var(--disp);text-align:center}
+.bf-body h2{font:700 1.8rem/1.1 var(--disp);margin:2.6rem 0 .8rem;max-width:none}.bf-body h3{font:700 1.3rem var(--disp);margin:1.8rem 0 .5rem}
+.bf-body p,.bf-body li{margin-bottom:1rem;color:var(--ink)}.bf-body ul,.bf-body ol{padding-left:1.4rem}
+.bf-body code{font:400 .85em var(--mono);background:var(--rule);padding:.1em .35em}.bf-body pre{background:#0E1A2B;color:#E9EDF0;padding:1.2rem;overflow-x:auto;margin:1.4rem 0}.bf-body pre code{background:none;padding:0}
+.bf-body blockquote{border-left:4px solid var(--cobalt);padding-left:1.2rem;font-size:1.15rem;margin:1.6rem 0}.bf-divider{height:2px;background:var(--rule);margin:2.4rem 0}
+[hidden]{display:none!important}
+[data-theme=dark]{--paper:#0B1220;--ink:#E9EDF0;--rule:#26324a;--mut:#9AA8C2;--cobalt:#6B7FFF;--card:#121c30;--grid:rgba(233,237,240,.05)}
+[data-theme=dark] .btn,[data-theme=dark] .xp.hot{color:#0B1220}[data-theme=dark] .btn:hover{color:var(--cobalt)}
+#name .tag{font:600 clamp(1.1rem,2.6vw,2.2rem)/1.2 var(--disp);font-variation-settings:"wdth" 100;letter-spacing:.02em;margin-bottom:1.4rem}
+nav div{align-items:center}nav button{background:none;border:1px solid currentColor;color:inherit;font:500 .8rem var(--disp);padding:.25rem .7rem;border-radius:99px;cursor:pointer}
+#projects h2{margin-bottom:2rem}
+.flt{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:3rem}.flt button{font:600 .9rem var(--disp);padding:.5rem 1.1rem;border:2px solid var(--ink);background:none;color:var(--ink);border-radius:99px;cursor:pointer}.flt button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+button.lnk{background:none;border:0;cursor:pointer;margin-right:1.4rem}
+.flow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0 2rem}.flow span{border:2px solid var(--ink);padding:.5rem .8rem;font:600 .9rem var(--disp)}.flow i{font-style:normal;color:var(--cobalt)}
+#now{display:grid;grid-template-columns:1fr 1fr;gap:4rem}#now h3{font:700 1.6rem var(--disp);margin-bottom:1rem}#now ul{list-style:none;display:grid;gap:.7rem}#now li{border-top:1px solid var(--rule);padding-top:.7rem}#now li span{color:var(--mut);display:block;font-size:.92rem}
+@media(max-width:899px){#now{grid-template-columns:1fr;gap:2rem}}
+.avail{display:flex;gap:.6rem;align-items:center;font:600 1.1rem var(--disp);margin-bottom:1.4rem}.avail::before{content:'';width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.25)}
+.dark dt{color:rgba(233,237,240,.6)}.hire{margin-bottom:1.6rem}.btns{margin:0 0 1.6rem}
+#thanks h3{font:800 2.4rem var(--disp);margin-bottom:.6rem}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#home">SS<span class="acid">.</span> / ENGINEERING</a><div class="nav-links" id="navLinks"><a href="#about">About</a><a href="#architecture">Architecture</a><a href="#experience">Experience</a><a href="#skills">Stack</a><a href="#projects">Projects</a><a href="#terminal">Terminal</a></div><a class="nav-cta" href="mailto:sumeetshah7007@gmail.com">LET'S TALK ↗</a><button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">MENU +</button></nav></header>
-<main id="main"><section class="hero wrap" id="home"><div class="hero-left"><div class="eyebrow"><span class="live-dot"></span> SOFTWARE ENGINEER / INDIA</div><h1><span class="outline">BUILD.</span><br>THINK<span class="acid">.</span><br><span class="outline">SHIP.</span></h1><p class="hero-copy">I'm <strong>Sumeet Shah</strong> — a software engineer working across <strong>C#, .NET, Angular and APIs</strong>. I build maintainable systems, connect the layers, and care about what happens after deployment.</p><div class="hero-actions"><a class="button primary" href="#projects">EXPLORE PROJECTS <span>↘</span></a><a class="button secondary" href="https://github.com/sumeetshah30" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a class="button secondary" href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a></div><div class="hero-meta"><span>C# / .NET</span><span>ANGULAR</span><span>SQL + EF CORE</span><span>AI TOOLING</span></div></div><div class="hero-right reveal"><div class="terminal" aria-label="Interactive-style developer profile panel"><div class="term-head"><span class="lights"><i></i><i></i><i></i></span><span>profile.config</span><span>● LOCAL</span></div><div class="term-body"><div><span class="prompt">$</span> whoami</div><div class="term-val">Sumeet Shah / Software Engineer</div><br><div><span class="prompt">$</span> cat focus.json</div><div class="term-dim">{</div><div>&nbsp; <span class="prompt">"backend"</span>: <span class="term-val">"ASP.NET Core / C#"</span>,</div><div>&nbsp; <span class="prompt">"frontend"</span>: <span class="term-val">"Angular / TypeScript"</span>,</div><div>&nbsp; <span class="prompt">"data"</span>: <span class="term-val">"SQL Server / EF Core / LINQ"</span>,</div><div>&nbsp; <span class="prompt">"approach"</span>: <span class="term-val">"Clean Architecture"</span></div><div class="term-dim">}</div><br><div><span class="prompt">$</span> system.status</div><div class="term-val"><span class="acid">●</span> Open to opportunities<span class="cursor" aria-hidden="true"></span></div><div class="term-dim">Build deliberately. Ship responsibly.</div></div><div class="term-footer"><span>PROFILE / 001</span><span>UTF-8 · READY</span></div></div></div></section>
-<div class="ticker" aria-label="Technology areas"><div class="ticker-track" aria-hidden="true"><span><b>✳</b>C# & .NET</span><span><b>✳</b>ASP.NET CORE</span><span><b>✳</b>ANGULAR</span><span><b>✳</b>ENTITY FRAMEWORK</span><span><b>✳</b>LINQ</span><span><b>✳</b>SQL SERVER</span><span><b>✳</b>REST APIS</span><span><b>✳</b>OIDC / RBAC</span><span><b>✳</b>CI/CD</span><span><b>✳</b>AI TOOLING</span><span><b>✳</b>C# & .NET</span><span><b>✳</b>ASP.NET CORE</span><span><b>✳</b>ANGULAR</span><span><b>✳</b>ENTITY FRAMEWORK</span><span><b>✳</b>LINQ</span><span><b>✳</b>SQL SERVER</span><span><b>✳</b>REST APIS</span><span><b>✳</b>OIDC / RBAC</span><span><b>✳</b>CI/CD</span><span><b>✳</b>AI TOOLING</span></div></div>
-<section class="content" id="about"><div class="wrap"><div class="section-head reveal"><div class="section-index">01 / ABOUT</div><div><h2 class="section-title">Engineer the <em>whole picture.</em></h2><p class="section-desc">Backend-first thinking with a full-stack mindset: thoughtful APIs, useful interfaces, secure access, and systems that are easier to maintain.</p></div></div><div class="about-grid"><div class="about-text reveal"><p>My work spans enterprise backend services, Angular interfaces, REST APIs, database queries, authentication, and production troubleshooting. At Accenture, I worked on insurance policy workflows supporting US and Canada markets.</p><p>I value <strong>clear boundaries, readable code, and practical engineering decisions</strong>. Clean Architecture and SOLID principles matter to me because they help teams change software without making every change risky.</p><p>I hold a B.E. in Computer Engineering from MET's Institute of Engineering, with a CGPA of 8.65/10. I’m currently exploring software engineering opportunities involving .NET, full-stack development, and applied AI tooling.</p><div class="quote">“Make the system understandable first. Make it clever only when it needs to be.”</div><div class="tags"><span class="tag">CLEAN ARCHITECTURE</span><span class="tag">SOLID</span><span class="tag">LINQ</span><span class="tag">API DESIGN</span><span class="tag">APPLICATION SECURITY</span></div></div><aside class="fact-panel reveal delay1"><div class="panel-label">// quick facts</div><div class="fact-row"><span>Experience</span><span>Accenture · Apr 2024–Mar 2026</span></div><div class="fact-row"><span>Education</span><span>B.E. Computer Engineering</span></div><div class="fact-row"><span>Graduated</span><span>2023</span></div><div class="fact-row"><span>CGPA</span><span>8.65 / 10</span></div><div class="fact-row"><span>Certification</span><span>Azure Fundamentals AZ-900</span></div><div class="fact-row"><span>Certification</span><span>GitHub Copilot</span></div><div class="fact-row"><span>Learning</span><span>Agentic AI</span></div></aside></div></div></section>
-<section class="content" id="architecture"><div class="wrap"><div class="section-head reveal"><div class="section-index">02 / SYSTEM MAP</div><div><h2 class="section-title">Think in <em>layers.</em></h2><p class="section-desc">A visual map of the application layers I work with. This is a conceptual architecture view, not a claim that every project uses every component.</p></div></div><div class="architecture reveal"><div class="arch-flow"><article class="arch-node"><span class="n">LAYER / 01</span><h3>Angular UI</h3><p>Components, forms, validation, user experience.</p></article><article class="arch-node"><span class="n">LAYER / 02</span><h3>ASP.NET Core API</h3><p>REST endpoints, validation, application rules.</p></article><article class="arch-node"><span class="n">LAYER / 03</span><h3>Application + Domain</h3><p>Use cases, business logic, clear boundaries.</p></article><article class="arch-node"><span class="n">LAYER / 04</span><h3>Data + Services</h3><p>EF Core, LINQ, SQL Server, integrations.</p></article></div><p class="arch-note">REQUEST FLOW → UI → API → APPLICATION / DOMAIN → DATA ACCESS → RESPONSE</p></div></div></section>
-<section class="content" id="experience"><div class="wrap"><div class="section-head reveal"><div class="section-index">03 / EXPERIENCE</div><div><h2 class="section-title">Work built for <em>real systems.</em></h2><p class="section-desc">Enterprise application development, frontend integration, security, and production support.</p></div></div><div class="timeline"><article class="job reveal"><div class="job-date">APR 2024 — MAR 2026<small>FULL-TIME · INDIA</small></div><div><h3>Associate Software Engineer</h3><h4>Accenture · Packaged App Development</h4><ul><li>Developed and maintained backend services using C# and ASP.NET Core for insurance policy workflows supporting US and Canada markets.</li><li>Built Angular UI components, forms, and validations integrated with REST APIs.</li><li>Worked with LINQ and Entity Framework Core to improve data access and query behavior.</li><li>Implemented Okta OIDC authentication and role-based authorization across application layers.</li><li>Applied SOLID and repository-pattern approaches to keep code maintainable.</li><li>Used Splunk for production monitoring, log analysis, and incident troubleshooting.</li><li>Worked with feature toggles and application security remediation.</li></ul></div></article><article class="job reveal"><div class="job-date">JAN 2022 — MAR 2022<small>INTERNSHIP · REMOTE</small></div><div><h3>Java Trainee Intern</h3><h4>SoftCrowd Technologies</h4><ul><li>Worked on Java backend functionality, business logic, and data processing.</li><li>Integrated backend services with frontend components and supported API testing.</li></ul></div></article></div></div></section>
-<section class="content" id="skills"><div class="wrap"><div class="section-head reveal"><div class="section-index">04 / TOOLKIT</div><div><h2 class="section-title">Tools are choices.<br><em>Fundamentals last.</em></h2><p class="section-desc">A grouped view of the technologies and practices used across my experience and projects.</p></div></div><div class="skills-grid"><article class="skill reveal"><div class="skill-num">01 / BACKEND</div><h3>Backend & Frameworks</h3><div class="tags"><span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">ASP.NET MVC</span><span class="tag">Web API</span><span class="tag">Node.js</span></div></article><article class="skill reveal delay1"><div class="skill-num">02 / FRONTEND</div><h3>Frontend Engineering</h3><div class="tags"><span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span></div></article><article class="skill reveal delay2"><div class="skill-num">03 / DATA</div><h3>Data & Persistence</h3><div class="tags"><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">EF Core</span><span class="tag">LINQ</span><span class="tag">Stored Procedures</span></div></article><article class="skill reveal"><div class="skill-num">04 / DESIGN</div><h3>Architecture & APIs</h3><div class="tags"><span class="tag">REST APIs</span><span class="tag">Clean Architecture</span><span class="tag">SOLID</span><span class="tag">Repository Pattern</span><span class="tag">Swagger</span></div></article><article class="skill reveal delay1"><div class="skill-num">05 / DELIVERY</div><h3>Cloud & Delivery</h3><div class="tags"><span class="tag">Azure</span><span class="tag">Docker</span><span class="tag">Jenkins</span><span class="tag">CI/CD</span><span class="tag">GitHub Actions</span><span class="tag">Git</span></div></article><article class="skill reveal delay2"><div class="skill-num">06 / SECURITY</div><h3>Security & Tooling</h3><div class="tags"><span class="tag">Okta OIDC</span><span class="tag">RBAC</span><span class="tag">JWT</span><span class="tag">Splunk</span><span class="tag">Snyk</span><span class="tag">GitHub Copilot</span></div></article></div></div></section>
-<section class="content" id="projects"><div class="wrap"><div class="section-head reveal"><div class="section-index">05 / SELECTED WORK</div><div><h2 class="section-title">Projects with a <em>purpose.</em></h2><p class="section-desc">Personal projects exploring full-stack workflows, maintainable backend design, and AI-assisted development.</p></div></div><article class="project-feature reveal"><div class="project-visual"><div class="visual-top">FEATURED / FINANCE PLATFORM</div><div class="mini-dashboard"><div class="dash-head"><span>FINORA / OVERVIEW</span><span class="acid">● LOCAL DEMO</span></div><div class="dash-total">Money, made <span class="acid">clear.</span></div><div class="dash-head"><span>SPENDING SNAPSHOT</span><span>MONTHLY</span></div><div class="bars" aria-hidden="true"><i style="height:36%"></i><i style="height:72%"></i><i style="height:48%"></i><i style="height:88%"></i><i style="height:56%"></i><i style="height:65%"></i><i style="height:95%"></i><i style="height:52%"></i><i style="height:78%"></i></div></div><div class="project-meta">ANGULAR · ASP.NET CORE · SQL SERVER</div></div><div class="project-info"><div class="project-meta">PROJECT / 01 — PERSONAL FINANCE</div><h3>Finora — Personal Finance Tracker</h3><p>A personal finance platform focused on importing transactions, organizing spending, and making monthly activity easier to understand.</p><ul><li>CSV transaction import with duplicate protection</li><li>Accounts, budgets, recurring payments, and dashboard analytics</li><li>Spending signals and AI-assisted categorization/insights are part of the project direction</li></ul><div class="tags"><span class="tag">Angular</span><span class="tag">ASP.NET Core 8</span><span class="tag">Clean Architecture</span><span class="tag">EF Core</span><span class="tag">SQL Server</span></div><div class="project-links"><a class="button primary" href="https://github.com/sumeetshah30/Finora" target="_blank" rel="noopener noreferrer">VIEW REPOSITORY ↗</a></div></div></article><div class="project-grid"><article class="project-card reveal"><div class="project-meta">PROJECT / 02</div><h3>Smart Task & Workflow System</h3><p>Full-stack task management project exploring task assignment, role-based access, workflow states, and audit history with a layered backend.</p><div class="tags"><span class="tag">ASP.NET Core 8</span><span class="tag">Angular</span><span class="tag">EF Core</span><span class="tag">SQL Server</span><span class="tag">JWT / RBAC</span></div><a class="button secondary" href="https://github.com/sumeetshah30/TaskFlow" target="_blank" rel="noopener noreferrer">VIEW REPOSITORY ↗</a></article><article class="project-card reveal delay1"><div class="project-meta">PROJECT / 03</div><h3>Inventory & Warehouse Management</h3><p>A full-stack inventory management project centered on stock tracking and warehouse workflows.</p><div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">C#</span><span class="tag">Angular</span><span class="tag">EF Core</span><span class="tag">SQL Server</span></div><a class="button secondary" href="https://github.com/sumeetshah30/inventory-warehouse-management" target="_blank" rel="noopener noreferrer">VIEW REPOSITORY ↗</a></article><article class="project-card reveal delay2"><div class="project-meta">PROJECT / 04</div><h3>AI PR Reviewer</h3><p>An AI-assisted pull-request review project using Claude API and multi-agent review concepts.</p><div class="tags"><span class="tag">C# / .NET</span><span class="tag">Claude API</span><span class="tag">GitHub REST API</span><span class="tag">Agentic Workflows</span></div><a class="button secondary" href="https://github.com/sumeetshah30/ai-pr-reviewer" target="_blank" rel="noopener noreferrer">VIEW REPOSITORY ↗</a></article></div><p class="arch-note">PROJECT LINKS OPEN THE REPOSITORIES. FEATURE SETS MAY EVOLVE AS DEVELOPMENT CONTINUES.</p></div></section>
-<section class="content" id="terminal"><div class="wrap"><div class="section-head reveal"><div class="section-index">06 / INTERACTIVE</div><div><h2 class="section-title">A little <em>command line.</em></h2><p class="section-desc">Explore this portfolio with short commands. You can also use the regular navigation above—no terminal knowledge required.</p></div></div><div class="terminal-section"><div class="terminal-live reveal"><div class="term-head"><span class="lights"><i></i><i></i><i></i></span><span>visitor@portfolio:~</span><span>INTERACTIVE</span></div><div class="term-body" id="terminalOutput" aria-live="polite"><div class="term-dim">Portfolio shell v1.0 — type <span class="acid">help</span> to see commands.</div><div><span class="prompt">visitor@portfolio:~$</span> help</div><div class="term-val">about · skills · projects · experience · contact · clear</div></div><form class="command-row" id="commandForm"><label for="commandInput">$</label><input id="commandInput" name="command" autocomplete="off" aria-label="Enter a portfolio command" placeholder="type a command…"><button type="submit">RUN ↵</button></form></div><div class="reveal delay1"><div class="panel-label">// commands</div><div class="fact-row"><span>about</span><span>Jump to profile</span></div><div class="fact-row"><span>skills</span><span>Explore the toolkit</span></div><div class="fact-row"><span>projects</span><span>Browse project work</span></div><div class="fact-row"><span>experience</span><span>View career history</span></div><div class="fact-row"><span>contact</span><span>Start a conversation</span></div><p class="command-hint">TIP: COMMANDS ARE CASE-INSENSITIVE. PRESS ENTER TO RUN.</p></div></div></div></section>
-<section class="content" id="contact"><div class="wrap"><div class="contact-box reveal"><div><div class="eyebrow">NEXT STEP / SAY HELLO</div><h3>Have a good<br><span>problem?</span></h3><p>I'm open to conversations about .NET engineering, full-stack development, and software roles where thoughtful implementation matters.</p><a class="button primary" href="mailto:sumeetshah7007@gmail.com">EMAIL ME ↗</a></div><div class="contact-links"><a href="mailto:sumeetshah7007@gmail.com"><span>EMAIL</span><span>sumeetshah7007@gmail.com ↗</span></a><a href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener noreferrer"><span>LINKEDIN</span><span>CONNECT ↗</span></a><a href="https://github.com/sumeetshah30" target="_blank" rel="noopener noreferrer"><span>GITHUB</span><span>VIEW CODE ↗</span></a><a href="https://sumeetshah30.github.io/" target="_blank" rel="noopener noreferrer"><span>PORTFOLIO</span><span>LIVE SITE ↗</span></a></div></div></div></section>
-</main><footer class="wrap"><span>© <span id="year"></span> SUMEET SHAH / BUILT WITH HTML, CSS & JS</span><span class="footer-note">NO FRAMEWORK. JUST THE WEB. <a href="#home" class="acid">BACK TO TOP ↑</a></span></footer>
+<div id="curtain"><p>GET /sumeet-shah <b id="ct-n">0</b>% <span id="ct-s"></span></p></div>
+<div id="cur"></div>
+<div id="spine"><div id="fill"></div><div id="pkt"></div></div>
+<div id="hud" aria-hidden="true">GET /hello</div>
+
+<nav><a class="lg" href="#hero">Sumeet Shah</a><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Dark</button></div></nav>
+
+<main>
+<section id="hero" data-s="/hello">
+  <h1 id="name" aria-label="Software Engineer, India. Build. Think. Ship."><span class="w tag">SOFTWARE ENGINEER / INDIA</span><span class="w">BUILD.</span><span class="w">THINK.</span><span class="w">SHIP.</span></h1>
+  <div class="hero-in">
+    <span class="live">Open to freelance and full-time work</span>
+    <p>I'm Sumeet Shah. I build the APIs, authentication and data layers behind enterprise insurance platforms, plus the Angular screens on top. Two years in production for the US and Canada, with API response times cut by about 30%.</p>
+    <div class="cta"><a class="btn" href="#contact">Hire me</a><a class="btn ghost" href="SumeetShah-Resume.pdf">Download résumé</a></div>
+  </div>
+</section>
+
+<section id="system" data-s="/system">
+  <h2>Every request passes through these six layers.</h2>
+  <p class="sub">This is the path I build and tune. Select a layer to see what I did there.</p>
+  <div class="sys" id="sys">
+    <div class="sys-line" id="sys-line"></div>
+    <button class="node" data-t="Angular UI" data-d="Forms, validation and data binding connected to REST APIs for insurance policy management at Accenture. The same approach drives the Inventory and Invoice apps." aria-pressed="true">Angular UI</button>
+    <button class="node" data-t="ASP.NET Core API" data-d="RESTful Web APIs in C# (and Node.js where needed) behind policy workflows for US and Canada customers. Four of my GitHub projects are built on it.">ASP.NET Core API</button>
+    <button class="node" data-t="Okta, OIDC and JWT" data-d="Okta-based OIDC sign-in with role-based authorisation across the backend and Angular. TaskFlow, Inventory and Invoice use JWT with RBAC.">Okta, OIDC, JWT</button>
+    <button class="node" data-t="Service layer" data-d="Clean architecture with SOLID and the repository pattern, plus feature toggle services so teams can roll out changes in a controlled way.">Service layer</button>
+    <button class="node" data-t="EF Core and LINQ" data-d="Optimised REST calls, LINQ queries and database interactions that improved response time and overall performance by about 30%.">EF Core, LINQ</button>
+    <button class="node" data-t="SQL Server and PostgreSQL" data-d="Schema and query work under production load. I also watch live health in Splunk dashboards and trace incidents through the logs.">SQL, PostgreSQL</button>
+  </div>
+  <div id="sys-info" aria-live="polite"><h3></h3><p></p></div>
+</section>
+
+<section id="about" data-s="/about">
+  <p id="pull">Clean architecture produces maintainable systems. I use SOLID and repository patterns as practical tools, so the next developer can change the code with confidence.</p>
+  <div class="about-cols">
+    <div>
+      <p>I'm a software engineer in India, specialising in enterprise backend development. I've worked on insurance policy management platforms for international markets: designing APIs, implementing authentication, and tuning database performance under production load.</p>
+      <p>I'm backend-first with a full-stack mindset, from query optimisation to Angular components. Outside code I follow emerging technology, solve problems, travel and listen to music.</p>
+      <p>I'm looking for backend-heavy work, API development, and Angular full-stack builds with startups and product teams anywhere.</p>
+    </div>
+    <div>
+      <dl><dt>Location</dt><dd>India, remote worldwide</dd><dt>Languages</dt><dd>English, Hindi, Marathi</dd><dt>Replies</dt><dd>Within 24 hours</dd><dt>Education</dt><dd>B.E. Computer Engineering, MET's Institute, Nashik, 2019–2023 (CGPA 8.65)</dd></dl>
+      <div class="certs"><div>Azure Fundamentals AZ-900 <span>Microsoft, May 2025</span></div><div>GitHub Copilot <span>GitHub, May 2025</span></div><div>Reinvention with Agentic AI <span>Stanford HAI, Dec 2025</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" data-s="/experience">
+  <div class="xwrap"><div class="xtrack">
+    <div class="xp intro"><h2>Where I've built things.</h2><p>Two years of enterprise systems for international clients. Keep scrolling.</p></div>
+    <div class="xp"><span class="when">Apr 2024 – Mar 2026, full-time</span><h3>Packaged App Development Associate, Accenture</h3><ul><li>Built and maintained backend services in ASP.NET Core, C# and Node.js for insurance policy workflows in the US and Canada.</li><li>Built Angular forms, validations and data binding connected to the REST APIs.</li></ul></div>
+    <div class="xp hot"><div class="big30">30%</div><h3>faster responses</h3><ul><li>Optimised REST API calls, LINQ queries and database interactions to improve response time across the system.</li></ul></div>
+    <div class="xp"><h3>Security and structure</h3><ul><li>Implemented Okta-based OIDC authentication and role-based authorisation across backend services and Angular apps.</li><li>Applied clean architecture (SOLID, repository pattern) to keep the codebase maintainable.</li><li>Built feature toggle services for controlled rollouts and configuration-driven activation.</li></ul></div>
+    <div class="xp"><h3>Production health</h3><ul><li>Monitored live systems with Splunk dashboards, finding and resolving incidents through log analysis.</li></ul><span class="when" style="margin-top:1rem">Jan 2022 – Mar 2022, internship</span><h3>Java Trainee, Soft Crowd Technologies</h3><ul><li>Built Java backend features for an enterprise application, integrated them with frontend components, and covered them with unit tests.</li></ul></div>
+  </div></div>
+</section>
+
+<section id="stack" class="dark" data-s="/stack">
+  <h2 style="margin-bottom:4rem">The tools I build with.</h2>
+  <div class="row"><span>Backend</span><div class="mq"><div class="mqt">C# <i>ASP.NET Core</i> ASP.NET MVC <i>Web API</i> Node.js C++</div></div></div>
+  <div class="row"><span>Frontend</span><div class="mq"><div class="mqt"><i>Angular</i> TypeScript JavaScript <i>HTML5</i> CSS3</div></div></div>
+  <div class="row"><span>Data</span><div class="mq"><div class="mqt">SQL Server <i>PostgreSQL</i> EF Core <i>LINQ</i></div></div></div>
+  <div class="row"><span>Architecture</span><div class="mq"><div class="mqt"><i>Clean Architecture</i> SOLID Repository Pattern <i>MVC</i> Microservices REST</div></div></div>
+  <div class="row"><span>Cloud and delivery</span><div class="mq"><div class="mqt">Azure <i>Azure DevOps</i> App Service Docker <i>Jenkins</i> CI/CD</div></div></div>
+  <div class="row"><span>Security and tools</span><div class="mq"><div class="mqt"><i>Okta</i> OIDC RBAC <i>JWT</i> Splunk Postman GitHub Copilot Jira</div></div></div>
+</section>
+
+<section id="projects" data-s="/projects">
+  <h2>Freelance and personal projects.</h2>
+  <div class="flt" role="group" aria-label="Filter projects"><button data-f="all" aria-pressed="true">All</button><button data-f="backend" aria-pressed="false">Backend</button><button data-f="fullstack" aria-pressed="false">Full-stack</button><button data-f="ai" aria-pressed="false">AI</button></div>
+  <article class="pcard" data-cat="ai fullstack" style="--i:0"><div><h3>Finora: AI personal finance platform</h3></div><div>
+    <p>Import bank statements, track income, expenses and budgets, spot unusual or duplicate transactions, and ask an AI assistant about your spending in plain language.</p><div class="tags"><span>Angular</span><span>ASP.NET Core 8</span><span>C#</span><span>EF Core</span><span>SQL Server</span><span>Anthropic Claude API</span><span>xUnit</span><span>Swagger</span></div>
+    <button class="lnk" onclick="openCase('finora')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/Finora" target="_blank" rel="noopener">GitHub ↗</a></div></article>
+<article class="pcard" data-cat="backend" style="--i:1"><div><h3>Smart Task and Workflow System</h3></div><div>
+    <p>A task management platform for teams: create, assign, track and manage tasks with role-based access, configurable workflow states and complete audit logging.</p>
+    <ul><li><b>JWT authentication</b> with RBAC on every API endpoint.</li><li><b>Clean architecture</b> with strict Domain, Application, Infrastructure and API layers.</li><li><b>Workflow states</b> with a configurable lifecycle and audit log.</li><li><b>EF Core and LINQ</b> for fast data retrieval.</li></ul>
+    <div class="tags"><span>ASP.NET Core Web API</span><span>EF Core</span><span>SQL Server / PostgreSQL</span><span>JWT</span></div>
+    <button class="lnk" onclick="openCase('taskflow')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/TaskFlow" target="_blank" rel="noopener">GitHub ↗</a></div></article>  <article class="pcard" data-cat="fullstack" style="--i:2"><div><h3>Inventory and Warehouse Management</h3></div><div>
+    <p>A full-stack inventory and warehouse management system — real-time stock tracking, multi-warehouse support, supplier management, stock movement logs, and low-stock alerts. Built with clean ASP.NET Core architecture and a responsive Angular front-end.</p><div class="tags"><span>ASP.NET Core</span><span>C#</span><span>Angular</span><span>EF Core</span><span>SQL Server</span><span>JWT</span><span>Clean Architecture</span></div>
+    <button class="lnk" onclick="openCase('inventory')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/inventory-warehouse-management" target="_blank" rel="noopener">GitHub ↗</a></div></article>
+  <article class="pcard" data-cat="fullstack" style="--i:3"><div><h3>Invoice and Billing System</h3></div><div>
+    <p>A complete invoice and billing management system — client management, invoice generation, payment tracking, tax calculations, and PDF export. Supports recurring billing cycles and automated payment reminders with a clean RESTful API layer.</p><div class="tags"><span>ASP.NET Core Web API</span><span>C#</span><span>EF Core</span><span>PostgreSQL</span><span>Angular</span><span>JWT</span><span>LINQ</span></div>
+    <button class="lnk" onclick="openCase('invoice')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/invoice-billing-system" target="_blank" rel="noopener">GitHub ↗</a></div></article>
+  <article class="pcard" data-cat="ai backend" style="--i:4"><div><h3>AI PR Reviewer Service</h3></div><div>
+    <p>A three-agent AI system that reviews GitHub pull requests using Claude.</p><div class="tags"><span>.NET Core</span><span>C#</span><span>Anthropic Claude API</span><span>GitHub REST API</span><span>Agentic workflow design</span></div>
+    <button class="lnk" onclick="openCase('pr')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/ai-pr-reviewer" target="_blank" rel="noopener">GitHub ↗</a></div></article>
+</section>
+
+<section id="now" data-s="/now">
+  <div><h3>What I'm learning</h3><ul><li>Agentic AI patterns<span>Stanford HAI course, and the source of my two articles below.</span></li><li>Semantic Kernel and Claude API<span>Building agent workflows in .NET, like the AI PR Reviewer.</span></li><li>Azure<span>AZ-900 done; moving into App Service and DevOps pipelines.</span></li></ul></div>
+  <div><h3>What I use every day</h3><ul><li>Build<span>ASP.NET Core, C#, Angular, EF Core, Docker</span></li><li>Data<span>SQL Server, PostgreSQL</span></li><li>Ship and watch<span>Azure DevOps, Jenkins, Splunk, Postman, GitHub Copilot, Jira</span></li></ul></div>
+</section>
+
+<section id="writing" data-s="/writing">
+  <h2>Writing on AI and .NET.</h2>
+  <div class="list">
+    <a class="post" href="#" onclick="openBlog('b1');return false"><time>June 2026, 8 min</time><div><h3>From GPT to Production: building real apps with generative AI</h3><p>What two years of .NET development taught me about shipping LLM-powered features in enterprise systems.</p></div><span class="lnk">Read ↗</span></a>
+    <a class="post" href="#" onclick="openBlog('b2');return false"><time>May 2026, 10 min</time><div><h3>Agentic AI and .NET: building autonomous backend workflows</h3><p>How ASP.NET Core developers can design agent-driven pipelines that work with real APIs, databases and business logic.</p></div><span class="lnk">Read ↗</span></a>
+  </div>
+</section>
+
+<section id="contact" class="dark" data-s="/contact">
+  <h2>Send me a request.</h2>
+  <div class="ct">
+    <div>
+      <p class="avail">Available now for freelance and full-time</p>
+      <dl class="hire"><dt>Time zone</dt><dd>India (IST, UTC+5:30), with flexible overlap for Europe and US hours</dd><dt>Typical work</dt><dd>Backend APIs, Angular full-stack builds, authentication, database performance, AI features in .NET</dd><dt>Reply</dt><dd>Within 24 hours</dd></dl>
+      <div class="links btns"><a id="b-cal" class="btn" hidden target="_blank" rel="noopener">Book a call</a><a id="b-wa" class="btn ghost" hidden target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener">Message on LinkedIn</a></div>
+      <a class="mail" href="mailto:sumeetshah7007@gmail.com">sumeetshah7007@gmail.com</a>
+      <div class="links"><a href="https://github.com/sumeetshah30" target="_blank" rel="noopener">GitHub</a><a href="SumeetShah-Resume.pdf">Résumé (PDF)</a></div>
+    </div>
+    <div>
+    <div id="thanks" hidden><h3>Message sent.</h3><p>Thanks for reaching out. I'll reply within 24 hours at the email you gave.</p></div>
+    <form class="contact-form" action="https://formsubmit.co/sumeetshah7007@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from portfolio — Sumeet Shah"/><input type="hidden" name="_captcha" value="false"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_next" id="nx"/>
+      <div class="two"><label>First name<input name="first_name" required/></label><label>Last name<input name="last_name" required/></label></div>
+      <div class="two"><label>Email<input type="email" name="email" required/></label><label>Phone (optional)<input type="tel" name="phone_number"/></label></div>
+      <label>Project details<textarea name="message" rows="4" required placeholder="What are you building, and by when?"></textarea></label>
+      <button class="btn" id="cf-btn" type="submit">Send message</button>
+    </form></div>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 Sumeet Shah</span><span>Hosted on GitHub Pages</span></footer>
+
+<div class="blog-full" id="b1">
+  <button class="blog-full-close" onclick="closeBlog('b1')">← Back to portfolio</button>
+  <div class="blog-full-inner">
+    <span class="blog-tag bf-tag">Generative AI</span>
+    <h1 class="bf-title">From GPT to <em>Production</em> — Building Real Apps with Generative AI</h1>
+    <div class="bf-meta">
+      <span>Sumeet Shah</span>
+      <span>June 2026</span>
+      <span>8 min read</span>
+      <span>ASP.NET Core · C# · OpenAI API</span>
+    </div>
+    <div class="bf-img-placeholder">GenAI × .NET</div>
+    <div class="bf-body">
+      <p>Everyone's played with ChatGPT. Everyone's seen the demos. But there's a significant gap between <em>prompting a chatbot</em> and <em>shipping a production feature powered by a large language model</em>. I've been on both sides of that gap — and this article is about what I learned crossing it.</p>
+
+      <p>Over the past year, working at the intersection of enterprise .NET development and emerging AI capabilities, I've integrated LLM-powered features into backend systems that serve real users. Here's what actually matters.</p>
+
+      <div class="bf-divider"></div>
+      <h2>Why most GenAI demos fail in production</h2>
+      <p>Demo code is optimistic. It assumes the model always returns well-formed JSON, that latency is acceptable, that the same prompt works every time. Production systems are none of those things.</p>
+      <p>The three failure modes I encountered most often:</p>
+      <ul>
+        <li><strong>Non-determinism at scale</strong> — the same prompt can return structurally different responses. Your parser breaks on Tuesday.</li>
+        <li><strong>Latency spikes</strong> — a 2-second average with 15-second tail latency is a UX nightmare when it's blocking a user action.</li>
+        <li><strong>Cost surprises</strong> — token usage at demo scale (10 requests/day) doesn't predict production scale (50,000 requests/day).</li>
+      </ul>
+
+      <h2>The architecture that actually works</h2>
+      <p>After several iterations, I settled on a pattern I call <strong>Guard-Generate-Validate</strong> for LLM integration in .NET backends.</p>
+
+      <h3>1. Guard — protect your system from the model</h3>
+      <p>Treat the LLM like an untrusted external API. Every response should go through a validation layer before touching your database or business logic.</p>
+      <pre><code>public async Task&lt;PolicySummary?&gt; GenerateSummaryAsync(string policyText)
+{{
+    var raw = await _llmClient.CompleteAsync(BuildPrompt(policyText));
+    
+    if (!TryParseSummary(raw, out var summary))
+    {{
+        _logger.LogWarning("LLM returned unparseable response, falling back");
+        return await _fallbackService.GetSummaryAsync(policyText);
+    }}
+    
+    return summary;
+}}</code></pre>
+
+      <h3>2. Generate — engineer your prompt like code</h3>
+      <p>Prompt engineering is real engineering. I treat prompts as versioned, tested artifacts — not strings concatenated at runtime. A few principles that made a measurable difference:</p>
+      <ul>
+        <li>Specify the <strong>output format explicitly</strong> in the system prompt. Ask for JSON with a defined schema.</li>
+        <li>Include <strong>negative examples</strong> — "do not include preamble text before the JSON".</li>
+        <li>Use <strong>temperature=0</strong> for structured output tasks. Save creativity for summarisation and generation tasks where variation is acceptable.</li>
+      </ul>
+
+      <h3>3. Validate — never trust the model's output directly</h3>
+      <p>JSON schema validation, semantic checks, and range guards before any LLM output reaches your data layer. I use <code>FluentValidation</code> for this — the same library I use everywhere else in the stack.</p>
+
+      <blockquote>"The model doesn't know what your application needs. Only your code does."</blockquote>
+
+      <div class="bf-divider"></div>
+      <h2>Practical patterns for ASP.NET Core</h2>
+
+      <h3>Async streaming for better UX</h3>
+      <p>If your LLM call takes 4 seconds, don't make the user wait for the whole response. Stream it. ASP.NET Core supports server-sent events natively — combine it with OpenAI's streaming API and you get a chat-like experience in your own UI without WebSockets complexity.</p>
+
+      <h3>Caching semantically similar requests</h3>
+      <p>Exact-match caching barely works for LLM inputs — users rephrase the same question. Semantic caching (embedding the input, finding vector-similar cached results) can reduce LLM API calls by 30–60% for common question patterns. I used Azure AI Search for this.</p>
+
+      <h3>Observability is non-negotiable</h3>
+      <p>Log the full prompt, the full response, latency, token count, and model version for every production call. When something breaks — and it will — you need the complete picture. I pipe this to Splunk with a custom LLM telemetry middleware.</p>
+
+      <div class="bf-divider"></div>
+      <h2>What I'd tell myself 12 months ago</h2>
+      <p>GenAI in production is a software engineering problem first, and an AI problem second. The models are impressive. The hard part is wrapping them in the reliability, observability, and testability that enterprise systems demand. If you can build resilient APIs, you can build resilient AI features — the discipline is the same.</p>
+
+      <p>The engineers who will build the most valuable AI-powered systems aren't the ones who know the most about transformer architecture. They're the ones who know how to <strong>ship production software</strong> — and who learn to work with LLMs the same way they work with any powerful, imperfect dependency.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ BLOG ARTICLE 2 — Full Page ════ -->
+<div class="blog-full" id="b2">
+  <button class="blog-full-close" onclick="closeBlog('b2')">← Back to portfolio</button>
+  <div class="blog-full-inner">
+    <span class="blog-tag bf-tag" style="color:var(--p3);background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.2)">Agentic AI</span>
+    <h1 class="bf-title">Agentic AI &amp; <em>.NET</em> — Building Autonomous Backend Workflows</h1>
+    <div class="bf-meta">
+      <span>Sumeet Shah</span>
+      <span>May 2026</span>
+      <span>10 min read</span>
+      <span>ASP.NET Core · C# · Semantic Kernel</span>
+    </div>
+    <div class="bf-img-placeholder" style="color:rgba(56,189,248,.18)">Agentic × .NET</div>
+    <div class="bf-body">
+      <p>Generative AI responds to prompts. <strong>Agentic AI acts on goals.</strong> That distinction sounds subtle, but it fundamentally changes how you architect the systems around it — and what becomes possible.</p>
+
+      <p>A GenAI feature says: "Here's a summary of this document." An agentic system says: "I need to process this claim — let me check the policy database, calculate the payout, flag anomalies, draft the notification, and submit it for approval." It plans, executes, and adapts.</p>
+
+      <p>I've been working with agentic patterns in .NET backends since early 2025. Here's what the architecture actually looks like.</p>
+
+      <div class="bf-divider"></div>
+      <h2>What makes a system "agentic"?</h2>
+      <p>Three properties distinguish an agentic system from a simple LLM integration:</p>
+      <ul>
+        <li><strong>Tool use</strong> — the agent can call functions, APIs, and services autonomously to gather information or take action.</li>
+        <li><strong>Multi-step reasoning</strong> — it breaks down complex goals into subtasks and executes them in sequence, with each step informing the next.</li>
+        <li><strong>Feedback loops</strong> — it can observe the results of its actions and adjust its plan accordingly.</li>
+      </ul>
+
+      <h2>Microsoft Semantic Kernel — the .NET-native choice</h2>
+      <p>For .NET developers, <strong>Semantic Kernel</strong> is the most mature framework for building agentic systems. It gives you plugins (tools the agent can call), planners (the reasoning layer), and memory (context persistence) — all wired into familiar .NET patterns.</p>
+
+      <pre><code>var kernel = Kernel.CreateBuilder()
+    .AddAzureOpenAIChatCompletion(deploymentName, endpoint, apiKey)
+    .Build();
+
+kernel.Plugins.AddFromType&lt;PolicyPlugin&gt;();
+kernel.Plugins.AddFromType&lt;NotificationPlugin&gt;();
+
+var result = await kernel.InvokePromptAsync(
+    "Process claim {{$claimId}} end-to-end and notify the claimant.",
+    new KernelArguments {{ ["claimId"] = claimId }}
+);</code></pre>
+
+      <h3>Designing agent plugins for enterprise systems</h3>
+      <p>Each plugin is a C# class with methods decorated with <code>[KernelFunction]</code>. The agent decides when and how to call them based on the goal. The key design principle: <strong>make plugins idempotent and auditable</strong>.</p>
+      <p>In enterprise systems, an agent might call the same function twice if it re-plans. Your plugin must handle that gracefully — database operations should be idempotent, and every action should be logged with enough context to reconstruct what happened and why.</p>
+
+      <div class="bf-divider"></div>
+      <h2>The hardest problem: trust boundaries</h2>
+      <p>When a human submits a form, they're responsible for what they submit. When an agent calls your API, <em>the system is responsible</em>. This creates a new class of security and governance challenges.</p>
+
+      <h3>Scope constraints</h3>
+      <p>Agents should operate within explicitly defined scopes. Don't give your claims-processing agent access to HR data just because it technically could need it. Apply the principle of least privilege just as you would to a service account.</p>
+
+      <h3>Human-in-the-loop checkpoints</h3>
+      <p>For high-stakes actions — sending a large payment, modifying a live policy, triggering an external API — require explicit human approval before the agent proceeds. I implement this as an async approval workflow: the agent pauses, creates an approval request, and resumes when a human confirms.</p>
+
+      <blockquote>"Autonomous doesn't mean unsupervised. The best agentic systems know when to ask."</blockquote>
+
+      <h3>Full audit trails</h3>
+      <p>Every decision the agent makes — which tool it chose to call, what reasoning it used, what the tool returned — should be logged. When something goes wrong, and eventually it will, you need to understand the agent's decision chain completely.</p>
+
+      <div class="bf-divider"></div>
+      <h2>A real pattern: the claim processing agent</h2>
+      <p>At Accenture, I worked on insurance policy workflows. An agentic system for claim processing looks like this:</p>
+      <ol>
+        <li><strong>Intake</strong> — agent receives a claim submission, calls <code>GetPolicyDetails(policyId)</code> to fetch coverage.</li>
+        <li><strong>Validation</strong> — calls <code>ValidateClaim(claimData, policy)</code> to check eligibility and flag anomalies.</li>
+        <li><strong>Decision</strong> — for straightforward claims, calls <code>ApproveClaim()</code> or <code>FlagForReview()</code> based on rules.</li>
+        <li><strong>Notification</strong> — calls <code>SendClaimantNotification()</code> with a generated, personalised message.</li>
+        <li><strong>Audit</strong> — logs the full decision chain to the audit system.</li>
+      </ol>
+      <p>What previously required 3 microservices and a message queue can be expressed as a goal for an agent — with the agent handling orchestration, error recovery, and retry logic autonomously.</p>
+
+      <div class="bf-divider"></div>
+      <h2>Where agentic AI actually delivers value</h2>
+      <p>Not every process benefits from an agent. The sweet spot is workflows that are <strong>complex enough that hardcoded orchestration is brittle</strong>, but <strong>structured enough that the agent can be given clear success criteria</strong>.</p>
+      <p>Document processing, multi-step data enrichment, cross-system reconciliation, intelligent notification routing — these are the use cases where agentic systems consistently outperform both rigid automation and purely human processes.</p>
+      <p>The backend engineers who understand both the distributed systems fundamentals <em>and</em> the new agentic patterns will build the most impactful systems in the next five years. The foundation is the same — clean architecture, reliable APIs, thoughtful data models. What changes is the orchestration layer above it.</p>
+    </div>
+  </div>
+</div>
+<div class="blog-full" id="cs"><button class="blog-full-close" onclick="closeBlog('cs')">← Back to portfolio</button><div class="blog-full-inner" id="cs-in"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
-(()=>{'use strict';const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);$('#year').textContent=new Date().getFullYear();const menu=$('#menuBtn'),links=$('#navLinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'CLOSE −':'MENU +'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='MENU +'}));const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if('IntersectionObserver'in window&&!reduced){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.12});$$('.reveal').forEach(el=>observer.observe(el))}else{$$('.reveal').forEach(el=>el.classList.add('in'))}const routes={about:'#about',skills:'#skills',projects:'#projects',experience:'#experience',contact:'#contact'};const output=$('#terminalOutput'),form=$('#commandForm'),input=$('#commandInput');function run(raw){const cmd=raw.trim().toLowerCase();if(!cmd)return;const line=document.createElement('div');line.innerHTML='<span class="prompt">visitor@portfolio:~$</span> ';const safe=document.createElement('span');safe.textContent=raw;line.appendChild(safe);output.appendChild(line);if(cmd==='clear'){output.replaceChildren();return}let response='Command not found. Type help to see available commands.';if(cmd==='help')response='Available: about · skills · projects · experience · contact · clear';else if(routes[cmd]){response='Opening '+cmd+' section…';const target=$(routes[cmd]);target.scrollIntoView({behavior:reduced?'auto':'smooth'});}const result=document.createElement('div');result.className='term-val';result.textContent=response;output.appendChild(result);output.scrollTop=output.scrollHeight;}form.addEventListener('submit',e=>{e.preventDefault();run(input.value);input.value='';});$$('[data-command]').forEach(el=>el.addEventListener('click',()=>run(el.dataset.command)));})();
+const $=s=>document.querySelector(s),H=document.documentElement;
+let lenis;
+if(!(window.gsap&&window.ScrollTrigger&&window.SplitText&&window.ScrambleTextPlugin))H.classList.remove('js');
+const js=H.classList.contains('js');
+
+/* blog overlay */
+function openBlog(id){$('#'+id).classList.add('open');lenis&&lenis.stop();document.body.style.overflow='hidden'}
+function closeBlog(id){$('#'+id).classList.remove('open');lenis&&lenis.start();document.body.style.overflow=''}
+addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.blog-full.open').forEach(b=>closeBlog(b.id))});
+$('.contact-form').addEventListener('submit',()=>{const b=$('#cf-btn');b.textContent='Sending…';b.disabled=true});
+
+/* system diagram (works without JS animation) */
+const nodes=[...document.querySelectorAll('.node')],info=$('#sys-info');
+function pick(b){nodes.forEach(n=>n.setAttribute('aria-pressed',n===b));info.querySelector('h3').textContent=b.dataset.t;info.querySelector('p').textContent=b.dataset.d;js&&gsap.fromTo(info,{opacity:.2,y:10},{opacity:1,y:0,duration:.4})}
+nodes.forEach(n=>n.addEventListener('click',()=>pick(n)));pick(nodes[0]);
+
+if(js){
+gsap.registerPlugin(ScrollTrigger,SplitText,ScrambleTextPlugin);
+if(window.Lenis){lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);lenis.stop()}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(t&&a.getAttribute('href').length>1){e.preventDefault();lenis?lenis.scrollTo(t):t.scrollIntoView()}}));
+
+/* one orchestrated load: request counts up, curtain lifts, name rises */
+const split=SplitText.create('#name .w',{type:'chars',mask:'chars'});gsap.set(split.chars,{yPercent:115});
+const o={v:0};
+gsap.timeline()
+ .to(o,{v:100,duration:1.2,ease:'power2.inOut',onUpdate:()=>$('#ct-n').textContent=Math.round(o.v)})
+ .add(()=>$('#ct-s').textContent='200 OK')
+ .to('#curtain',{yPercent:-100,duration:.9,ease:'power4.inOut',delay:.25})
+ .to(split.chars,{yPercent:0,duration:1.1,ease:'power4.out',stagger:.045},'-=.4')
+ .to('.hero-in',{opacity:1,duration:.8,stagger:.12},'-=.7')
+ .add(()=>lenis&&lenis.start());
+
+/* scroll spine: packet travels, hud reports the route */
+const S=[...document.querySelectorAll('[data-s]')],N=S.length,spine=$('#spine'),ms=[8,14,21,19,33,27,16,18,12];
+const vert=matchMedia('(min-width:900px)');
+S.forEach((s,i)=>{const d=document.createElement('a');d.href='#'+s.id;d.title=s.dataset.s;d.style.top=i/(N-1)*100+'%';spine.append(d);
+ ScrollTrigger.create({trigger:s,start:'top center',end:'bottom center',
+  onToggle:t=>{if(t.isActive)gsap.to('#hud',{duration:.6,scrambleText:{text:`GET ${s.dataset.s} 200 OK ${ms[i]}ms`,chars:'01',speed:.7}})},
+  onUpdate:t=>{const p=Math.min(1,(i+t.progress)/(N-1));$('#pkt').style.top=p*100+'%';$('#fill').style.transform=vert.matches?`scaleY(${p})`:`scaleX(${p})`}})});
+
+/* packets flow through the diagram, faster while you scroll */
+const line=$('#sys-line'),pkTl=gsap.timeline();let boost=0,ts=1;
+for(let k=0;k<3;k++){const p=document.createElement('i');p.className='pk';line.append(p);pkTl.fromTo(p,{left:'0%'},{left:'98%',duration:4.5,ease:'none',repeat:-1},k*1.5)}
+ScrollTrigger.create({onUpdate:t=>{boost=Math.min(5,Math.abs(t.getVelocity())/700)}});
+gsap.ticker.add(()=>{boost*=.92;ts+=(1+boost-ts)*.1;pkTl.timeScale(ts)});
+
+/* about: words light up as you read */
+const sp=SplitText.create('#pull',{type:'words'});
+gsap.fromTo(sp.words,{opacity:.15},{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:'#pull',start:'top 80%',end:'bottom 50%',scrub:true}});
+
+/* experience: pinned sideways scroll on desktop */
+gsap.matchMedia().add('(min-width:900px)',()=>{const tr=$('.xtrack'),d=()=>tr.scrollWidth-innerWidth;
+ gsap.to(tr,{x:()=>-d(),ease:'none',scrollTrigger:{trigger:'.xwrap',start:'top top',end:()=>'+='+d(),pin:true,scrub:1,invalidateOnRefresh:true}})});
+
+/* stack rows drift with scroll, alternating direction */
+document.querySelectorAll('.mqt').forEach((t,i)=>{t.innerHTML=t.innerHTML.repeat(3);
+ gsap.fromTo(t,{xPercent:i%2?-30:0},{xPercent:i%2?0:-30,ease:'none',scrollTrigger:{trigger:t,start:'top bottom',end:'bottom top',scrub:1}})});
+
+/* projects: earlier cards recede as the next one lands */
+const cards=[...document.querySelectorAll('.pcard')];
+cards.slice(0,-1).forEach((c,i)=>gsap.to(c,{scale:.95,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top 85%',end:'top 15%',scrub:true}}));
+
+/* cursor */
+if(matchMedia('(pointer:fine)').matches){const c=$('#cur'),qx=gsap.quickTo(c,'x',{duration:.25}),qy=gsap.quickTo(c,'y',{duration:.25});
+ addEventListener('mousemove',e=>{qx(e.clientX);qy(e.clientY)});
+ document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>c.classList.add('big'));el.addEventListener('mouseleave',()=>c.classList.remove('big'))})}
+}
 </script>
-</body></html>
+<script>
+const CAL='',WA='';/* paste your Cal.com / Calendly link and WhatsApp link (https://wa.me/91XXXXXXXXXX) here */
+if(CAL){const a=$('#b-cal');a.href=CAL;a.hidden=false}if(WA){const a=$('#b-wa');a.href=WA;a.hidden=false}
+$('#nx').value=location.href.split('#')[0]+'#thanks';
+if(location.hash==='#thanks'){$('.contact-form').hidden=true;$('#thanks').hidden=false;setTimeout(()=>$('#contact').scrollIntoView(),100)}
+
+/* theme */
+const th=$('#th');function setT(x,save){H.dataset.theme=x;th.textContent=x==='dark'?'Light':'Dark';if(save)try{localStorage.setItem('th',x)}catch(e){}}
+function toggleT(){setT(H.dataset.theme==='dark'?'light':'dark',1)}setT(H.dataset.theme||'light');th.onclick=toggleT;
+
+/* project filters */
+document.querySelectorAll('.flt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.flt button').forEach(x=>x.setAttribute('aria-pressed',x===b));const f=b.dataset.f;document.querySelectorAll('.pcard').forEach(c=>c.hidden=!(f==='all'||c.dataset.cat.includes(f)));js&&ScrollTrigger.refresh()});
+
+/* case studies */
+const G='https://github.com/sumeetshah30/';
+const CS={
+finora:{t:'Finora',tag:'AI · Angular · ASP.NET Core 8',r:'Finora',p:'Tracking money from bank statements and spreadsheets is slow, and it is hard to see where it actually goes each month.',f:['Angular','ASP.NET Core 8 API','Application','Domain','Infrastructure (EF Core)','SQL Server','Anthropic Claude API'],d:['Clean architecture split into Api, Application, Domain and Infrastructure projects, so business rules do not depend on the database or the UI.','CSV statement import with duplicate-import protection, so re-uploading a statement does not double count.','AI summaries and the chat assistant run through the backend, so API keys never reach the browser and secrets stay out of source control.','Trade-off: AI answers depend on the configured integration and the data imported, so what is shared with the AI service needs review.','xUnit tests for backend logic and Swagger / OpenAPI for the API.'],o:['Dashboard for income, expenses and net cash flow, with month-on-month comparison and filters by account, statement and month.','Budgets, subscriptions and recurring payments in one place.','Spending intelligence that flags unusual, high-value and possibly duplicate transactions.','A natural-language assistant for questions about your own spending.']},
+taskflow:{t:'Smart Task and Workflow System',tag:'Backend · Clean architecture',r:'TaskFlow',p:'Teams need to assign and track work with clear permissions and a reliable history of what changed.',f:['Client','Web API (JWT + RBAC)','Application','Domain','Infrastructure (EF Core)','SQL Server / PostgreSQL'],d:['Strict Domain, Application, Infrastructure and API separation.','JWT authentication with role-based access on every endpoint.','Configurable workflow states with full audit logging.','EF Core with LINQ queries shaped for fast retrieval.'],o:['Create, assign, track and manage tasks.','Role-based access and a configurable task lifecycle.','A complete audit trail.']},
+inventory:{t:'Inventory and Warehouse Management',tag:'Full-stack · Angular · ASP.NET Core',r:'inventory-warehouse-management',p:'Businesses need accurate stock levels across more than one warehouse, with a trail of how stock moved.',f:['Angular','ASP.NET Core API (JWT)','Services','EF Core','SQL Server'],d:['Clean ASP.NET Core architecture behind a responsive Angular front end.','A multi-warehouse model with supplier management.','Stock movement logs so every change can be traced.','Low-stock alerts to act before items run out.'],o:['Real-time stock tracking.','Multi-warehouse support and supplier management.','Stock movement logs and low-stock alerts.']},
+invoice:{t:'Invoice and Billing System',tag:'Full-stack · ASP.NET Core · PostgreSQL',r:'invoice-billing-system',p:'Billing involves clients, invoices, taxes, payments and reminders, which are tedious to run by hand.',f:['Angular','Web API (JWT)','Services','EF Core + LINQ','PostgreSQL'],d:['A clean RESTful API layer over the billing domain.','Tax calculation handled in the backend.','Recurring billing cycles with automated payment reminders.','PDF export for invoices.'],o:['Client management and invoice generation.','Payment tracking and tax calculations.','Recurring billing, reminders and PDF export.']},
+pr:{t:'AI PR Reviewer Service',tag:'AI · .NET · Claude',r:'ai-pr-reviewer',p:'Pull request reviews can be slow and uneven. This service gives every PR a consistent first review.',f:['GitHub REST API','.NET Core service','Three cooperating agents','Anthropic Claude API'],d:['The review is split across three agents instead of one large prompt.','Claude handles the reasoning; the GitHub REST API supplies the pull request data.','Written as an agentic workflow in .NET so it fits a typical backend stack.'],o:['A working 3-agent workflow that reviews GitHub pull requests with Claude. See the README for details.']}};
+const li=a=>a.map(x=>`<li>${x}</li>`).join('');
+function openCase(id){const c=CS[id];$('#cs-in').innerHTML=`<span class="bf-tag">${c.tag}</span><h1 class="bf-title">${c.t}</h1><div class="bf-body"><h2>Problem</h2><p>${c.p}</p><h2>How a request flows</h2><div class="flow">${c.f.map(x=>`<span>${x}</span>`).join('<i>→</i>')}</div><h2>Decisions and trade-offs</h2><ul>${li(c.d)}</ul><h2>What it delivers</h2><ul>${li(c.o)}</ul><p><a class="lnk" href="${G+c.r}" target="_blank" rel="noopener">Read the code on GitHub ↗</a></p></div>`;openBlog('cs');$('#cs').scrollTop=0}
+
+
+</script>
+</body>
+</html>
