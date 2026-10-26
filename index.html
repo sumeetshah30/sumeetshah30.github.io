@@ -6,28 +6,28 @@
 <title>Sumeet Shah — Software Engineer</title>
 <meta name="description" content="Software Engineer specialising in ASP.NET Core, C# and Angular. Available for freelance and full-time work."/>
 <meta name="theme-color" content="#E9EDF0"/>
-<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('js');try{var th=localStorage.getItem('th');if(th)document.documentElement.dataset.theme=th}catch(e){}</script>
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--paper:#E9EDF0;--ink:#0E1A2B;--cobalt:#2740FF;--amber:#FF9F1C;--rule:#C3CCD5;--mut:#52607A;--card:#fff;--grid:rgba(14,26,43,.055);--px:clamp(1.25rem,7vw,6rem);--disp:'Bricolage Grotesque',sans-serif;--mono:'JetBrains Mono',monospace}
+:root{--paper:#E9EDF0;--ink:#0E1A2B;--cobalt:#2740FF;--amber:#FF9F1C;--rule:#C3CCD5;--mut:#52607A;--px:clamp(1.25rem,7vw,6rem);--disp:'Bricolage Grotesque',sans-serif;--mono:'JetBrains Mono',monospace}
 html{font-size:16px;-webkit-font-smoothing:antialiased}
 html.lenis,html.lenis body{height:auto}.lenis.lenis-stopped{overflow:hidden}
-body{background:var(--paper) linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/88px 100%;color:var(--ink);font:400 1.02rem/1.65 'Hanken Grotesk',sans-serif;overflow-x:hidden}
+body{background:var(--paper) linear-gradient(90deg,rgba(14,26,43,.055) 1px,transparent 1px) 0 0/88px 100%;color:var(--ink);font:400 1.02rem/1.65 'Hanken Grotesk',sans-serif;overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
 section{position:relative;padding:8rem var(--px)}
 h2{font:700 clamp(2.6rem,6.5vw,6rem)/.95 var(--disp);font-variation-settings:"wdth" 80;letter-spacing:-.025em;max-width:16ch}
-.dark{background:#0E1A2B;color:#E9EDF0}
+.dark{background:var(--ink);color:var(--paper)}
 .btn{display:inline-block;font:600 .95rem var(--disp);padding:.85rem 1.5rem;border-radius:99px;background:var(--cobalt);color:#fff;text-decoration:none;border:2px solid var(--cobalt);transition:background .2s,color .2s;cursor:pointer}
 .btn:hover{background:transparent;color:var(--cobalt)}
 .btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.dark .btn.ghost:hover{background:#E9EDF0;color:#0E1A2B}
+.dark .btn.ghost:hover{background:var(--paper);color:var(--ink)}
 
 /* loader, cursor, spine, hud */
 #curtain,#spine,#hud,#cur{display:none}
-.js #curtain{display:grid;place-items:center;position:fixed;inset:0;z-index:9000;background:#0E1A2B;color:#E9EDF0;font:400 .95rem var(--mono)}
+.js #curtain{display:grid;place-items:center;position:fixed;inset:0;z-index:9000;background:var(--ink);color:var(--paper);font:400 .95rem var(--mono)}
 .js #spine{display:block;position:fixed;left:20px;top:18vh;bottom:18vh;width:2px;background:var(--rule);z-index:50}
 #fill{position:absolute;inset:0;background:var(--cobalt);transform-origin:top;transform:scaleY(0)}
 #spine a{position:absolute;left:-4px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);transform:translateY(-50%)}
@@ -43,7 +43,7 @@ nav .lg{font-weight:700;font-size:1.05rem}
 
 /* hero */
 #hero{min-height:100vh;padding-top:7rem;display:flex;flex-direction:column;justify-content:flex-end;gap:2.5rem}
-#name{font:800 clamp(3.6rem,15vw,15rem)/.82 var(--disp);font-variation-settings:"wdth" 75;letter-spacing:-.035em;color:var(--ink)}
+#name{font:800 clamp(5.2rem,21vw,20rem)/.8 var(--disp);font-variation-settings:"wdth" 75;letter-spacing:-.035em;color:var(--ink)}
 #name .w{display:block}
 .hero-in{max-width:34rem;font-size:1.15rem}
 .js .hero-in{opacity:0}
@@ -52,6 +52,17 @@ nav .lg{font-weight:700;font-size:1.05rem}
 .photo{position:absolute;right:var(--px);top:7rem;width:clamp(110px,15vw,210px);aspect-ratio:4/5}
 .photo::before{content:'';position:absolute;inset:0;transform:translate(12px,12px);background:var(--cobalt)}
 .photo img{position:relative;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+
+/* lightweight interactive 3D hero object */
+#hero{isolation:isolate}
+.hero-object{position:absolute;right:2vw;top:8rem;width:clamp(360px,46vw,720px);aspect-ratio:1;z-index:0;pointer-events:none;opacity:.98}
+.hero-object canvas{width:100%;height:100%;display:block;overflow:visible}
+.hero-object-label{position:absolute;right:0;bottom:-.3rem;font:400 .68rem var(--mono);letter-spacing:.08em;color:var(--mut)}
+#name,.hero-in,.hero-kicker{position:relative;z-index:1}
+#hero .hero-intro{max-width:35rem}
+@media(min-width:900px){#hero .hero-intro{max-width:34rem}#name{max-width:100%;font-size:clamp(5rem,18vw,17rem)}}
+@media(max-width:899px){.hero-object{top:7rem;right:-4vw;width:clamp(260px,58vw,420px);opacity:.5}#hero{padding-top:9rem}#name{font-size:clamp(4.4rem,19vw,10rem)}}
+@media(prefers-reduced-motion:reduce){.hero-object{opacity:.5}}
 
 /* system */
 #system{border-top:1px solid var(--rule)}
@@ -69,7 +80,7 @@ nav .lg{font-weight:700;font-size:1.05rem}
 #about{display:grid;gap:4rem}
 #pull{font:600 clamp(1.8rem,4.2vw,3.8rem)/1.12 var(--disp);font-variation-settings:"wdth" 85;letter-spacing:-.02em;max-width:24ch}
 .about-cols{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem}
-.about-cols p{max-width:38rem;margin-bottom:1.2rem;color:var(--ink);opacity:.85}
+.about-cols p{max-width:38rem;margin-bottom:1.2rem;color:#2a3850}
 dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.4rem;font-size:.95rem}dt{color:var(--mut)}dd{font-weight:500}
 .certs{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--rule);display:grid;gap:.6rem;font-size:.95rem}.certs span{color:var(--mut)}
 @media(max-width:899px){.about-cols{grid-template-columns:1fr;gap:2rem}}
@@ -98,9 +109,9 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.4rem;font-size:.95rem
 
 /* projects */
 #projects h2{margin-bottom:4rem}
-.pcard{position:sticky;top:calc(5.5rem + var(--i)*22px);background:var(--card);border:2px solid var(--ink);padding:2.2rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;transform-origin:top center}
+.pcard{position:sticky;top:calc(5.5rem + var(--i)*22px);background:#fff;border:2px solid var(--ink);padding:2.2rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;transform-origin:top center}
 .pcard h3{font:800 clamp(2rem,4vw,3.4rem)/.95 var(--disp);font-variation-settings:"wdth" 78;letter-spacing:-.02em}
-.pcard p{color:var(--ink);opacity:.85;margin-bottom:1rem}
+.pcard p{color:#2a3850;margin-bottom:1rem}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.2rem 0}.tags span{font-size:.8rem;font-weight:500;padding:.2rem .7rem;border:1px solid var(--ink);border-radius:99px}
 .pcard ul{list-style:none;display:grid;gap:.5rem;font-size:.95rem;margin-bottom:1rem}
 .lnk{font:700 1rem var(--disp);color:var(--cobalt)}
@@ -109,7 +120,7 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.4rem;font-size:.95rem
 /* writing */
 .post{display:grid;grid-template-columns:8rem 1fr auto;gap:2rem;align-items:baseline;padding:2rem 0;border-top:2px solid var(--ink);text-decoration:none;cursor:pointer;transition:padding .25s,background .25s}
 .post:last-child{border-bottom:2px solid var(--ink)}
-.post:hover{background:var(--card);padding-left:1.2rem;padding-right:1.2rem}
+.post:hover{background:#fff;padding-left:1.2rem;padding-right:1.2rem}
 .post time{font:400 .8rem var(--mono);color:var(--mut)}
 .post h3{font:700 clamp(1.4rem,2.6vw,2.2rem)/1.08 var(--disp);font-variation-settings:"wdth" 85}.post p{color:var(--mut);margin-top:.5rem;max-width:44rem;font-size:.95rem}
 #writing .list{margin-top:3.5rem}
@@ -124,9 +135,12 @@ form{display:grid;gap:1.1rem}.two{display:grid;grid-template-columns:1fr 1fr;gap
 label{display:grid;gap:.3rem;font:500 .85rem var(--disp)}
 input,textarea{background:transparent;border:0;border-bottom:2px solid rgba(233,237,240,.5);color:inherit;font:inherit;padding:.5rem 0;outline:none;resize:none;border-radius:0}
 input:focus,textarea:focus{border-color:var(--amber)}
+.form-note{font-size:.82rem;color:rgba(233,237,240,.65);max-width:34rem}
 .dark .btn{border-color:var(--amber);background:var(--amber);color:var(--ink)}.dark .btn:hover{background:transparent;color:var(--amber)}
 @media(max-width:899px){.ct,.two{grid-template-columns:1fr}}
 footer{background:var(--ink);color:rgba(233,237,240,.6);padding:2rem var(--px) 4.5rem;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(233,237,240,.15)}
+
+
 
 /* blog overlay */
 .blog-full{display:none;position:fixed;inset:0;z-index:1000;background:var(--paper);overflow-y:auto}.blog-full.open{display:block}
@@ -135,25 +149,14 @@ footer{background:var(--ink);color:rgba(233,237,240,.6);padding:2rem var(--px) 4
 .bf-tag{font:600 .8rem var(--disp);color:var(--cobalt)}
 .bf-title{font:800 clamp(2.2rem,6vw,3.8rem)/1 var(--disp);font-variation-settings:"wdth" 82;letter-spacing:-.025em;margin:.6rem 0 1rem}
 .bf-meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font:400 .78rem var(--mono);color:var(--mut)}
-.bf-img-placeholder{margin:2rem 0;padding:3rem 1rem;background:#0E1A2B;color:var(--amber);font:800 2.4rem var(--disp);text-align:center}
+.bf-img-placeholder{margin:2rem 0;padding:3rem 1rem;background:var(--ink);color:var(--amber);font:800 2.4rem var(--disp);text-align:center}
 .bf-body h2{font:700 1.8rem/1.1 var(--disp);margin:2.6rem 0 .8rem;max-width:none}.bf-body h3{font:700 1.3rem var(--disp);margin:1.8rem 0 .5rem}
-.bf-body p,.bf-body li{margin-bottom:1rem;color:var(--ink)}.bf-body ul,.bf-body ol{padding-left:1.4rem}
-.bf-body code{font:400 .85em var(--mono);background:var(--rule);padding:.1em .35em}.bf-body pre{background:#0E1A2B;color:#E9EDF0;padding:1.2rem;overflow-x:auto;margin:1.4rem 0}.bf-body pre code{background:none;padding:0}
+.bf-body p,.bf-body li{margin-bottom:1rem;color:#1d2a40}.bf-body ul,.bf-body ol{padding-left:1.4rem}
+.bf-body code{font:400 .85em var(--mono);background:#d7dee6;padding:.1em .35em}.bf-body pre{background:var(--ink);color:var(--paper);padding:1.2rem;overflow-x:auto;margin:1.4rem 0}.bf-body pre code{background:none;padding:0}
 .bf-body blockquote{border-left:4px solid var(--cobalt);padding-left:1.2rem;font-size:1.15rem;margin:1.6rem 0}.bf-divider{height:2px;background:var(--rule);margin:2.4rem 0}
-[hidden]{display:none!important}
-[data-theme=dark]{--paper:#0B1220;--ink:#E9EDF0;--rule:#26324a;--mut:#9AA8C2;--cobalt:#6B7FFF;--card:#121c30;--grid:rgba(233,237,240,.05)}
-[data-theme=dark] .btn,[data-theme=dark] .xp.hot{color:#0B1220}[data-theme=dark] .btn:hover{color:var(--cobalt)}
-#name .tag{font:600 clamp(1.1rem,2.6vw,2.2rem)/1.2 var(--disp);font-variation-settings:"wdth" 100;letter-spacing:.02em;margin-bottom:1.4rem}
-nav div{align-items:center}nav button{background:none;border:1px solid currentColor;color:inherit;font:500 .8rem var(--disp);padding:.25rem .7rem;border-radius:99px;cursor:pointer}
-#projects h2{margin-bottom:2rem}
-.flt{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:3rem}.flt button{font:600 .9rem var(--disp);padding:.5rem 1.1rem;border:2px solid var(--ink);background:none;color:var(--ink);border-radius:99px;cursor:pointer}.flt button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
-button.lnk{background:none;border:0;cursor:pointer;margin-right:1.4rem}
-.flow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0 2rem}.flow span{border:2px solid var(--ink);padding:.5rem .8rem;font:600 .9rem var(--disp)}.flow i{font-style:normal;color:var(--cobalt)}
-#now{display:grid;grid-template-columns:1fr 1fr;gap:4rem}#now h3{font:700 1.6rem var(--disp);margin-bottom:1rem}#now ul{list-style:none;display:grid;gap:.7rem}#now li{border-top:1px solid var(--rule);padding-top:.7rem}#now li span{color:var(--mut);display:block;font-size:.92rem}
-@media(max-width:899px){#now{grid-template-columns:1fr;gap:2rem}}
-.avail{display:flex;gap:.6rem;align-items:center;font:600 1.1rem var(--disp);margin-bottom:1.4rem}.avail::before{content:'';width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.25)}
-.dark dt{color:rgba(233,237,240,.6)}.hire{margin-bottom:1.6rem}.btns{margin:0 0 1.6rem}
-#thanks h3{font:800 2.4rem var(--disp);margin-bottom:.6rem}
+
+/* Easter egg interactions */
+.egg-toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;z-index:300;background:var(--ink);color:var(--paper);border:1px solid var(--cobalt);padding:16px 20px;max-width:min(92vw,560px);font:13px/1.55 var(--mono);box-shadow:8px 8px 0 var(--amber);transition:opacity .22s,transform .22s}.egg-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.egg-toast strong{color:var(--amber)}.egg-terminal{position:fixed;inset:auto 20px 20px auto;width:min(520px,calc(100vw - 28px));z-index:310;background:var(--ink);color:var(--paper);border:1px solid var(--cobalt);padding:18px;box-shadow:8px 8px 0 var(--amber);display:none;font:13px/1.55 var(--mono)}.egg-terminal.open{display:block}.egg-terminal-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px;color:var(--amber)}.egg-terminal output{display:block;min-height:48px;white-space:pre-wrap;margin:8px 0}.egg-terminal form{display:flex;gap:8px}.egg-terminal input{flex:1;min-width:0;background:transparent;color:var(--paper);border:1px solid var(--muted);padding:10px;font:inherit}.egg-terminal button{background:var(--cobalt);color:white;border:0;padding:10px 12px;cursor:pointer;font:inherit}.hero-object canvas{pointer-events:auto;cursor:pointer}
 </style>
 </head>
 <body>
@@ -162,16 +165,17 @@ button.lnk{background:none;border:0;cursor:pointer;margin-right:1.4rem}
 <div id="spine"><div id="fill"></div><div id="pkt"></div></div>
 <div id="hud" aria-hidden="true">GET /hello</div>
 
-<nav><a class="lg" href="#hero">Sumeet Shah</a><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Dark</button></div></nav>
+<nav><a class="lg" href="#hero">Sumeet Shah</a><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
 
 <main>
 <section id="hero" data-s="/hello">
-  <h1 id="name" aria-label="Software Engineer, India. Build. Think. Ship."><span class="w tag">SOFTWARE ENGINEER / INDIA</span><span class="w">BUILD.</span><span class="w">THINK.</span><span class="w">SHIP.</span></h1>
-  <div class="hero-in">
-    <span class="live">Open to freelance and full-time work</span>
-    <p>I'm Sumeet Shah. I build the APIs, authentication and data layers behind enterprise insurance platforms, plus the Angular screens on top. Two years in production for the US and Canada, with API response times cut by about 30%.</p>
-    <div class="cta"><a class="btn" href="#contact">Hire me</a><a class="btn ghost" href="SumeetShah-Resume.pdf">Download résumé</a></div>
-  </div>
+  <div class="hero-object" aria-hidden="true"><canvas id="hero-torus" width="900" height="900"></canvas><span class="hero-object-label">TORUS / 001</span></div>
+  <div class="hero-kicker hero-in">SOFTWARE ENGINEER / INDIA</div>
+  <h1 id="name" aria-label="Think. Build. Ship."><span class="w">THINK.</span><span class="w">BUILD.</span><span class="w">SHIP.</span></h1>
+  <div class="hero-in hero-intro"><p>I'm <strong>Sumeet Shah</strong> — a software engineer working across <strong>C#, .NET, Angular and APIs</strong>. I build maintainable systems, connect the layers, and care about what happens after deployment.</p>
+  <div class="cta"><a class="btn" href="#projects">Explore projects ↘</a><a class="btn ghost" href="https://github.com/sumeetshah30" target="_blank" rel="noopener">GitHub ↗</a><a class="btn ghost" href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="hero-tags">C# / .NET　 ✳　 ANGULAR　 ✳　 SQL + EF CORE　 ✳　 AI TOOLING</div>
+  <div class="profile-terminal"><div class="term-title">profile.config <span>● LOCAL</span></div><p><b>$ whoami</b><br>Sumeet Shah / Software Engineer</p><p><b>$ cat focus.json</b><br><code>{<br>&nbsp; "backend": "ASP.NET Core / C#",<br>&nbsp; "frontend": "Angular / TypeScript",<br>&nbsp; "data": "SQL Server / EF Core / LINQ",<br>&nbsp; "approach": "Clean Architecture"<br>}</code></p><p><b>$ system.status</b><br>● Open to opportunities</p><small>Build deliberately. Ship responsibly.　 PROFILE / 001　 UTF-8 · READY</small></div></div>
 </section>
 
 <section id="system" data-s="/system">
@@ -224,30 +228,24 @@ button.lnk{background:none;border:0;cursor:pointer;margin-right:1.4rem}
   <div class="row"><span>Security and tools</span><div class="mq"><div class="mqt"><i>Okta</i> OIDC RBAC <i>JWT</i> Splunk Postman GitHub Copilot Jira</div></div></div>
 </section>
 
-<section id="projects" data-s="/projects">
-  <h2>Freelance and personal projects.</h2>
-  <div class="flt" role="group" aria-label="Filter projects"><button data-f="all" aria-pressed="true">All</button><button data-f="backend" aria-pressed="false">Backend</button><button data-f="fullstack" aria-pressed="false">Full-stack</button><button data-f="ai" aria-pressed="false">AI</button></div>
-  <article class="pcard" data-cat="ai fullstack" style="--i:0"><div><h3>Finora: AI personal finance platform</h3></div><div>
-    <p>Import bank statements, track income, expenses and budgets, spot unusual or duplicate transactions, and ask an AI assistant about your spending in plain language.</p><div class="tags"><span>Angular</span><span>ASP.NET Core 8</span><span>C#</span><span>EF Core</span><span>SQL Server</span><span>Anthropic Claude API</span><span>xUnit</span><span>Swagger</span></div>
-    <button class="lnk" onclick="openCase('finora')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/Finora" target="_blank" rel="noopener">GitHub ↗</a></div></article>
-<article class="pcard" data-cat="backend" style="--i:1"><div><h3>Smart Task and Workflow System</h3></div><div>
-    <p>A task management platform for teams: create, assign, track and manage tasks with role-based access, configurable workflow states and complete audit logging.</p>
-    <ul><li><b>JWT authentication</b> with RBAC on every API endpoint.</li><li><b>Clean architecture</b> with strict Domain, Application, Infrastructure and API layers.</li><li><b>Workflow states</b> with a configurable lifecycle and audit log.</li><li><b>EF Core and LINQ</b> for fast data retrieval.</li></ul>
-    <div class="tags"><span>ASP.NET Core Web API</span><span>EF Core</span><span>SQL Server / PostgreSQL</span><span>JWT</span></div>
-    <button class="lnk" onclick="openCase('taskflow')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/TaskFlow" target="_blank" rel="noopener">GitHub ↗</a></div></article>  <article class="pcard" data-cat="fullstack" style="--i:2"><div><h3>Inventory and Warehouse Management</h3></div><div>
-    <p>A full-stack inventory and warehouse management system — real-time stock tracking, multi-warehouse support, supplier management, stock movement logs, and low-stock alerts. Built with clean ASP.NET Core architecture and a responsive Angular front-end.</p><div class="tags"><span>ASP.NET Core</span><span>C#</span><span>Angular</span><span>EF Core</span><span>SQL Server</span><span>JWT</span><span>Clean Architecture</span></div>
-    <button class="lnk" onclick="openCase('inventory')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/inventory-warehouse-management" target="_blank" rel="noopener">GitHub ↗</a></div></article>
-  <article class="pcard" data-cat="fullstack" style="--i:3"><div><h3>Invoice and Billing System</h3></div><div>
-    <p>A complete invoice and billing management system — client management, invoice generation, payment tracking, tax calculations, and PDF export. Supports recurring billing cycles and automated payment reminders with a clean RESTful API layer.</p><div class="tags"><span>ASP.NET Core Web API</span><span>C#</span><span>EF Core</span><span>PostgreSQL</span><span>Angular</span><span>JWT</span><span>LINQ</span></div>
-    <button class="lnk" onclick="openCase('invoice')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/invoice-billing-system" target="_blank" rel="noopener">GitHub ↗</a></div></article>
-  <article class="pcard" data-cat="ai backend" style="--i:4"><div><h3>AI PR Reviewer Service</h3></div><div>
-    <p>A three-agent AI system that reviews GitHub pull requests using Claude.</p><div class="tags"><span>.NET Core</span><span>C#</span><span>Anthropic Claude API</span><span>GitHub REST API</span><span>Agentic workflow design</span></div>
-    <button class="lnk" onclick="openCase('pr')">Case study</button><a class="lnk" href="https://github.com/sumeetshah30/ai-pr-reviewer" target="_blank" rel="noopener">GitHub ↗</a></div></article>
-</section>
+<section id="projects" data-s="/projects"><div class="section-top"><span>05 / SELECTED WORK</span><span>PERSONAL & FREELANCE WORK</span></div><h2>Where I've built <em>things.</em></h2><p class="sub">Five projects exploring full-stack workflows, maintainable backend design, and AI-assisted development. Open a project for its case study.</p>
+<div class="project-list">
+<article class="project-card featured" tabindex="0" role="button" data-case="finora"><div class="project-meta">PROJECT / 01 — PERSONAL FINANCE · FEATURED</div><h3>Finora — Personal Finance Tracker</h3><p>Import transactions, organize spending, and make monthly activity easier to understand.</p><div class="case-gallery"></div><div class="tags"><span>Angular</span><span>ASP.NET Core 8</span><span>Clean Architecture</span><span>EF Core</span><span>SQL Server</span></div><button class="btn case-open" data-case="finora">Explore case study ↗</button> <a class="btn ghost" href="https://github.com/sumeetshah30/Finora" target="_blank" rel="noopener">GitHub ↗</a></article>
+<article class="project-card" tabindex="0" role="button" data-case="taskflow"><div class="project-meta">PROJECT / 02</div><h3>TaskFlow — Smart Task & Workflow System</h3><p>Task management exploring assignment, role-based access, workflow states and audit history.</p><div class="tags"><span>ASP.NET Core 8</span><span>Angular</span><span>EF Core</span><span>SQL Server</span><span>JWT / RBAC</span></div><button class="btn case-open" data-case="taskflow">Explore case study ↗</button> <a class="btn ghost" href="https://github.com/sumeetshah30/TaskFlow" target="_blank" rel="noopener">GitHub ↗</a></article>
+<article class="project-card" tabindex="0" role="button" data-case="inventory"><div class="project-meta">PROJECT / 03</div><h3>Inventory & Warehouse Management</h3><p>A full-stack project centered on stock tracking and warehouse workflows.</p><div class="tags"><span>ASP.NET Core</span><span>C#</span><span>Angular</span><span>EF Core</span><span>SQL Server</span></div><button class="btn case-open" data-case="inventory">Explore case study ↗</button> <a class="btn ghost" href="https://github.com/sumeetshah30/inventory-warehouse-management-" target="_blank" rel="noopener">GitHub ↗</a></article>
+<article class="project-card" tabindex="0" role="button" data-case="ai"><div class="project-meta">PROJECT / 04</div><h3>AI PR Reviewer</h3><p>An AI-assisted pull-request review project using Claude API and multi-agent review concepts.</p><div class="tags"><span>C# / .NET</span><span>Claude API</span><span>GitHub REST API</span><span>Agentic workflows</span></div><button class="btn case-open" data-case="ai">Explore case study ↗</button> <a class="btn ghost" href="https://github.com/sumeetshah30/ai-pr-reviewer" target="_blank" rel="noopener">GitHub ↗</a></article>
+<article class="project-card" tabindex="0" role="button" data-case="invoice"><div class="project-meta">PROJECT / 05</div><h3>InvoicePro — Billing System</h3><p>An invoice and billing application exploring structured business workflows.</p><div class="tags"><span>ASP.NET Core</span><span>Angular</span><span>SQL</span><span>EF Core</span></div><button class="btn case-open" data-case="invoice">Explore case study ↗</button> <a class="btn ghost" href="https://github.com/sumeetshah30/invoice-billing-system" target="_blank" rel="noopener">GitHub ↗</a></article>
+</div><p class="arch-note">PROJECT FEATURES MAY EVOLVE AS DEVELOPMENT CONTINUES. DETAILS DISTINGUISH CURRENT SCOPE FROM POSSIBLE IMPROVEMENTS.</p></section>
 
-<section id="now" data-s="/now">
-  <div><h3>What I'm learning</h3><ul><li>Agentic AI patterns<span>Stanford HAI course, and the source of my two articles below.</span></li><li>Semantic Kernel and Claude API<span>Building agent workflows in .NET, like the AI PR Reviewer.</span></li><li>Azure<span>AZ-900 done; moving into App Service and DevOps pipelines.</span></li></ul></div>
-  <div><h3>What I use every day</h3><ul><li>Build<span>ASP.NET Core, C#, Angular, EF Core, Docker</span></li><li>Data<span>SQL Server, PostgreSQL</span></li><li>Ship and watch<span>Azure DevOps, Jenkins, Splunk, Postman, GitHub Copilot, Jira</span></li></ul></div>
+<section id="debug-lab" data-s="/debug-lab">
+  <div class="section-top"><span>06 / INTERACTIVE LAB</span><span>PRACTICE · DEBUG · LEARN</span></div>
+  <article class="project-card debug-lab-card">
+    <div class="project-meta">HANDS-ON CHALLENGE / C# · LINQ · API · SQL</div>
+    <h3>Debug Lab</h3>
+    <p>Find bugs in practical code snippets, choose the right fix, and learn from a short explanation. Start with easy questions and work your way up.</p>
+    <div class="tags"><span>C#</span><span>LINQ</span><span>ASP.NET Core</span><span>SQL</span></div>
+    <button class="btn" type="button" id="enterDebugLab">Enter Debug Lab ↗</button>
+  </article>
 </section>
 
 <section id="writing" data-s="/writing">
@@ -259,24 +257,20 @@ button.lnk{background:none;border:0;cursor:pointer;margin-right:1.4rem}
 </section>
 
 <section id="contact" class="dark" data-s="/contact">
-  <h2>Send me a request.</h2>
+  <h2>Have a problem worth solving?</h2>
   <div class="ct">
     <div>
-      <p class="avail">Available now for freelance and full-time</p>
-      <dl class="hire"><dt>Time zone</dt><dd>India (IST, UTC+5:30), with flexible overlap for Europe and US hours</dd><dt>Typical work</dt><dd>Backend APIs, Angular full-stack builds, authentication, database performance, AI features in .NET</dd><dt>Reply</dt><dd>Within 24 hours</dd></dl>
-      <div class="links btns"><a id="b-cal" class="btn" hidden target="_blank" rel="noopener">Book a call</a><a id="b-wa" class="btn ghost" hidden target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener">Message on LinkedIn</a></div>
+      <p style="max-width:28rem;margin-bottom:1.4rem;color:rgba(233,237,240,.75)">Let’s talk about software engineering opportunities, a product you’re building, or a problem that needs a thoughtful technical solution.</p>
       <a class="mail" href="mailto:sumeetshah7007@gmail.com">sumeetshah7007@gmail.com</a>
-      <div class="links"><a href="https://github.com/sumeetshah30" target="_blank" rel="noopener">GitHub</a><a href="SumeetShah-Resume.pdf">Résumé (PDF)</a></div>
+      <div class="links"><a href="https://www.linkedin.com/in/sumeet-shah30" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/sumeetshah30" target="_blank" rel="noopener">GitHub</a><a href="SumeetShah-Resume.pdf">Résumé (PDF)</a></div>
     </div>
-    <div>
-    <div id="thanks" hidden><h3>Message sent.</h3><p>Thanks for reaching out. I'll reply within 24 hours at the email you gave.</p></div>
     <form class="contact-form" action="https://formsubmit.co/sumeetshah7007@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New enquiry from portfolio — Sumeet Shah"/><input type="hidden" name="_captcha" value="false"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_next" id="nx"/>
+      <input type="hidden" name="_subject" value="New enquiry from portfolio — Sumeet Shah"/><input type="hidden" name="_captcha" value="false"/><input type="hidden" name="_template" value="table"/>
       <div class="two"><label>First name<input name="first_name" required/></label><label>Last name<input name="last_name" required/></label></div>
       <div class="two"><label>Email<input type="email" name="email" required/></label><label>Phone (optional)<input type="tel" name="phone_number"/></label></div>
       <label>Project details<textarea name="message" rows="4" required placeholder="What are you building, and by when?"></textarea></label>
-      <button class="btn" id="cf-btn" type="submit">Send message</button>
-    </form></div>
+      <button class="btn" id="cf-btn" type="submit">Send message ↗</button><p class="form-note" id="form-note" aria-live="polite">Your message will be sent to Sumeet by email. Phone is optional.</p>
+    </form>
   </div>
 </section>
 </main>
@@ -445,8 +439,57 @@ var result = await kernel.InvokePromptAsync(
     </div>
   </div>
 </div>
-<div class="blog-full" id="cs"><button class="blog-full-close" onclick="closeBlog('cs')">← Back to portfolio</button><div class="blog-full-inner" id="cs-in"></div></div>
 
+<div class="egg-toast" id="egg-toast" role="status" aria-live="polite"></div>
+<div class="egg-terminal" id="egg-terminal" role="dialog" aria-label="Hidden portfolio terminal" aria-modal="false">
+  <div class="egg-terminal-head"><span>SECRET SHELL / EASTER EGG</span><button type="button" id="egg-terminal-close" aria-label="Close terminal">×</button></div>
+  <div>Type <strong>help</strong> to see available commands.</div>
+  <output id="egg-output">READY.</output>
+  <form id="egg-form"><label for="egg-command">$</label><input id="egg-command" autocomplete="off" spellcheck="false" placeholder="sudo hire sumeet" aria-label="Terminal command"><button type="submit">RUN</button></form>
+</div>
+<script>
+// Lightweight interactive 3D wireframe torus rendered directly on canvas.
+(()=>{
+ const init=()=>{
+  const canvas=document.querySelector('#hero-torus'); if(!canvas || !canvas.getContext) return;
+  const ctx=canvas.getContext('2d'); if(!ctx) return;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let mx=0,my=0,tx=0,ty=0,rot=0,raf=0;
+  const hero=document.querySelector('#hero');
+  hero.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();tx=((e.clientX-(r.left+r.width/2))/Math.max(r.width,1))*.65;ty=((e.clientY-(r.top+r.height/2))/Math.max(r.height,1))*.65;},{passive:true});
+  hero.addEventListener('pointerleave',()=>{tx=0;ty=0;},{passive:true});
+  let torusClicks=0;canvas.addEventListener('click',()=>{torusClicks++;if(torusClicks>=5){torusClicks=0;window.dispatchEvent(new CustomEvent('portfolio-egg',{detail:{message:'TORUS OVERRIDE // THINK. BUILD. SHIP.',sub:'Geometry is just another way to solve a problem.'}}));}});
+  function draw(){
+   const rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2),w=Math.max(1,Math.round(rect.width*dpr)),h=Math.max(1,Math.round(rect.height*dpr));
+   if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
+   ctx.clearRect(0,0,w,h); if(!reduced)rot+=.0045; mx+=(tx-mx)*.045;my+=(ty-my)*.045;
+   const R=.78,r=.34,nu=64,nv=22,ax=.38+my,ay=rot+mx,az=-.22;
+   const ca=Math.cos(ax),sa=Math.sin(ax),cb=Math.cos(ay),sb=Math.sin(ay),cc=Math.cos(az),sc=Math.sin(az);
+   const scale=Math.min(w,h)*.39;
+   const project=(u,v)=>{
+    const x=(R+r*Math.cos(v))*Math.cos(u),y=(R+r*Math.cos(v))*Math.sin(u),z=r*Math.sin(v);
+    const y1=y*ca-z*sa,z1=y*sa+z*ca,x2=x*cb+z1*sb,z2=-x*sb+z1*cb,x3=x2*cc-y1*sc,y3=x2*sc+y1*cc;
+    const perspective=3.2/(3.2-z2*.28);return [w/2+x3*scale*perspective,h/2+y3*scale*perspective,z2];
+   };
+   ctx.lineWidth=Math.max(1,dpr*1.15);
+   for(let i=0;i<nu;i++){
+    const u=i/nu*Math.PI*2;ctx.beginPath();
+    for(let j=0;j<=nv*2;j++){const p=project(u,j/(nv*2)*Math.PI*2);if(j===0)ctx.moveTo(p[0],p[1]);else ctx.lineTo(p[0],p[1]);}
+    ctx.strokeStyle=i%8===0?'#FF9F1C':'#2740FF';ctx.globalAlpha=i%8===0?.72:.32;ctx.stroke();
+   }
+   for(let j=0;j<nv;j++){
+    const v=j/nv*Math.PI*2;ctx.beginPath();
+    for(let i=0;i<=nu*2;i++){const p=project(i/(nu*2)*Math.PI*2,v);if(i===0)ctx.moveTo(p[0],p[1]);else ctx.lineTo(p[0],p[1]);}
+    ctx.strokeStyle=j%4===0?'#FF9F1C':'#2740FF';ctx.globalAlpha=j%4===0?.58:.25;ctx.stroke();
+   }
+   ctx.globalAlpha=1;
+   if(!reduced)raf=requestAnimationFrame(draw);
+  }
+  draw();
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
@@ -463,6 +506,35 @@ function openBlog(id){$('#'+id).classList.add('open');lenis&&lenis.stop();docume
 function closeBlog(id){$('#'+id).classList.remove('open');lenis&&lenis.start();document.body.style.overflow=''}
 addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.blog-full.open').forEach(b=>closeBlog(b.id))});
 $('.contact-form').addEventListener('submit',()=>{const b=$('#cf-btn');b.textContent='Sending…';b.disabled=true});
+
+/* Easter eggs: optional discoveries that never block normal navigation. */
+(()=>{
+ const toast=$('#egg-toast'),terminal=$('#egg-terminal'),output=$('#egg-output'),input=$('#egg-command');let toastTimer,logoClicks=0,torusMode=0,apiFailMode=false;
+ function say(message,sub=''){toast.innerHTML='<strong>'+message.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</strong>'+(sub?'<br>'+sub.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])):'');toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),4800)}
+ function openTerminal(){terminal.classList.add('open');setTimeout(()=>input.focus(),30)}
+ function closeTerminal(){terminal.classList.remove('open')}
+ document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='j'){e.preventDefault();openTerminal()}
+  if(e.key==='Escape'){closeTerminal();toast.classList.remove('show')}
+ });
+ $('#egg-terminal-close').addEventListener('click',closeTerminal);
+ $('#egg-form').addEventListener('submit',e=>{e.preventDefault();const cmd=input.value.trim().toLowerCase();let msg='Unknown command. Type help.';
+  if(cmd==='help')msg='help · whoami · projects · stack · contact · sudo hire sumeet · 42';
+  else if(cmd==='whoami')msg='Sumeet Shah — Software Engineer | C# · .NET · Angular · APIs';
+  else if(cmd==='projects')msg='Finora · TaskFlow · Inventory Management · AI PR Reviewer · InvoicePro';
+  else if(cmd==='stack')msg='C# / ASP.NET Core / Angular / EF Core / LINQ / SQL Server';
+  else if(cmd==='contact'){msg='Opening contact section…';closeTerminal();$('#contact').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
+  else if(cmd==='resume')msg='Resume shortcut: use the Resume link on the page when configured.';
+  else if(cmd==='42')msg='THE ANSWER TO LIFE, THE UNIVERSE, AND EVERYTHING. You found the reference.';
+  else if(cmd==='sudo hire sumeet'){msg='ACCESS GRANTED: HIRE SUMEET.\nNext step: send a message or connect on LinkedIn.';say('ACCESS GRANTED: HIRE SUMEET','A good next step starts with a conversation.');}
+  output.textContent=msg;input.value='';
+ });
+ const logo=document.querySelector('nav .lg');if(logo)logo.addEventListener('click',e=>{logoClicks++;if(logoClicks===7){e.preventDefault();logoClicks=0;say('GOOD SOFTWARE IS BUILT WITH INTENTION.','Secret motto unlocked.');}});
+ window.addEventListener('portfolio-egg',e=>say(e.detail.message,e.detail.sub));
+ let sequence=[];const code=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];document.addEventListener('keydown',e=>{sequence.push(e.key.length===1?e.key.toLowerCase():e.key);sequence=sequence.slice(-code.length);if(sequence.join('|')===code.join('|')){sequence=[];document.body.classList.add('retro-egg');say('PLAYER ONE READY','Konami code discovered. You have excellent keyboard skills.');setTimeout(()=>document.body.classList.remove('retro-egg'),5000);}});
+ // Clearly labelled simulation: this does not send a real API request.
+ const apiNode=document.querySelector('#system .node');if(apiNode){let count=0;apiNode.addEventListener('click',()=>{count++;if(count===5){count=0;say('SIMULATED 500 ERROR','No real request was made. Recovery: retry → 200 OK.');const info=$('#sys-info');if(info){info.querySelector('h3').textContent='Simulated failure → recovered';info.querySelector('p').textContent='This is a portfolio demo only: a service returns 500, then a retry succeeds with 200 OK. No backend request is sent.';}}});}
+})();
 
 /* system diagram (works without JS animation) */
 const nodes=[...document.querySelectorAll('.node')],info=$('#sys-info');
@@ -486,7 +558,7 @@ gsap.timeline()
  .add(()=>lenis&&lenis.start());
 
 /* scroll spine: packet travels, hud reports the route */
-const S=[...document.querySelectorAll('[data-s]')],N=S.length,spine=$('#spine'),ms=[8,14,21,19,33,27,16,18,12];
+const S=[...document.querySelectorAll('[data-s]')],N=S.length,spine=$('#spine'),ms=[8,14,21,19,33,27,16,12];
 const vert=matchMedia('(min-width:900px)');
 S.forEach((s,i)=>{const d=document.createElement('a');d.href='#'+s.id;d.title=s.dataset.s;d.style.top=i/(N-1)*100+'%';spine.append(d);
  ScrollTrigger.create({trigger:s,start:'top center',end:'bottom center',
@@ -521,31 +593,108 @@ if(matchMedia('(pointer:fine)').matches){const c=$('#cur'),qx=gsap.quickTo(c,'x'
  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>c.classList.add('big'));el.addEventListener('mouseleave',()=>c.classList.remove('big'))})}
 }
 </script>
+
+<button id="themeToggle" aria-label="Switch to dark mode" class="theme-toggle">◐ <span> DARK MODE</span></button>
+<div id="caseOverlay" class="case-overlay" aria-hidden="true"><div class="case-dialog" role="dialog" aria-modal="true" aria-labelledby="caseTitle"><button id="caseClose" class="case-close" aria-label="Close case study">×</button><div class="case-eyebrow" id="caseEyebrow">CASE STUDY / 01</div><h2 id="caseTitle">Project</h2><p id="caseSummary"></p><div class="case-columns"><div><h3>Problem & intent</h3><p id="caseProblem"></p><h3>Engineering approach</h3><p id="caseApproach"></p></div><div><h3>Technical focus</h3><ul id="caseTech"></ul><h3>What I'd evaluate next</h3><p id="caseNext"></p></div></div><div id="caseGalleryModal"></div><a id="caseRepo" class="btn" href="#" target="_blank" rel="noopener">Open repository ↗</a></div></div>
+<style>
+:root{--paper:#E9EDF0;--ink:#0E1A2B;--cobalt:#2740FF;--amber:#FF9F1C;--rule:#C3CCD5;--muted:#52607A;--panel:#F5F7F8}body{background:var(--paper);color:var(--ink)}body::before{background-image:linear-gradient(to right,rgba(14,26,43,.045) 1px,transparent 1px)}.hero-kicker{font-size:clamp(12px,1.3vw,18px);letter-spacing:.15em;font-weight:700;margin-bottom:2vh}.hero-intro{max-width:850px}.hero-intro>p{font-size:clamp(18px,2.1vw,28px);line-height:1.5}.hero-tags{margin:28px 0;font-size:12px;letter-spacing:.1em;color:var(--muted)}.profile-terminal{max-width:520px;border:1px solid var(--rule);padding:20px;margin:28px 0;background:var(--panel);font:13px/1.65 ui-monospace,monospace}.term-title{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:12px}.term-title span{color:var(--cobalt)}.profile-terminal p{margin:12px 0}.profile-terminal b{color:var(--cobalt)}.profile-terminal small{color:var(--muted)}#name{font-size:clamp(4rem,15.5vw,18rem)!important;line-height:.78!important;letter-spacing:-.085em!important;display:flex;flex-direction:column;align-items:flex-start;gap:.04em;max-width:100%;overflow-wrap:anywhere}#name .w{display:block!important}.section-top{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:10px 0;font-size:11px;letter-spacing:.12em;color:var(--muted)}#projects h2{font-size:clamp(42px,8vw,100px);letter-spacing:-.06em;line-height:.95;margin:32px 0}#projects h2 em{color:var(--cobalt);font-style:normal}.project-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:35px}.project-card{padding:clamp(20px,3vw,36px);border:1px solid var(--rule);background:var(--panel);transition:transform .25s,border-color .25s;cursor:pointer}.project-card:hover{transform:translateY(-4px);border-color:var(--cobalt)}.project-card.featured{grid-column:1/-1}.project-card h3{font-size:clamp(24px,3vw,38px);letter-spacing:-.04em;margin:16px 0}.project-card p{line-height:1.6;color:var(--muted)}.project-meta{font-size:11px;letter-spacing:.12em;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}.tags span{border:1px solid var(--rule);padding:6px 9px;font-size:11px}.case-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}.case-shot{border:1px solid var(--rule);padding:0;background:var(--paper);text-align:left;cursor:zoom-in;overflow:hidden}.case-shot img{width:100%;height:auto;display:block}.case-shot span{display:block;padding:9px;font-size:10px;letter-spacing:.1em}.theme-toggle{position:fixed;right:18px;bottom:18px;z-index:90;background:var(--ink);color:var(--paper);border:1px solid var(--rule);padding:12px 15px;cursor:pointer;font-size:11px;letter-spacing:.08em}.case-overlay{position:fixed;inset:0;background:rgba(14,26,43,.72);z-index:120;display:none;overflow:auto;padding:4vh 16px}.case-overlay.open{display:block}.case-dialog{position:relative;max-width:1000px;margin:0 auto;background:var(--paper);color:var(--ink);padding:clamp(24px,5vw,60px);border:1px solid var(--rule)}.case-close{position:absolute;right:20px;top:12px;border:0;background:none;font-size:36px;cursor:pointer;color:var(--ink)}.case-eyebrow{font-size:11px;letter-spacing:.15em;color:var(--muted)}.case-dialog h2{font-size:clamp(36px,7vw,78px);line-height:.95;letter-spacing:-.06em;margin:22px 0}.case-dialog h3{margin:24px 0 8px}.case-dialog p,.case-dialog li{line-height:1.65}.case-columns{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:30px 0}.case-dialog #caseGalleryModal img{width:100%;margin:8px 0;border:1px solid var(--rule)}body.dark{--paper:#0E1A2B;--ink:#E9EDF0;--panel:#14243A;--rule:#34445A;--muted:#AAB7C8;background:var(--paper);color:var(--ink)}body.dark .theme-toggle{background:var(--amber);color:#0E1A2B}body.dark .case-dialog{background:var(--paper);color:var(--ink)}body.dark .profile-terminal{background:var(--panel)}@media(max-width:700px){.project-list{grid-template-columns:1fr}.project-card.featured{grid-column:auto}.case-columns{grid-template-columns:1fr}.theme-toggle{right:10px;bottom:10px}#name{font-size:clamp(3.2rem,16vw,7rem)!important}.case-gallery{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
 <script>
-const CAL='',WA='';/* paste your Cal.com / Calendly link and WhatsApp link (https://wa.me/91XXXXXXXXXX) here */
-if(CAL){const a=$('#b-cal');a.href=CAL;a.hidden=false}if(WA){const a=$('#b-wa');a.href=WA;a.hidden=false}
-$('#nx').value=location.href.split('#')[0]+'#thanks';
-if(location.hash==='#thanks'){$('.contact-form').hidden=true;$('#thanks').hidden=false;setTimeout(()=>$('#contact').scrollIntoView(),100)}
+(()=>{const data={
+finora:{n:'Finora — Personal Finance Tracker',s:'A personal finance platform focused on importing transactions, organizing spending, and making monthly activity easier to understand.',p:'Financial activity can be difficult to review when transactions live across accounts and statements. Finora explores a single workflow for importing and organizing that activity.',a:'CSV import with duplicate protection, transaction queries, account and budget concepts, and an Angular interface backed by ASP.NET Core and EF Core. AI-assisted categorization is a project direction and should be described as in progress unless verified in the repository.',t:['Angular','ASP.NET Core 8','Clean Architecture','EF Core','SQL Server','CSV import'],n:'Validate duplicate handling, category accuracy, security around financial data, and clear monthly summaries with realistic test data.',r:'https://github.com/sumeetshah30/Finora',g:true},
+taskflow:{n:'TaskFlow — Smart Task & Workflow System',s:'A full-stack task-management project exploring assignment, role-based access, workflow states, and audit history.',p:'Teams need a consistent way to track ownership and status changes as work moves through a workflow.',a:'A layered ASP.NET Core API and Angular client, with EF Core persistence. Authentication, role checks, workflow transitions and audit records should be documented according to the implementation in the repository.',t:['ASP.NET Core 8','Angular','EF Core','SQL Server','JWT / RBAC'],n:'Test permission boundaries, invalid state transitions, and audit history for important task changes.',r:'https://github.com/sumeetshah30/TaskFlow'},
+inventory:{n:'Inventory & Warehouse Management',s:'A full-stack inventory project centered on stock tracking and warehouse workflows.',p:'Inventory systems need dependable records of items and stock movement to help users understand what is available.',a:'The project explores a C# / ASP.NET Core backend with Angular and EF Core persistence. Specific stock operations should be confirmed against the current implementation.',t:['C#','ASP.NET Core','Angular','EF Core','SQL Server'],n:'Test stock adjustments, validation, concurrent updates and clear low-stock reporting where implemented.',r:'https://github.com/sumeetshah30/inventory-warehouse-management-'},
+ai:{n:'AI PR Reviewer',s:'An AI-assisted pull-request review project using Claude API and multi-agent review concepts.',p:'Pull-request reviews can be time-consuming and may miss issues when changes are large or span several files.',a:'The project explores sending code changes through AI-assisted review steps and returning structured findings with severity labels. Findings should support developer judgement, not replace it.',t:['Claude API','GitHub REST API','AI-assisted review','Multi-agent concepts'],n:'Evaluate false positives, prompt injection risks, consistent severity, and usefulness against human-reviewed examples.',r:'https://github.com/sumeetshah30/ai-pr-reviewer'},
+invoice:{n:'InvoicePro — Billing System',s:'An invoice and billing application exploring structured business workflows.',p:'Billing workflows need consistent invoice details, validation and status tracking.',a:'The project is built as a full-stack application. Invoice lifecycle, persistence and validation details should reflect the current repository implementation rather than assumed features.',t:['ASP.NET Core','Angular','EF Core','SQL'],n:'Test validation, totals and rounding, status transitions, and reliable persistence.',r:'https://github.com/sumeetshah30/invoice-billing-system'}};
+const overlay=document.getElementById('caseOverlay');function openCase(key){const d=data[key];if(!d)return;document.getElementById('caseEyebrow').textContent='CASE STUDY / '+({finora:'01',taskflow:'02',inventory:'03',ai:'04',invoice:'05'}[key]);document.getElementById('caseTitle').textContent=d.n;document.getElementById('caseSummary').textContent=d.s;document.getElementById('caseProblem').textContent=d.p;document.getElementById('caseApproach').textContent=d.a;document.getElementById('caseNext').textContent=d.n;document.getElementById('caseTech').innerHTML=d.t.map(x=>'<li>'+x+'</li>').join('');document.getElementById('caseRepo').href=d.r;document.getElementById('caseGalleryModal').innerHTML=d.g?Array.from(document.querySelectorAll('.case-shot img')).map(x=>'<img src="'+x.src+'" alt="'+x.alt+'">').join(''):'';overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('caseClose').focus()}function closeCase(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow=''}document.querySelectorAll('[data-case]').forEach(el=>{el.addEventListener('click',e=>{if(e.target.closest('a'))return;openCase(el.dataset.case)});el.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&el.matches('.project-card')){e.preventDefault();openCase(el.dataset.case)}})});document.getElementById('caseClose').addEventListener('click',closeCase);overlay.addEventListener('click',e=>{if(e.target===overlay)closeCase()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCase()});const toggle=document.getElementById('themeToggle');toggle.addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');toggle.innerHTML=dark?'☼ <span> LIGHT MODE</span>':'◐ <span> DARK MODE</span>';toggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode')});document.querySelectorAll('.case-shot').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();openCase('finora')}));})();
+</script>
 
-/* theme */
-const th=$('#th');function setT(x,save){H.dataset.theme=x;th.textContent=x==='dark'?'Light':'Dark';if(save)try{localStorage.setItem('th',x)}catch(e){}}
-function toggleT(){setT(H.dataset.theme==='dark'?'light':'dark',1)}setT(H.dataset.theme||'light');th.onclick=toggleT;
-
-/* project filters */
-document.querySelectorAll('.flt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.flt button').forEach(x=>x.setAttribute('aria-pressed',x===b));const f=b.dataset.f;document.querySelectorAll('.pcard').forEach(c=>c.hidden=!(f==='all'||c.dataset.cat.includes(f)));js&&ScrollTrigger.refresh()});
-
-/* case studies */
-const G='https://github.com/sumeetshah30/';
-const CS={
-finora:{t:'Finora',tag:'AI · Angular · ASP.NET Core 8',r:'Finora',p:'Tracking money from bank statements and spreadsheets is slow, and it is hard to see where it actually goes each month.',f:['Angular','ASP.NET Core 8 API','Application','Domain','Infrastructure (EF Core)','SQL Server','Anthropic Claude API'],d:['Clean architecture split into Api, Application, Domain and Infrastructure projects, so business rules do not depend on the database or the UI.','CSV statement import with duplicate-import protection, so re-uploading a statement does not double count.','AI summaries and the chat assistant run through the backend, so API keys never reach the browser and secrets stay out of source control.','Trade-off: AI answers depend on the configured integration and the data imported, so what is shared with the AI service needs review.','xUnit tests for backend logic and Swagger / OpenAPI for the API.'],o:['Dashboard for income, expenses and net cash flow, with month-on-month comparison and filters by account, statement and month.','Budgets, subscriptions and recurring payments in one place.','Spending intelligence that flags unusual, high-value and possibly duplicate transactions.','A natural-language assistant for questions about your own spending.']},
-taskflow:{t:'Smart Task and Workflow System',tag:'Backend · Clean architecture',r:'TaskFlow',p:'Teams need to assign and track work with clear permissions and a reliable history of what changed.',f:['Client','Web API (JWT + RBAC)','Application','Domain','Infrastructure (EF Core)','SQL Server / PostgreSQL'],d:['Strict Domain, Application, Infrastructure and API separation.','JWT authentication with role-based access on every endpoint.','Configurable workflow states with full audit logging.','EF Core with LINQ queries shaped for fast retrieval.'],o:['Create, assign, track and manage tasks.','Role-based access and a configurable task lifecycle.','A complete audit trail.']},
-inventory:{t:'Inventory and Warehouse Management',tag:'Full-stack · Angular · ASP.NET Core',r:'inventory-warehouse-management',p:'Businesses need accurate stock levels across more than one warehouse, with a trail of how stock moved.',f:['Angular','ASP.NET Core API (JWT)','Services','EF Core','SQL Server'],d:['Clean ASP.NET Core architecture behind a responsive Angular front end.','A multi-warehouse model with supplier management.','Stock movement logs so every change can be traced.','Low-stock alerts to act before items run out.'],o:['Real-time stock tracking.','Multi-warehouse support and supplier management.','Stock movement logs and low-stock alerts.']},
-invoice:{t:'Invoice and Billing System',tag:'Full-stack · ASP.NET Core · PostgreSQL',r:'invoice-billing-system',p:'Billing involves clients, invoices, taxes, payments and reminders, which are tedious to run by hand.',f:['Angular','Web API (JWT)','Services','EF Core + LINQ','PostgreSQL'],d:['A clean RESTful API layer over the billing domain.','Tax calculation handled in the backend.','Recurring billing cycles with automated payment reminders.','PDF export for invoices.'],o:['Client management and invoice generation.','Payment tracking and tax calculations.','Recurring billing, reminders and PDF export.']},
-pr:{t:'AI PR Reviewer Service',tag:'AI · .NET · Claude',r:'ai-pr-reviewer',p:'Pull request reviews can be slow and uneven. This service gives every PR a consistent first review.',f:['GitHub REST API','.NET Core service','Three cooperating agents','Anthropic Claude API'],d:['The review is split across three agents instead of one large prompt.','Claude handles the reasoning; the GitHub REST API supplies the pull request data.','Written as an agentic workflow in .NET so it fits a typical backend stack.'],o:['A working 3-agent workflow that reviews GitHub pull requests with Claude. See the README for details.']}};
-const li=a=>a.map(x=>`<li>${x}</li>`).join('');
-function openCase(id){const c=CS[id];$('#cs-in').innerHTML=`<span class="bf-tag">${c.tag}</span><h1 class="bf-title">${c.t}</h1><div class="bf-body"><h2>Problem</h2><p>${c.p}</p><h2>How a request flows</h2><div class="flow">${c.f.map(x=>`<span>${x}</span>`).join('<i>→</i>')}</div><h2>Decisions and trade-offs</h2><ul>${li(c.d)}</ul><h2>What it delivers</h2><ul>${li(c.o)}</ul><p><a class="lnk" href="${G+c.r}" target="_blank" rel="noopener">Read the code on GitHub ↗</a></p></div>`;openBlog('cs');$('#cs').scrollTop=0}
-
-
+<style>.retro-egg{filter:hue-rotate(35deg)}.retro-egg #hero{background-image:linear-gradient(rgba(39,64,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(39,64,255,.06) 1px,transparent 1px);background-size:18px 18px}.retro-egg #name{letter-spacing:.01em!important}</style>
+<style id="debug-game-styles">
+.debug-overlay{position:fixed;inset:0;z-index:500;background:rgba(14,26,43,.78);display:none;overflow:auto;padding:20px;color:var(--ink)}
+.debug-overlay.open{display:grid;place-items:center}
+.debug-dialog{position:relative;width:min(900px,100%);max-height:94vh;overflow:auto;background:var(--paper);border:1px solid var(--rule);padding:clamp(20px,4vw,44px);box-shadow:10px 10px 0 var(--amber)}
+.debug-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:14px;margin-bottom:20px;font:11px/1.4 var(--mono);letter-spacing:.12em;color:var(--muted)}
+.debug-close{border:1px solid var(--rule);background:transparent;color:var(--ink);font-size:25px;line-height:1;padding:5px 10px;cursor:pointer}
+.debug-dialog h2{font-size:clamp(34px,6vw,66px);line-height:.95;letter-spacing:-.055em;margin:10px 0 14px}
+.debug-controls{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.debug-controls button,.debug-answer{font:inherit;cursor:pointer;border:1px solid var(--rule);background:var(--panel);color:var(--ink);padding:11px 14px;text-align:left}
+.debug-controls button[aria-pressed="true"]{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.debug-question{font-size:18px;line-height:1.5;margin:20px 0 10px}
+.debug-code{overflow:auto;background:#0E1A2B;color:#E9EDF0;padding:18px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;border-left:4px solid var(--cobalt)}
+.debug-answers{display:grid;gap:9px;margin:16px 0}.debug-answer:hover:not(:disabled){border-color:var(--cobalt)}.debug-answer:disabled{cursor:default;opacity:1}.debug-answer.correct{border-color:#24845A;background:rgba(36,132,90,.12)}.debug-answer.wrong{border-color:#C04A3A;background:rgba(192,74,58,.10)}
+.debug-feedback{min-height:60px;padding:14px;border:1px solid var(--rule);line-height:1.55;margin:14px 0;background:var(--panel)}.debug-footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:18px}.debug-primary{background:var(--cobalt)!important;color:#fff!important;border:0!important;padding:12px 18px!important;cursor:pointer;font:inherit}.debug-muted{font-size:12px;color:var(--muted)}
+body.dark .debug-dialog{background:var(--paper);color:var(--ink)}
+#debug-lab{padding-top:6vh;padding-bottom:8vh}#debug-lab .debug-lab-card{max-width:900px;margin:30px 0 0;cursor:default}#debug-lab .debug-lab-card:hover{transform:none}
+@media(max-width:600px){.debug-overlay{padding:8px}.debug-dialog{max-height:97vh;padding:18px}.debug-question{font-size:16px}}
+</style>
+<div class="debug-overlay" id="debugOverlay" aria-hidden="true">
+ <section class="debug-dialog" role="dialog" aria-modal="true" aria-labelledby="debugTitle">
+  <div class="debug-top"><span>DEBUG LAB / C# · LINQ · API · SQL</span><button class="debug-close" id="debugClose" aria-label="Close Debug the Code">×</button></div>
+  <h2 id="debugTitle">Debug the Code<span style="color:var(--cobalt)">.</span></h2>
+  <p>Find the bug, choose a fix, and learn why it works. No score pressure—just practical debugging.</p>
+  <div class="debug-controls" aria-label="Difficulty level"><button type="button" data-level="easy" aria-pressed="true">01 / EASY</button><button type="button" data-level="medium" aria-pressed="false">02 / MEDIUM</button><button type="button" data-level="hard" aria-pressed="false">03 / HARD</button></div>
+  <div class="debug-muted" id="debugProgress">QUESTION 1 / 3 · SCORE 0</div>
+  <p class="debug-question" id="debugQuestion"></p>
+  <pre class="debug-code"><code id="debugSnippet"></code></pre>
+  <div class="debug-answers" id="debugAnswers"></div>
+  <div class="debug-feedback" id="debugFeedback" role="status" aria-live="polite">Choose the fix you think is correct.</div>
+  <div class="debug-footer"><span class="debug-muted" id="debugResult">Pick an answer to reveal the explanation.</span><button type="button" class="debug-primary" id="debugNext" disabled>Next question →</button></div>
+ </section>
+</div>
+<script id="debug-game-script">
+(()=>{
+ const bank={
+ easy:[
+  {q:'A user name can be null. Which fix prevents a NullReferenceException?',code:`string? name = GetUserName();
+Console.WriteLine(name.Length);`,a:['Console.WriteLine(name!.Length);','Console.WriteLine(name?.Length ?? 0);','Console.WriteLine(name.Length ?? 0);'],c:1,e:'The null-conditional operator ?. accesses Length only when name is not null. The ?? operator supplies 0 when the result is null. The null-forgiving operator ! only suppresses warnings; it does not protect at runtime.'},
+  {q:'This API endpoint should reject an empty name. Which check is correct?',code:`public IActionResult Create(string name)
+{
+    // validate name here
+    return Ok();
+}`,a:['if (string.IsNullOrWhiteSpace(name)) return BadRequest("Name is required");','if (name == null && name.Length == 0) return Ok();','if (name.Length < 0) return BadRequest();'],c:0,e:'IsNullOrWhiteSpace handles null, empty and whitespace-only strings. Returning BadRequest communicates that the client supplied invalid input.'},
+  {q:'You need to filter a list to only active users. Which LINQ expression is correct?',code:`var activeUsers = users
+    // filter active users`,a:['users.Select(u => u.IsActive)','users.Where(u => u.IsActive)','users.OrderBy(u => u.IsActive)'],c:1,e:'Where filters a sequence by a predicate. Select transforms each element, while OrderBy sorts the sequence.'}
+ ],
+ medium:[
+  {q:'Avoid calling ToList before filtering a database query. Which version is usually more efficient with EF Core?',code:`// users is an EF Core DbSet<User>
+var result = users.ToList()
+    .Where(u => u.IsActive);`,a:['var result = users.Where(u => u.IsActive).ToList();','var result = users.Select(u => u.IsActive).ToList();','var result = users.OrderBy(u => u.IsActive).ToList();'],c:0,e:'Applying Where before ToList lets EF Core translate the filter to SQL, so the database returns only matching rows. Check generated SQL and indexes for real performance work.'},
+  {q:'An API receives a DTO. What is the best basic way to reject invalid model data in an ASP.NET Core controller using [ApiController]?',code:`public class CreateUserDto
+{
+    [Required]
+    public string Name { get; set; } = "";
+}`,a:['Ignore ModelState and always save','Use [ApiController] with validation attributes and return the framework validation response','Catch every exception and return 200 OK'],c:1,e:'With [ApiController], model-validation errors automatically produce a 400 response. Validation attributes describe constraints; custom business rules may still need explicit validation.'},
+  {q:'You want every order with a total greater than 100. Which SQL clause filters rows before grouping?',code:`SELECT CustomerId, SUM(Total)
+FROM Orders
+-- add row filter
+GROUP BY CustomerId;`,a:['HAVING Total > 100','WHERE Total > 100','ORDER BY Total > 100'],c:1,e:'WHERE filters individual rows before grouping. HAVING filters groups after aggregation; for a condition on SUM(Total), HAVING is the appropriate clause.'}
+ ],
+ hard:[
+  {q:'A nullable query parameter is optional. Which C# condition safely handles a missing value and rejects non-positive values?',code:`int? page = request.Page;
+// accept only page > 0 when supplied`,a:['if (page <= 0) Reject();','if (page.HasValue && page.Value <= 0) Reject();','if (page.Value <= 0 || page == null) Accept();'],c:1,e:'Check HasValue before reading Value. Pattern matching is another clean option: if (page is <= 0) Reject(); for a nullable numeric value this rejects supplied non-positive values while allowing null.'},
+  {q:'You need customers whose total order value exceeds 1000. Which SQL query correctly filters aggregate results?',code:`SELECT CustomerId, SUM(Total) AS OrderValue
+FROM Orders
+GROUP BY CustomerId
+-- filter aggregate`,a:['WHERE SUM(Total) > 1000','HAVING SUM(Total) > 1000','GROUP BY SUM(Total) > 1000'],c:1,e:'Aggregate expressions are filtered with HAVING after GROUP BY. WHERE is evaluated before aggregation and generally cannot filter on SUM(Total).'},
+  {q:'A LINQ query should return one user or null when no match exists. Which operator best communicates that intent?',code:`var user = users
+    .Where(u => u.Email == email)
+    // choose single optional result`,a:['First()','Single()','SingleOrDefault()'],c:2,e:'SingleOrDefault returns the single match or the default value if none exists, and throws if multiple matches exist. FirstOrDefault is appropriate if you only need the first match and duplicates are acceptable.'}
+ ]};
+ const overlay=document.getElementById('debugOverlay');if(!overlay)return;let level='easy',index=0,score=0,answered=false,round=[];
+ const $=id=>document.getElementById(id);const shuffle=a=>a.slice().sort(()=>Math.random()-.5);
+ function start(l=level){level=l;index=0;score=0;round=bank[level].slice();render()}
+ function render(){const item=round[index];answered=false;$('debugProgress').textContent=`${level.toUpperCase()} · QUESTION ${index+1} / ${round.length} · SCORE ${score}`;$('debugQuestion').textContent=item.q;$('debugSnippet').textContent=item.code;$('debugAnswers').innerHTML='';item.a.forEach((answer,i)=>{const b=document.createElement('button');b.type='button';b.className='debug-answer';b.textContent=String.fromCharCode(65+i)+'. '+answer;b.addEventListener('click',()=>choose(i));$('debugAnswers').appendChild(b)});$('debugFeedback').textContent='Choose the fix you think is correct.';$('debugResult').textContent='Pick an answer to reveal the explanation.';$('debugNext').disabled=true;$('debugNext').textContent=index===round.length-1?'Play again ↻':'Next question →';document.querySelectorAll('[data-level]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.level===level)))}
+ function choose(i){if(answered)return;answered=true;const item=round[index];const buttons=[...$('debugAnswers').children];buttons.forEach((b,j)=>{b.disabled=true;if(j===item.c)b.classList.add('correct');else if(j===i)b.classList.add('wrong')});const correct=i===item.c;if(correct)score++;$('debugFeedback').textContent=(correct?'Correct. ':'Not quite. ')+item.e;$('debugResult').textContent=correct?'BUG FIXED ✓':'REVIEW THE FIX';$('debugProgress').textContent=`${level.toUpperCase()} · QUESTION ${index+1} / ${round.length} · SCORE ${score}`;$('debugNext').disabled=false}
+ function close(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+ window.openDebugCode=()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';start('easy');$('debugClose').focus()};
+ const enterButton=document.getElementById('enterDebugLab');if(enterButton)enterButton.addEventListener('click',()=>window.openDebugCode());
+ $('debugClose').addEventListener('click',close);overlay.addEventListener('click',e=>{if(e.target===overlay)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))close()});document.querySelectorAll('[data-level]').forEach(b=>b.addEventListener('click',()=>start(b.dataset.level)));$('debugNext').addEventListener('click',()=>{if(index<round.length-1){index++;render()}else{const finalScore=score;round=[];$('debugQuestion').textContent=`Level complete: ${finalScore} / ${bank[level].length}`;$('debugSnippet').textContent='DEBUG SESSION COMPLETE';$('debugAnswers').innerHTML='';$('debugFeedback').textContent=finalScore===bank[level].length?'Perfect run. All bugs fixed.':'Good practice—review the explanations and try again.';$('debugResult').textContent='Choose a level above to replay.';$('debugNext').disabled=true;$('debugNext').textContent='Level complete ✓'}});
+})();
 </script>
 </body>
 </html>
+
+<style id="portfolio-fixes">
+#name{font-family:var(--disp)!important;font-size:clamp(3.8rem,14.2vw,16rem)!important;line-height:.92!important;letter-spacing:-.045em!important;max-width:100%;overflow:visible!important;padding-right:.12em}#name .w{white-space:nowrap;overflow:visible!important;padding-right:.08em}.case-overlay{padding:clamp(12px,3vh,32px) 12px;overscroll-behavior:contain}.case-dialog{width:min(100%,1000px);max-height:94vh;overflow-y:auto;overscroll-behavior:contain;padding:clamp(22px,4vw,52px)}.case-dialog h2{overflow-wrap:anywhere;padding-right:28px}.case-dialog p,.case-dialog li{overflow-wrap:anywhere}.case-columns{align-items:start}.case-dialog #caseGalleryModal{max-width:100%}.case-dialog #caseGalleryModal img{height:auto;max-width:100%;object-fit:contain}.case-gallery{grid-template-columns:minmax(0,1fr)}@media(max-width:700px){#name{font-size:clamp(3.1rem,15.5vw,6.8rem)!important;letter-spacing:-.035em!important}.case-dialog{max-height:96vh}.case-columns{gap:12px}}
+</style>
